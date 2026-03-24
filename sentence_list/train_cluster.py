@@ -67,7 +67,7 @@ X_train, X_temp, y_train, y_temp, idx_train, idx_temp = train_test_split(
 
 # Chia tiếp 30% → val 10%, test 20% 
 X_val, X_test, y_val, y_test, idx_val, idx_test = train_test_split(
-    X_temp, y_temp, idx_temp, test_size=2/3, random_state=42
+    X_temp, y_temp, idx_temp, test_size=1/3, random_state=42
 )
 
 # KMeans Clustering
