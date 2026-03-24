@@ -8,7 +8,7 @@ load_dotenv()
 API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 # Hàm để crawl comments từ một video YouTube
-def crawl_youtube_comments(video_id, max_results=200):
+def crawl_youtube_comments(video_id, max_results=1000, max_retries=5, retry_backoff=2):
     youtube = build("youtube", "v3", developerKey=API_KEY)
 
     comments = []
@@ -19,14 +19,29 @@ def crawl_youtube_comments(video_id, max_results=200):
     )
 
     while request and len(comments) < max_results:
-        response = request.execute()
+        attempt = 0
+        while attempt < max_retries:
+            try:
+                response = request.execute()
+                break
+            except Exception as e:
+                attempt += 1
+                if attempt >= max_retries:
+                    print(f"[ERROR] crawl cảm thấy quá nhiều lỗi cho video {video_id}, dừng lại: {e}")
+                    raise
+                wait_time = retry_backoff * attempt
+                print(f"[WARN] Lỗi API (attempt {attempt}/{max_retries}) cho video {video_id}: {e} -- retry sau {wait_time}s")
+                time.sleep(wait_time)
 
-        for item in response["items"]:
-            text = item["snippet"]["topLevelComment"]["snippet"]["textOriginal"]
+        for item in response.get("items", []):
+            text = item["snippet"]["topLevelComment"]["snippet"].get("textOriginal", "")
             comments.append({
                 "video_id": video_id,
                 "comment": text
             })
+
+        if len(comments) >= max_results:
+            break
 
         request = youtube.commentThreads().list_next(request, response)
 
@@ -57,14 +72,14 @@ def save_to_csv(data, output_path=None):
         writer.writerows(data)
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-video_id_file = os.path.join(script_dir, "youtube_id.txt")
+video_id_file = os.path.join(script_dir, "youtube_id_music.txt")
 video_ids = read_video_ids(video_id_file)
 
 all_comments = []
 
 for vid in video_ids:
     print(f"Đang crawl video: {vid}")
-    comments = crawl_youtube_comments(vid, max_results=200)
+    comments = crawl_youtube_comments(vid, max_results=20000)
     all_comments.extend(comments)
     time.sleep(1)  # tránh bị quota limit
 
