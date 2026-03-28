@@ -1,0 +1,13 @@
+python-dotenv
+google-api-python-client
+emoji
+langdetect
+pandas
+scikit-learn
+gensim
+numpy
+matplotlib
+transformers
+torch
+seaborn
+torchgen

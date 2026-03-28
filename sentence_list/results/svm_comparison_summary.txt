@@ -1,0 +1,112 @@
+================================================================================
+SVM COMPARISON REPORT – TF-IDF vs Doc2Vec vs XLM-RoBERTa
+================================================================================
+
+────────────────────────────────────────────────────────────
+  Phương pháp : TF-IDF
+────────────────────────────────────────────────────────────
+  Đặc trưng         : 500 chiều
+  Tham số encoder   : 500
+  Tham số SVM       : 3,280,573
+  Support vectors   : 6,535
+  Tổng tham số      : 3,281,073
+  Thời gian encode  : 1.45s
+  Thời gian SVM     : 855.50s
+  Model file        : D:\NLP\NLP\sentence_list\results\svm_models\svm_model_tf_idf.pkl
+
+  --- Validation ---
+    accuracy    : 0.9775
+    precision   : 0.9809
+    recall      : 0.9713
+    f1          : 0.9760
+
+  --- Test ---
+    accuracy    : 0.9768
+    precision   : 0.9811
+    recall      : 0.9687
+    f1          : 0.9748
+
+  Classification Report (Test):
+              precision    recall  f1-score   support
+
+   criticism       1.00      0.99      1.00       212
+     neutral       0.97      0.92      0.94       866
+      praise       0.98      0.99      0.98      3014
+
+    accuracy                           0.98      4092
+   macro avg       0.98      0.97      0.97      4092
+weighted avg       0.98      0.98      0.98      4092
+
+
+────────────────────────────────────────────────────────────
+  Phương pháp : Doc2Vec
+────────────────────────────────────────────────────────────
+  Đặc trưng         : 100 chiều
+  Tham số encoder   : 2,917,600
+  Tham số SVM       : 503,271
+  Support vectors   : 4,934
+  Tổng tham số      : 3,420,871
+  Thời gian encode  : 222.24s
+  Thời gian SVM     : 220.28s
+  Model file        : D:\NLP\NLP\sentence_list\results\svm_models\svm_model_doc2vec.pkl
+
+  --- Validation ---
+    accuracy    : 0.9846
+    precision   : 0.9888
+    recall      : 0.9080
+    f1          : 0.9424
+
+  --- Test ---
+    accuracy    : 0.9824
+    precision   : 0.9871
+    recall      : 0.9068
+    f1          : 0.9409
+
+  Classification Report (Test):
+              precision    recall  f1-score   support
+
+   criticism       0.99      0.98      0.99      2316
+     neutral       0.97      0.99      0.98      1744
+      praise       1.00      0.75      0.86        32
+
+    accuracy                           0.98      4092
+   macro avg       0.99      0.91      0.94      4092
+weighted avg       0.98      0.98      0.98      4092
+
+
+────────────────────────────────────────────────────────────
+  Phương pháp : XLM-RoBERTa
+────────────────────────────────────────────────────────────
+  Đặc trưng         : 768 chiều
+  Tham số encoder   : 278,045,955
+  Tham số SVM       : 3,217,063
+  Support vectors   : 4,178
+  Tổng tham số      : 281,263,018
+  Thời gian encode  : 2099.56s
+  Thời gian SVM     : 318.94s
+  Model file        : D:\NLP\NLP\sentence_list\results\svm_models\svm_model_xlm_roberta.pkl
+
+  --- Validation ---
+    accuracy    : 0.9826
+    precision   : 0.9831
+    recall      : 0.9804
+    f1          : 0.9817
+
+  --- Test ---
+    accuracy    : 0.9814
+    precision   : 0.9818
+    recall      : 0.9795
+    f1          : 0.9806
+
+  Classification Report (Test):
+              precision    recall  f1-score   support
+
+   criticism       0.98      0.97      0.98       750
+     neutral       0.98      0.99      0.98      1968
+      praise       0.99      0.98      0.98      1374
+
+    accuracy                           0.98      4092
+   macro avg       0.98      0.98      0.98      4092
+weighted avg       0.98      0.98      0.98      4092
+
+

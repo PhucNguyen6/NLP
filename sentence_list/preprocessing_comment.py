@@ -191,9 +191,9 @@ def detect_language(text: str) -> str | None:
 
     if vi_chars and en_chars:
         return "mix"
-    if vi_chars:
+    if vi_chars and not en_chars:
         return "vi"
-    if en_chars:
+    if en_chars and not vi_chars:
         return "en"
     return None
 

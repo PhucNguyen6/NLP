@@ -1,0 +1,721 @@
+original_comment,processed_comment,tfidf_prediction,doc2vec_prediction,xlmroberta_prediction
+"Lần đầu nghe nhạc của Chi Xê, mới nghe 1 lần mà dính quá!  Mong chị sớm gặp nhiều may mắn trên chặn đường của chị <3",lần đầu nghe nhạc của chi xê mới nghe 1 lần mà dính quá mong chị sớm gặp nhiều may mắn trên chặn đường của chị 3,praise,neutral,praise
+"Nhẹ nhàng và êm ái
+Lưng luôn thẳng, chuẩn mực phong thái
+Nụ cười mượn tia nắng
+Nàng giữ ấm đam mê anh mang
+Sau một ngày dài
+Đậm đà và mạnh mẽ
+Anh chinh phục nàng bằng ngàn lí lẽ
+Sự tinh tế
+Nàng không dễ nhưng cứ thế
+Cả hai cứ ngấm dần ngấm dần
+Tí tách róc rách tiếng nói cười
+Vanh vách bóc tách những thói đời
+Lân la tới những yếu điểm
+Nhưng hay thay cộng lại là tròn mười
+Chóng vánh cái cách họ tán tỉnh
+Không lê thê mà ánh mắt tình ghê
+Không mê nhau sao tình thế
+Gió quấn quýt khiến lá xì xào
+Chuyện về hai cánh lá
+Nhẹ hút chặt lấy nhau giữa ồn ào
+Tự hỏi liệu thiếu anh
+Bầu trời có bớt xanh
+Một cuộc tình quá trong lành
+Chuyện trà và cà phê
+Say nhau quên mất đường về
+Nhiều giờ ngồi tỉ tê
+Chưa hợp ai được như thế
+Uh trà và cà phê
+Thay câu yêu đương vụng về
+They fall in love
+Tea and coffee
+Gimme gimme love
+Gimme kisses
+Gimme gimme sweet
+Sip me sip me
+Love my bitter every single
+Little bit of it
+Ít một ít một thôi
+Nhấp và khóa đầu môi
+Thấm trọn vị ngọt thơm lên
+Lời chúc mỗi sáng đầu ngày
+Đều đặn chàng qua qua qua
+Gặp mặt không qua loa
+Điều nàng luôn ngân nga
+Chuyện tình yêu xanh lá
+Một loạt giai điệu
+Tung tăng vui tươi vang ca
+Trên yên sau anh về nhà
+Gió quấn quýt khiến lá xì xào
+Chuyện về hai cánh lá
+Nhẹ hút chặt lấy nhau giữa ồn ào
+Tự hỏi liệu thiếu anh
+Bầu trời có bớt xanh
+Một cuộc tình quá trong lành
+Chuyện trà và cà phê
+Say nhau quên mất đường về
+Nhiều giờ ngồi tỉ tê
+Chưa hợp ai được như thế
+Uh trà và cà phê
+Thay câu yêu đương vụng về
+They fall in love
+Tea and coffee
+On a beautiful day, same place, same spot
+Tea asks coffee
+What do you think about this relationship
+Are you in
+And of course
+Without any hesitation, caffein
+Chuyện trà và cà phê
+Say nhau quên mất đường về
+Nhiều giờ ngồi tỉ tê
+Chưa hợp ai được như thế
+Uh trà và cà phê
+Thay câu yêu đương vụng về
+They fall in love
+Tea and coffee",nhẹ nhàng và êm ái lưng luôn thẳng chuẩn mực phong thái nụ cười mượn tia nắng nàng giữ ấm đam mê anh mang sau một ngày dài đậm đà và mạnh mẽ anh chinh phục nàng bằng ngàn lí lẽ sự tinh tế nàng không dễ nhưng cứ thế cả hai cứ ngấm dần ngấm dần tí tách róc rách tiếng nói cười vanh vách bóc tách những thói đời lân la tới những yếu điểm nhưng hay thay cộng lại là tròn mười chóng vánh cái cách họ tán tỉnh không lê thê mà ánh mắt tình ghê không mê nhau sao tình thế gió quấn quýt khiến lá xì xào chuyện về hai cánh lá nhẹ hút chặt lấy nhau giữa ồn ào tự hỏi liệu thiếu anh bầu trời có bớt xanh một cuộc tình quá trong lành chuyện trà và cà phê say nhau quên mất đường về nhiều giờ ngồi tỉ tê chưa hợp ai được như thế uh trà và cà phê thay câu yêu đương vụng về they fal in love tea and cofe gime gime love gime kises gime gime swet sip me sip me love my biter every single litle bit of it ít một ít một thôi nhấp và khóa đầu môi thấm trọn vị ngọt thơm lên lời chúc mỗi sáng đầu ngày đều đặn chàng qua qua qua gặp mặt không qua loa điều nàng luôn ngân nga chuyện tình yêu xanh lá một loạt giai điệu tung tăng vui tươi vang ca trên yên sau anh về nhà gió quấn quýt khiến lá xì xào chuyện về hai cánh lá nhẹ hút chặt lấy nhau giữa ồn ào tự hỏi liệu thiếu anh bầu trời có bớt xanh một cuộc tình quá trong lành chuyện trà và cà phê say nhau quên mất đường về nhiều giờ ngồi tỉ tê chưa hợp ai được như thế uh trà và cà phê thay câu yêu đương vụng về they fal in love tea and cofe on a beautiful day same place same spot tea asks cofe what do you think about this relationship are you in and of course without any hesitation cafein chuyện trà và cà phê say nhau quên mất đường về nhiều giờ ngồi tỉ tê chưa hợp ai được như thế uh trà và cà phê thay câu yêu đương vụng về they fal in love tea and cofe,praise,neutral,neutral
+Hay quáaaa,hay quáa,praise,criticism,praise
+"T-t-t-t-t-trà
+T-t-t-t-t-trà
+V-v-v-v-v-và
+C-c-c-c-cà phê
+Nhẹ nhàng và êm ái
+Lưng luôn thẳng, chuẩn mực phong thái
+Nụ cười mượn tia nắng
+Nàng giữ ấm đam mê anh mang sau một ngày dài
+Đậm đà và mạnh mẽ
+Anh chinh phục nàng bằng ngàn lý lẽ
+Sự tinh tế, nàng không dễ nhưng cứ thế
+Cả hai cứ ngấm dần ngấm dần
+Tí tách róc rách tiếng nói cười
+Vanh vách bóc tách những thói đời
+Lân la tới những yếu điểm
+Nhưng hay thay cộng lại là tròn mười
+Chóng vánh cái cách họ tán tỉnh (Ưm)
+Không lê thê mà ánh mắt tình ghê
+Không mê nhau sao tình thế
+Gió quấn quýt khiến lá xì xào
+Chuyện về hai cành lá nhẹ hút chặt lấy nhau giữa ồn ào
+Tự hỏi liệu thiếu anh
+Bầu trời có bớt xanh
+Một cuộc tình quá trong lành
+Chuyện trà và cà phê
+Say nhau quên mất đường về
+Nhiều giờ ngồi tỉ tê
+Chưa hợp ai được như thế
+Uh, trà và cà phê
+Thay câu yêu đương vụng về
+They fall in love
+T-tea and coffee
+Gimme gimme love, gimme gimme kisses
+Gimme gimme sweet, sip me sip me
+Love my bitter every single little bit of it
+Ít một ít một thôi
+Nhấp và khoá đầu môi
+Thấm trọn vị ngọt thơm lên lời chúc mỗi sáng đầu ngày
+Đều đặn chàng qua qua qua
+Gặp mặt không qua loa
+Điều nàng luôn ngân nga
+Chuyện tình yêu xanh lá
+Pa-da-pam-pa-pam
+Pa-da-pam-pa-pam
+Một loạt giai điệu tung tăng vui tươi vang ca
+Trên yên sau anh về nhà
+Gió quấn quýt khiến lá xì xào
+Chuyện về hai cành lá nhẹ hút chặt lấy nhau giữa ồn ào
+Tự hỏi liệu thiếu anh
+Bầu trời có bớt xanh
+Một cuộc tình quá trong lành (Uh)
+Chuyện trà và cà phê
+Say nhau quên mất đường về (Q-quên mất đường về)
+Nhiều giờ ngồi tỉ tê
+Chưa hợp ai được như thế
+Uh, trà và cà phê
+Thay câu yêu đương vụng về
+They fall in love
+T-tea and coffee
+On a beautiful day, same place, same spot
+Tea asks Coffee
+""What do you think about this relationship?
+Are you in?""
+And of course, without any hesitation
+C-c-caffein (Ooh)
+Chuyện trà và cà phê
+Say nhau quên mất đường về (Quên mất, quên mất đường)
+Nhiều giờ ngồi tỉ tê
+Chưa hợp ai được như thế
+Uh, trà và cà phê
+Thay câu yêu đương vụng về
+They fall in love
+T-tea and coffee (Coffee)
+Tưới cây, tưới hoa và rồi xoay
+(Xoay, xoay, xoay, xoay)
+Em, anh, chỉ mình ta cùng nhịp bước
+(Aah-aah-aah-aah-aah-aah-aah) (Bước, bước, bước, bước, bước)
+Rồi lại vẽ yêu, vẽ đương và rồi xoay (Xoay, xoay, xoay, xoay)
+Xoay qua, xoay lại
+Xoay qua, xoay lại
+T-tea and coffee",trà trà và cà phê nhẹ nhàng và êm ái lưng luôn thẳng chuẩn mực phong thái nụ cười mượn tia nắng nàng giữ ấm đam mê anh mang sau một ngày dài đậm đà và mạnh mẽ anh chinh phục nàng bằng ngàn lý lẽ sự tinh tế nàng không dễ nhưng cứ thế cả hai cứ ngấm dần ngấm dần tí tách róc rách tiếng nói cười vanh vách bóc tách những thói đời lân la tới những yếu điểm nhưng hay thay cộng lại là tròn mười chóng vánh cái cách họ tán tỉnh ưm không lê thê mà ánh mắt tình ghê không mê nhau sao tình thế gió quấn quýt khiến lá xì xào chuyện về hai cành lá nhẹ hút chặt lấy nhau giữa ồn ào tự hỏi liệu thiếu anh bầu trời có bớt xanh một cuộc tình quá trong lành chuyện trà và cà phê say nhau quên mất đường về nhiều giờ ngồi tỉ tê chưa hợp ai được như thế uh trà và cà phê thay câu yêu đương vụng về they fal in love tea and cofe gime gime love gime gime kises gime gime swet sip me sip me love my biter every single litle bit of it ít một ít một thôi nhấp và khoá đầu môi thấm trọn vị ngọt thơm lên lời chúc mỗi sáng đầu ngày đều đặn chàng qua qua qua gặp mặt không qua loa điều nàng luôn ngân nga chuyện tình yêu xanh lá padapampapam padapampapam một loạt giai điệu tung tăng vui tươi vang ca trên yên sau anh về nhà gió quấn quýt khiến lá xì xào chuyện về hai cành lá nhẹ hút chặt lấy nhau giữa ồn ào tự hỏi liệu thiếu anh bầu trời có bớt xanh một cuộc tình quá trong lành uh chuyện trà và cà phê say nhau quên mất đường về quên mất đường về nhiều giờ ngồi tỉ tê chưa hợp ai được như thế uh trà và cà phê thay câu yêu đương vụng về they fal in love tea and cofe on a beautiful day same place same spot tea asks cofe what do you think about this relationship are you in and of course without any hesitation cafein oh chuyện trà và cà phê say nhau quên mất đường về quên mất quên mất đường nhiều giờ ngồi tỉ tê chưa hợp ai được như thế uh trà và cà phê thay câu yêu đương vụng về they fal in love tea and cofe cofe tưới cây tưới hoa và rồi xoay xoay xoay xoay xoay em anh chỉ mình ta cùng nhịp bước ahahahahahahah bước bước bước bước bước rồi lại vẽ yêu vẽ đương và rồi xoay xoay xoay xoay xoay xoay qua xoay lại xoay qua xoay lại tea and cofe,praise,neutral,neutral
+Gimme gimme love Gimme kisses Gimme gimme sweet Sip me sip me love my bitter every single little bit of it,gime gime love gime kises gime gime swet sip me sip me love my biter every single litle bit of it,praise,criticism,praise
+bị ấn tượng cách bà Chi chơi chữ caffein á :))) hay dữ 😁,bị ấn tượng cách bà chi chơi chữ cafein á hay dữ,praise,neutral,criticism
+View giảm rồi huuu không đều như trước rồi,view giảm rồi hu không đều như trước rồi,praise,neutral,criticism
+nghe mỗi ngày luôn í,nghe mỗi ngày luôn í,neutral,criticism,praise
+e nghe tỉ lần vẫn thấy nó hay vc chi xê ơiiiiii,e nghe tỉ lần vẫn thấy nó hay vãi chi xê ơi,neutral,neutral,neutral
+MV ĐẪ MẮT VỀ THỜI TRANG GHÊ,mv đẫ mắt về thời trang ghê,praise,criticism,praise
+Nẹh nhàng và êm ấm,nẹh nhàng và êm ấm,praise,neutral,praise
+Có ai còn nghe không,có ai còn nghe không,neutral,neutral,neutral
+Lên được 10M không ta,lên được 10m không ta,praise,criticism,neutral
+5.5M rùi chị ơiiii mãi iu chị mong chị quay lại EXSH mùa 2 quá ò 😘😘😘😘,5m rồi chị ơi mãi iu chị mong chị quay lại exsh mùa 2 quá ò,praise,neutral,praise
+thấy mấy video trên tiktok ghép nhạc này vào cute xỉu,thấy mấy video trên tiktok ghép nhạc này vào cute xỉu,praise,neutral,praise
+càng nghe càng hay:)),càng nghe càng hay,neutral,criticism,neutral
+chi xê mãi đỉnh😍😍😍😍😍😘,chi xê mãi đỉnh,praise,criticism,praise
+"mãi ấn tượng khúc 
+- are u in? 
+- ca-ca-cafein 
+chơi chữ đỉnh quá",mãi ấn tượng khúc are you in cacacafein chơi chữ đỉnh quá,praise,neutral,praise
+tự nhiên nghe lại thấy cute và hay xỉu,tự nhiên nghe lại thấy cute và hay xỉu,neutral,criticism,praise
+Cố lên 10M viuu luôn mọi người ơi,cố lên 10m viu luôn mọi người ơi,praise,criticism,neutral
+MV đẹp quá . Phối màu sắc rất đẹp- nghệ thuật. Đỉnh!,mv đẹp quá phối màu sắc rất đẹp nghệ thuật đỉnh,praise,neutral,praise
+Tầm 1 tháng nũa lên 10tr view:))),tầm 1 tháng nũa lên 10tr view,praise,criticism,neutral
+"Trời ơi tài cơ đó 
+Ai cho bả nổi tiếng dùm cái đi
+Em chờ chị❤❤❤",trời ơi tài cơ đó ai cho bả nổi tiếng dùm cái đi em chờ chị,praise,neutral,neutral
+Bài này hay bạn nhé!,bài này hay bạn nhé,neutral,criticism,neutral
+ỡ,ỡ,praise,criticism,neutral
+Nghe đi nghe lại vẫn hay ❤,nghe đi nghe lại vẫn hay,neutral,criticism,praise
+Hayyy,hay,praise,criticism,neutral
+.,,praise,criticism,neutral
+Đúng là  idol của em❤,đúng là idol của em,praise,neutral,praise
+5tr viewwww,5tr view,praise,neutral,neutral
+“Rượu chè và mồi ngon anh say quên đường về”,rượu chè và mồi ngon anh say quên đường về,praise,neutral,neutral
+Cày view cao lên,cày view cao lên,praise,neutral,praise
+Hay quá,hay quá,praise,criticism,praise
+Hay quá chị Chi Xê uiii,hay quá chị chi xê ui,praise,criticism,praise
+hát hay quá đi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,hát hay quá đi,neutral,criticism,praise
+cho bé này lên 5M mn oiiii,cho bé này lên 5m mn oi,praise,criticism,neutral
+Bài đỉnh dị mà sao view ít thế được,bài đỉnh dị mà sao view ít thế được,neutral,criticism,criticism
+Cày lên 5tr luôn mng owiiii🎉🎉🎉🎉🎉🎉,cày lên 5tr luôn mng owi,praise,criticism,criticism
+Ly cafe ty tách,ly cafe thank you tách,praise,neutral,praise
+ôi nghe 1000000000000 lần vẫn ko chán,ôi nghe 10 lần vẫn không chán,neutral,neutral,praise
+26/07/2026 ngày quan trọng,26072026 ngày quan trọng,praise,neutral,neutral
+"Hay quá, dễ thương nữa~ thiệt là phê~~~",hay quá dễ thương nữa thiệt là phê,praise,neutral,praise
+MV này liệu có thể lên được 10M view hay không đây,mv này liệu có thể lên được 10m view hay không đây,praise,criticism,neutral
+hay quá ạ!,hay quá ạ,praise,criticism,praise
+Đoạn ‘trà và cafe ‘ dính mãi trang đầu,đoạn trà và cafe dính mãi trang đầu,praise,neutral,neutral
+"từ ngươi này sang người khác, theo như các chuyên gia đã nghiên cứu thì bệnh này có tên là bệnh “NGHÈO” hết trơn tiền rồi nè trời…",từ ngươi này sang người khác theo như các chuyên gia đã nghiên cứu thì bệnh này có tên là bệnh nghèo hết trơn tiền rồi nè trời,praise,neutral,criticism
+2:20 cho ai cần nha🎉,20 cho ai cần nha,praise,criticism,neutral
+3:17 hai ông bả dịu 😭💐,317 hai ông bả dịu,praise,neutral,neutral
+"cho anh lạy em cái nhé, nghe mà yêu đời phải lên cấp số nhân , bài hát tuyệt vời quá ",cho anh lạy em cái nhé nghe mà yêu đời phải lên cấp số nhân bài hát tuyệt vời quá,neutral,neutral,praise
+Hay quá chi xê ưi,hay quá chi xê ưi,praise,criticism,neutral
+2:25,25,praise,criticism,neutral
++1fan,1fan,praise,criticism,neutral
+"Nhạc gì mà nghe đi nghe lại, ngày nào cũng nghe luôn mà không biết hay ở đâu nữa...",nhạc gì mà nghe đi nghe lại ngày nào cũng nghe luôn mà không biết hay ở đâu nữa,neutral,criticism,neutral
+1:49,149,praise,criticism,neutral
+1:10 hay,10 hay,praise,criticism,neutral
+Chất lượng quá!,chất lượng quá,praise,neutral,criticism
+thấy hot bên tiktok mà giờ mới biết tên,thấy hot bên tiktok mà giờ mới biết tên,praise,criticism,neutral
+"em cài view từ lúc mv có 200 ngàn view cứ buồn vì sợ chị bị flop.Nhưng bây h đc hơn 4,5 triệu view r .Chúc chị thành công <3.",em cài view từ lúc mv có 20 ngàn view cứ buồn vì sợ chị bị flopnhưng bây h được hơn 45 triệu view are chúc chị thành công 3,praise,neutral,criticism
+2026 roài mà vẫn mê,2026 roài mà vẫn mê,praise,criticism,neutral
+đc đầu tư cơ mà hát chán thế,được đầu tư cơ mà hát chán thế,praise,neutral,criticism
+uuuuuuuuuffffffffffffffffffffoooooooooooooooo,ufo,praise,criticism,criticism
+"cường oi get the hint, em thích anh 😞",cường oi get the hint em thích anh,praise,neutral,praise
+Rượu chè và mồi ngon 😂,rượu chè và mồi ngon,praise,neutral,praise
+từ tiktok qua😮,từ tiktok qua,praise,neutral,neutral
+hay quá c ơi bạn e rất thíchach,hay quá c ơi bạn e rất thíchach,praise,criticism,praise
+hay phết,hay phết,praise,criticism,criticism
+Trai xinh gái đẹp 🎉,trai xinh gái đẹp,praise,neutral,praise
+"Mấy bạn oiii, cày view cho chỉ đi ạaaa",mấy bạn oi cày view cho chỉ đi ạa,praise,neutral,neutral
+.,,praise,criticism,neutral
+"ra MV quảng cáo cái, MV này đứng view luôn",ra mv quảng cáo cái mv này đứng view luôn,praise,criticism,neutral
+♥️♥️♥️,,praise,criticism,neutral
+Chi Xê đẹp gái quá,chi xê đẹp gái quá,praise,criticism,praise
+"ôi trời ơi chuỵen ""tình yêu xanh lá"" nghĩ ngay tới nhạc của Thịnh Suyyy",ôi trời ơi chuỵen tình yêu xanh lá nghĩ ngay tới nhạc của thịnh suy,praise,neutral,praise
+Trời ơi mong đc chị chi xê rep ạ em thích nghe bài này lắm ạ 😁😁😁,trời ơi mong được chị chi xê rep ạ em thích nghe bài này lắm ạ,neutral,neutral,praise
+Funky hay quá❤❤❤,funky hay quá,praise,criticism,praise
+Sao tui lại có cảm giác từng nghe bài này từ năm ngoái rồi nhờ,sao tui lại có cảm giác từng nghe bài này từ năm ngoái rồi nhờ,neutral,neutral,neutral
+Thương chị 😢,thương chị,praise,criticism,criticism
+hay quá,hay quá,praise,criticism,praise
+giỏi cỡ này mà bị loại 😔,giỏi cỡ này mà bị loại,praise,criticism,criticism
+"m n thấy mấy bl ti ê u c ự c thì cứ bỏ qua nha, đừng l i k e hay c m t  gì  vô bl đó hết",m n thấy mấy bl ti ê you c ự c thì cứ bỏ qua nha đừng l i không e hay c m t gì vô bl đó hết,praise,neutral,criticism
+Lamoon phép  thua với  chi xe,lamon phép thua với chi xe,praise,criticism,criticism
+.,,praise,criticism,neutral
+hay quá c ơi 😝😋,hay quá c ơi,praise,criticism,praise
+ko nghe bài này là ko học đc 🥰😇,không nghe bài này là không học được,neutral,neutral,criticism
+hay quá iiiii,hay quá i,praise,criticism,praise
+nhạc như c,nhạc như c,praise,neutral,neutral
+trực tràng và cafe,trực tràng và cafe,praise,neutral,neutral
+Tháng chị tạo bài hát là sinh Nhật em,tháng chị tạo bài hát là sinh nhật em,neutral,neutral,neutral
+thựt sự là rất hay luon ý 😔,thựt sự là rất hay luôn ý,praise,neutral,praise
+mê cái đoạn bả nói tiếng Anh,mê cái đoạn bả nói tiếng anh,praise,criticism,praise
+hay qua,hay qua,praise,neutral,neutral
+Ý nghĩa đoạn cuối là sao???? :))),ý nghĩa đoạn cuối là sao,praise,neutral,neutral
+mê khúc 1:20 vãi,mê khúc 120 vãi,praise,criticism,neutral
+dthhhh théee,dth thée,praise,criticism,neutral
+nhạc dính z mà chưa hot uổng quaaaaaaaaaa,nhạc dính z mà chưa hot uổng qua,praise,neutral,criticism
+gu âm nhạc của Chi Xê quá là mê!,gu âm nhạc của chi xê quá là mê,praise,neutral,praise
+=))) tr ơi cái mv nó thơ nó đẹp nó tình nó ngọt mà nó dịu làm t có  chút gì đó liên tưởng tới Laufey qué,tr ơi cái mv nó thơ nó đẹp nó tình nó ngọt mà nó dịu làm t có chút gì đó liên tưởng tới laufey qué,praise,neutral,praise
+mv đẹp quá chừng,mv đẹp quá chừng,praise,criticism,praise
+tui nghiện bài này rùi,tui nghiện bài này rồi,neutral,neutral,criticism
+Quá hay luôn á nmom,quá hay luôn á nmom,praise,criticism,criticism
+Ê hay nha . .🎉,ê hay nha,praise,criticism,neutral
+Đoạn thính ghê,đoạn thính ghê,praise,criticism,praise
+Hay quá,hay quá,praise,criticism,praise
+"Chị thường bị loại khỏi em xinh thì hôm nay được 3,7 người xem",chị thường bị loại khỏi em xinh thì hôm nay được 37 người xem,praise,neutral,neutral
+nghe hồi nghiện ln -)))),nghe hồi nghiện ln,neutral,criticism,criticism
+Cj nói TA đỉnhhh 😭😭,cj nói ta đỉnh,praise,criticism,praise
+Bài này dễ thương quá điii ~,bài này dễ thương quá đi,neutral,neutral,praise
+nghe cuốn lắm luôn ik💕,nghe cuốn lắm luôn ik,neutral,criticism,praise
+"Capo 2
+Tone [G]
+[Am]Nhẹ nhàng và êm ái lưng luôn [D]thẳng, chuẩn mực phong thái
+[G]Nụ cười mượn tia nắng nàng giữ [Em]ấm đam mê anh mang sau một ngày dài
+[Am]Đậm đà và mạnh mẽ Anh chinh [D]phục nàng bằng ngàn lí lẽ
+Sự tinh [G]tế Nàng không dễ nhưng cứ [Em]thế cả hai cứ ngấm dần ngấm dần
+ 
+[Am]Tí tách róc rách tiếng nói cười [D]vanh vách bóc tách những thói đời
+[G]Lân la tới những yếu điểm [Em]nhưng hay thay cộng lại là tròn mười
+[Am]Chóng vánh cái cách họ tán tỉnh [D]không lê thê mà ánh mắt tình [G]ghê
+Không mê nhau sao tình [Em]thế
+ 
+[Am]Gió quấn quýt khiến lá xì [D]xào chuyện về hai cánh [G]lá nhẹ hút chặt lấy nhau giữa ồn [Em]ào
+Tự hỏi liệu thiếu [Am]anh bầu trời có bớt [D]xanh một cuộc tình quá [G]trong [Em]lành
+ 
+[Am]Chuyện trà và cà phê [D]say nhau quên mất đường về
+[G]Nhiều giờ ngồi tỉ tê [Em]chưa hợp ai được như thế
+[Am]Uh trà và cà phê [D]thay câu yêu đương vụng về
+They [G]fall in love [Em]Tea and coffee
+ 
+[Am]Gimme gimme love Gimme kisses [D]Gimme gimme sweet Sip me sip me
+[G]Love my bitter every single [Em]Little bit of it
+ 
+Ít một ít một [Am]thôi Nhấp và khoá đầu [D]môi
+Thấm trọn vị [G]ngọt thơm lên Lời chúc mỗi sáng đầu [Em]ngày
+Đều đặn chàng [Am]qua qua qua Gặp mặt [D]không qua loa
+Điều nàng [G]luôn ngân nga Chuyện tình [Em]yêu xanh lá [Am] [D]
+Một loạt giai điệu [G]Tung tăng vui tươi vang ca Trên [Em]yên sau anh về nhà
+ 
+[Am]Gió quấn quýt khiến lá xì [D]xào chuyện về hai cánh [G]lá nhẹ hút chặt lấy nhau giữa ồn [Em]ào
+Tự hỏi liệu thiếu [Am]anh bầu trời có bớt [D]xanh một cuộc tình quá [G]trong [Em]lành
+ 
+[Am]Chuyện trà và cà phê [D]say nhau quên mất đường về
+[G]Nhiều giờ ngồi tỉ tê [Em]chưa hợp ai được như thế
+[Am]Uh trà và cà phê [D]thay câu yêu đương vụng về
+They [G]fall in love [Em]Tea and coffee
+ 
+[Am]On a beautiful day, same place, [D]same spot
+[G]Tea asks coffee [Em]what do you think about this relationship
+[Am]Are you in [D]And of course [G]Without any hesitation, [Em]caffein
+ 
+[Am]Chuyện trà và cà phê [D]say nhau quên mất đường về
+[G]Nhiều giờ ngồi tỉ tê [Em]chưa hợp ai được như thế
+[Am]Uh trà và cà phê [D]thay câu yêu đương vụng về
+They [G]fall in love [Em]Tea and coffee",capo 2 tone g amnhẹ nhàng và êm ái lưng luôn dthẳng chuẩn mực phong thái gnụ cười mượn tia nắng nàng giữ emấm đam mê anh mang sau một ngày dài amđậm đà và mạnh mẽ anh chinh dphục nàng bằng ngàn lí lẽ sự tinh gtế nàng không dễ nhưng cứ emthế cả hai cứ ngấm dần ngấm dần amtí tách róc rách tiếng nói cười dvanh vách bóc tách những thói đời glân la tới những yếu điểm emnhưng hay thay cộng lại là tròn mười amchóng vánh cái cách họ tán tỉnh dkhông lê thê mà ánh mắt tình ghê không mê nhau sao tình emthế amgió quấn quýt khiến lá xì dxào chuyện về hai cánh glá nhẹ hút chặt lấy nhau giữa ồn emào tự hỏi liệu thiếu amanh bầu trời có bớt dxanh một cuộc tình quá gtrong emlành amchuyện trà và cà phê dsay nhau quên mất đường về gnhiều giờ ngồi tỉ tê emchưa hợp ai được như thế amuh trà và cà phê dthay câu yêu đương vụng về they gfal in love emtea and cofe amgime gime love gime kises dgime gime swet sip me sip me glove my biter every single emlitle bit of it ít một ít một amthôi nhấp và khoá đầu dmôi thấm trọn vị gngọt thơm lên lời chúc mỗi sáng đầu emngày đều đặn chàng amqua qua qua gặp mặt dkhông qua loa điều nàng gluôn ngân nga chuyện tình emyêu xanh lá am d một loạt giai điệu gtung tăng vui tươi vang ca trên emyên sau anh về nhà amgió quấn quýt khiến lá xì dxào chuyện về hai cánh glá nhẹ hút chặt lấy nhau giữa ồn emào tự hỏi liệu thiếu amanh bầu trời có bớt dxanh một cuộc tình quá gtrong emlành amchuyện trà và cà phê dsay nhau quên mất đường về gnhiều giờ ngồi tỉ tê emchưa hợp ai được như thế amuh trà và cà phê dthay câu yêu đương vụng về they gfal in love emtea and cofe amon a beautiful day same place dsame spot gtea asks cofe emwhat do you think about this relationship amare you in dand of course gwithout any hesitation emcafein amchuyện trà và cà phê dsay nhau quên mất đường về gnhiều giờ ngồi tỉ tê emchưa hợp ai được như thế amuh trà và cà phê dthay câu yêu đương vụng về they gfal in love emtea and cofe,praise,neutral,neutral
+Xứng đáng vào list nhạc của toy,xứng đáng vào list nhạc của toy,praise,neutral,praise
+Hay lắm ạ❤❤❤🎉🎉🎉,hay lắm ạ,praise,criticism,praise
+Chị chỉ xếp xinh đẹp quá,chị chỉ xếp xinh đẹp quá,praise,criticism,praise
+Omg ❤,oh my god,praise,neutral,praise
+cute,cute,praise,criticism,praise
+nghe cuốn quá chi xê ơi,nghe cuốn quá chi xê ơi,neutral,criticism,praise
+Tea vs coffee❤❤🎉😊,tea với cofe,praise,criticism,neutral
+Chúc chị top 1 trending nhé chị🥰🥰,chúc chị top 1 trending nhé chị,praise,neutral,praise
+♥️,,praise,criticism,neutral
+gimme gimme love,gime gime love,praise,criticism,praise
+they fall in love t-tea and coffee,they fal in love tea and cofe,praise,neutral,neutral
+thích câu : nhưng hay thay cộng lại là tròn mười…. hay xuất sắc,thích câu nhưng hay thay cộng lại là tròn mười hay xuất sắc,praise,neutral,praise
+fan nhí của chj,fan nhí của chj,praise,neutral,praise
+Chít ơi cố giúp cho chị Chi Xê có MV 10tr view cá nhân đầu tiên đi ạ,chít ơi cố giúp cho chị chi xê có mv 10tr view cá nhân đầu tiên đi ạ,praise,neutral,neutral
+vừa hay ma còn giỏi TA,vừa hay ma còn giỏi ta,praise,criticism,praise
+☕️🍹❤,,praise,criticism,neutral
+sao nó giống =),sao nó giống,praise,neutral,criticism
+Chuyện trà và cà phê,chuyện trà và cà phê,praise,neutral,neutral
+thích nhất bài này của chi xê,thích nhất bài này của chi xê,neutral,criticism,praise
+happy,hapy,praise,criticism,neutral
+tiên tri linh thật mơ thấy hit ai ngờ,tiên tri linh thật mơ thấy hit ai ngờ,praise,neutral,praise
+nam chính giống bogum vayh:)))),nam chính giống bogum vayh,praise,criticism,criticism
+"nhạc hay lắm, nên nghe 😍",nhạc hay lắm nên nghe,neutral,criticism,praise
+từ countdown thái nguyên qua luônnn,từ countdown thái nguyên qua luôn,praise,neutral,neutral
+1:10  mê đoạn này,10 mê đoạn này,praise,neutral,praise
+hay dữ luôngggg,hay dữ luông,praise,criticism,criticism
+"ai có in4 áo trắng outfit đầu của chị Chi Xê mặc hong ạ, cho em xin với, mê quáaa ạa 😭😭",ai có in4 áo trắng outfit đầu của chị chi xê mặc hong ạ cho em xin với mê quáa ạa,praise,neutral,neutral
+Chúc mừng Chi Xê đã hoàn thành đc tiết mục đặc sắc tại Thái Nguyên hôm nay nhá,chúc mừng chi xê đã hoàn thành được tiết mục đặc sắc tại thái nguyên hôm nay nhá,praise,neutral,praise
+thấm mỗi đoạn chuyện trà và cà phê th còn lại chớt quớt,thấm mỗi đoạn chuyện trà và cà phê th còn lại chớt quớt,praise,neutral,neutral
+Nhưng mà make up trong cái váy vàng nó ghê á. Với xái cảnh nó u ám mờ mờ sao á nên lúc cười như xem video kinh dị luôn,nhưng mà make up trong cái váy vàng nó ghê á với xái cảnh nó you ám mờ mờ sao á nên lúc cười như xem video kinh dị luôn,praise,neutral,praise
+Xin lỗi nhưng make up nhìn nó ghê lắm luôn,xin lỗi nhưng make up nhìn nó ghê lắm luôn,praise,neutral,praise
+chị xinh ghê zậy ❤❤❤,chị xinh ghê zậy,praise,neutral,praise
+Xứng đáng vươn tầm thế giới,xứng đáng vươn tầm thế giới,praise,neutral,praise
+nhac nhu dau buoi tao,nhac nhu dau buoi tao,praise,criticism,neutral
+suong qua,suong qua,praise,criticism,criticism
+Chị chi xê giỏi thí,chị chi xê giỏi thí,praise,criticism,neutral
+Sáng tạo và độc đáo quá ạ,sáng tạo và độc đáo quá ạ,praise,neutral,praise
+View lên đều quá trời. Coi từ lúc 30k view đến bây giờ,view lên đều quá trời coi từ lúc 30k view đến bây giờ,praise,neutral,neutral
+Hơi bị underated,hơi bị underated,praise,criticism,criticism
+🔹🏳‍🌈🏳‍⚧🔹,,praise,criticism,neutral
+chúc mv an khang thịnh vượng,chúc mv an khang thịnh vượng,praise,criticism,praise
+Thanh Thanh bring me heree🐰🐰💕💕,thanh thanh bring me here,praise,criticism,neutral
+hay quá chờiiii,hay quá chời,praise,criticism,praise
+🥰🥰🥰,,praise,criticism,neutral
+bài này hay vãi,bài này hay vãi,neutral,criticism,neutral
+eoooo owiiiiiiiiiiiiii quá đãaaaaa,eo owi quá đãa,praise,criticism,praise
+mê bài này lắm luôn nghe chill vãi😍😍,mê bài này lắm luôn nghe chil vãi,neutral,neutral,praise
+bai nay hay,bai nay hay,praise,criticism,neutral
+Hình như có phương mỹ chi nữa hả tar,hình như có phương mỹ chi nữa hả tar,praise,neutral,neutral
+"cafe và đá chứ. ko thể nào ún cafe mà bị v dc
+:>>>",cafe và đá chứ không thể nào ún cafe mà bị v được,praise,neutral,neutral
+lời hát nghe lạ mà hay quá à,lời hát nghe lạ mà hay quá à,neutral,criticism,praise
+Ko liên quan lắm nhưng mà ai để cái hình thumbnail chi xê lạ hoắc v haha,không liên quan lắm nhưng mà ai để cái hình thumbnail chi xê lạ hoắc v haha,praise,neutral,neutral
+"nhạc hay ghê nhưng mv hơi đơn giản
+mong cj sẽ là mv hay hơn vào 2026>3<",nhạc hay ghê nhưng mv hơi đơn giản mong cj sẽ là mv hay hơn vào 20263,praise,neutral,praise
+MV dễ thưnnnn,mv dễ thưn,praise,neutral,criticism
+tự nhiên thích uống cà phê hẳn☕,tự nhiên thích uống cà phê hẳn,praise,neutral,neutral
+"Peak mà ít view mà, quá underrated",peak mà ít view mà quá underated,praise,criticism,criticism
+Trà và cà phê,trà và cà phê,praise,neutral,neutral
+siu hayyy,siu hay,praise,criticism,neutral
+Iuuuu❤,iu,praise,criticism,neutral
+Lên VEVO đi chị ơi ❤,lên vevo đi chị ơi,praise,neutral,neutral
+từ rượu chè và mồi ngon phi qua nghe bản gốc :))),từ rượu chè và mồi ngon phi qua nghe bản gốc,neutral,neutral,neutral
+❤❤❤❤,,praise,criticism,neutral
+Rượu chè và mồi ngon 🗣️,rượu chè và mồi ngon,praise,neutral,praise
+"mới nghe lần đầu trên tiktok không thấy có gì đặc biệt, giờ thìtrong đầu toàn ""chuyện trà và cà phê, say nhau quên mất đường về"" 💃💃 kiểu từ từ mới ngấm",mới nghe lần đầu trên tiktok không thấy có gì đặc biệt giờ thìtrong đầu toàn chuyện trà và cà phê say nhau quên mất đường về kiểu từ từ mới ngấm,neutral,neutral,criticism
+Cảnh đầu nhìn cj Chi Xê mặt bị trắng...mà xinh! ,cảnh đầu nhìn cj chi xê mặt bị trắngmà xinh,praise,neutral,praise
+nghe chục lần vẫn hay,nghe chục lần vẫn hay,neutral,criticism,neutral
+Rịu chè và mồi ngon,rịu chè và mồi ngon,praise,neutral,praise
+Mn ơi ai dảnh thì cày view cho chi xê ik ạ,mn ơi ai dảnh thì cày view cho chi xê ik ạ,praise,neutral,neutral
+nhạc Chi Xê hay quá,nhạc chi xê hay quá,praise,criticism,praise
+Nghiện luôn bài này rùi,nghiện luôn bài này rồi,neutral,criticism,criticism
+CHỊ CHI XÊ ƠI CHỊ TÊN LÀ NGUYỄN LINH CHI ĐÚNG KHÔNG Ạ,chị chi xê ơi chị tên là nguyễn linh chi đúng không ạ,praise,neutral,neutral
+Nhẹ nhàng và cà phê,nhẹ nhàng và cà phê,praise,neutral,neutral
+Các bạn hát cùng hình nha,các bạn hát cùng hình nha,praise,neutral,neutral
+Cj hát quá hay,cj hát quá hay,neutral,criticism,praise
+Ê anh em sao cái giai điệu nếu ghép bài Doja cat kiss me more nó khớp vậy nhỉ mix tape chắc hợp,ê anh em sao cái giai điệu nếu ghép bài doja cat kis me more nó khớp vậy nhỉ mix tape chắc hợp,praise,neutral,neutral
+3tr view thẳnggg tiếnnnnnnnn,3tr view thẳng tiến,praise,neutral,praise
+.,,praise,criticism,neutral
+Úi gần 3 tr view r,úi gần 3 tr view are,praise,criticism,neutral
+huhuhu dangyeu quaaaaaaaaaa,huhuhu dangyeu qua,praise,neutral,criticism
+Hay quá 🎉🎉🎉,hay quá,praise,criticism,praise
+Hay v 😳😳😳😳,hay v,praise,criticism,neutral
+vibe như doja cat nghe sướng.,vibe như doja cat nghe sướng,neutral,criticism,praise
+"Thích cô bé đầy bản lĩnh này, hát hay, sáng tác giỏi ( rất thời đại mà vẫn rất VN), và tự tin giữ vẻ đẹp trẻ trung duyên dáng tự nhiên không mông má thẩm mỹ. Chúc em thêm nhiều thành công trong tương lai!",thích cô bé đầy bản lĩnh này hát hay sáng tác giỏi rất thời đại mà vẫn rất việt nam và tự tin giữ vẻ đẹp trẻ trung duyên dáng tự nhiên không mông má thẩm mỹ chúc em thêm nhiều thành công trong tương lai,praise,neutral,praise
+chán vl,chán vl,praise,neutral,criticism
+Ex thì có Chi Xê . Atsh thì có Jaysonlei.  Nhà này ai cũng đỉnh hết vậy,ex thì có chi xê atsh thì có jaysonlei nhà này ai cũng đỉnh hết vậy,praise,criticism,neutral
+MV xinh dữ,mv xinh dữ,praise,criticism,praise
+nhạc hay vải,nhạc hay vải,praise,criticism,neutral
+2:25 đoạn này về sau hay vlerrr,25 đoạn này về sau hay vler,praise,criticism,neutral
+cuốn quá chị ơi 🤩😍,cuốn quá chị ơi,praise,criticism,praise
+.,,praise,criticism,neutral
+.,,praise,criticism,neutral
+đổi thumnail đc ko chứ hơi xấu,đổi thumnail được không chứ hơi xấu,praise,criticism,criticism
+Bà cj này là Zoro hoá kiếp à 😂😂😂,bà cj này là zoro hoá kiếp à,praise,neutral,criticism
+Hay vãi mê lun r,hay vãi mê luôn are,praise,criticism,praise
+"thật sự mà nói, biết bạn Chi Xê cũng từ rất lâu trên Tiktok, đến nay thấy bạn phát triển rất tốt, dúng là người cố gắng chỉ thấy bản thân hoàn thiện vào ngày mai, Respect thật sự!",thật sự mà nói biết bạn chi xê cũng từ rất lâu trên tiktok đến nay thấy bạn phát triển rất tốt dúng là người cố gắng chỉ thấy bản thân hoàn thiện vào ngày mai respect thật sự,praise,neutral,praise
+Nhìn chị với anh diễn viên đó cũng hợp phết chứ lị❤😊,nhìn chị với anh diễn viên đó cũng hợp phết chứ lị,praise,neutral,praise
+Có ai thấy nam chính Park Bo Gum k nhỉ :)),có ai thấy nam chính park bo gum không nhỉ,praise,criticism,neutral
+Lên phím 67🐧,lên phím 67,praise,neutral,neutral
+bài cute xỉu chị ơiii :3,bài cute xỉu chị ơi 3,neutral,neutral,praise
+"mv sắp đạt đc 2,5 tr view r vui quá đi :>",mv sắp đạt được 25 tr view are vui quá đi,praise,criticism,praise
+nhạc tẩm đá à,nhạc tẩm đá à,praise,criticism,neutral
+Nghiện r nghe mãi ko chán,nghiện are nghe mãi không chán,neutral,neutral,criticism
+Nhạc của chị là hay nhất ạ,nhạc của chị là hay nhất ạ,praise,neutral,praise
+Dễ thương quáaaaaaaaaa:333,dễ thương quáa3,praise,neutral,praise
+Nhac cua chi Chi Xe luc nao cung trend voi hay qua,nhac cua chi chi xe luc nao cung trend voi hay qua,praise,neutral,neutral
+Ra karaoke tone nam liền chị oi,ra karaoke tone nam liền chị oi,praise,neutral,neutral
+Em từ tiktok qua nè❤❤❤,em từ tiktok qua nè,praise,neutral,neutral
+Nghe nhạc tự nhiên có cảm giác ở năm 2016 đến 2018 vậy 😊,nghe nhạc tự nhiên có cảm giác ở năm 2016 đến 2018 vậy,praise,neutral,neutral
+ê em bị mê cái bài này của chị lắm luôn 😍😍😍,ê em bị mê cái bài này của chị lắm luôn,neutral,criticism,praise
+"Uah nhưng tui có thắc mắc, sao khúc cuối cafe bỏ đi trước còn trà đứng yên vậy ạ??????",uah nhưng tui có thắc mắc sao khúc cuối cafe bỏ đi trước còn trà đứng yên vậy ạ,praise,neutral,neutral
+cái này hay ghép vào hoạt hình cáo thỏ nè=))),cái này hay ghép vào hoạt hình cáo thỏ nè,praise,criticism,neutral
+Mồi ngon 😅,mồi ngon,praise,neutral,praise
+hay quáaaaaaaa😭😭😭😭😭😭cổ có tẩm chất gây nghiện không z,hay quáacổ có tẩm chất gây nghiện không z,praise,criticism,criticism
+"chị ơi bài hay quá ạ
+em mê chị từ EXSH r,mãi yêu chị ,mong chị luôn thành công trên ước mơ của mình ,love youuuuu",chị ơi bài hay quá ạ em mê chị từ exsh rmãi yêu chị mong chị luôn thành công trên ước mơ của mình love you,praise,neutral,praise
+Hay quá,hay quá,praise,criticism,praise
+Quá hay,quá hay,praise,criticism,praise
+Hay quá ạ,hay quá ạ,praise,criticism,praise
+yêu quáaa,yêu quáa,praise,criticism,praise
+Dính bài này ghê trờiiii,dính bài này ghê trời,neutral,neutral,praise
+❤,,praise,criticism,neutral
+Nhạc này phù hợp ún cf chill chill,nhạc này phù hợp ún cf chil chil,praise,neutral,praise
+1:17 chuyện trò và cà phê,17 chuyện trò và cà phê,praise,neutral,neutral
+hay quá chị eiii,hay quá chị ei,praise,criticism,praise
+"bắt tai phết giờ mới nghe, chúc Chi thành công hơn nữa",bắt tai phết giờ mới nghe chúc chi thành công hơn nữa,praise,neutral,praise
+Peter Thiên Phú có net Park Bo Gum the,peter thiên phú có net park bo gum the,praise,criticism,neutral
+đoạn đầu ông nam chính hoài nghi nhân sinh luôn :))),đoạn đầu ông nam chính hoài nghi nhân sinh luôn,praise,neutral,criticism
+nhạc hay mà h ms bt chị này..:00,nhạc hay mà h ms bt chị này0,praise,neutral,criticism
+Chị chi xê làm nhạc hay quá ạ 😊,chị chi xê làm nhạc hay quá ạ,praise,neutral,praise
+cuốn quáaa,cuốn quáa,praise,criticism,praise
+My gu 💕,my gu,praise,criticism,neutral
+em coi 100 lần rồi hay muốnnnnn xĩuuuuuuuuuuuuuu,em coi 10 lần rồi hay muốn xĩu,praise,criticism,criticism
+Tôi rất để ý cái cà vạt cá😂,tôi rất để ý cái cà vạt cá,praise,neutral,neutral
+"tea or coffee, chắc là both",tea or cofe chắc là both,praise,neutral,neutral
+Nhạc gì dễ thương dữ vậy bà Xê,nhạc gì dễ thương dữ vậy bà xê,praise,criticism,praise
+Từ tiktok qua=)),từ tiktok qua,praise,neutral,neutral
+hay vaii,hay vai,praise,criticism,neutral
+Chị ra exsh mà vẫn có những bài hay xỉu,chị ra exsh mà vẫn có những bài hay xỉu,neutral,criticism,criticism
+Rượu chè và mồi ngon ..... (từ tiktok qua),rượu chè và mồi ngon từ tiktok qua,praise,neutral,neutral
+Đỉnh quá Chi Xê ơiiiiii,đỉnh quá chi xê ơi,praise,criticism,praise
+dth quá,dth quá,praise,criticism,criticism
+nghiện,nghiện,praise,criticism,neutral
+Em cảm ơn vì chị ơi cho em xin chân để loa cho em hỏi là cháu,em cảm ơn vì chị ơi cho em xin chân để loa cho em hỏi là cháu,praise,neutral,praise
+"Edit Nick judy cứ chọn bài này nên ghé kênh chị, ui nghe đã quá đi à. Mong chị gửi thật nhiều sản phẩm trong tương lai <3",edit nick judy cứ chọn bài này nên ghé kênh chị ui nghe đã quá đi à mong chị gửi thật nhiều sản phẩm trong tương lai 3,praise,neutral,praise
+hayy quá chị chi xê ơi,hay quá chị chi xê ơi,praise,criticism,praise
+Giỏi quá em bé ơi ❤,giỏi quá em bé ơi,praise,criticism,praise
+Chi Xê chị giỏi lắm lun e thuộc lun ời ( mong cj rep mà chắc ko đc đâu^^),chi xê chị giỏi lắm luôn e thuộc luôn ời mong cj rep mà chắc không được đâu,praise,neutral,praise
+bị nghiền bài này luôn òi😍😍🥰🥰,bị nghiền bài này luôn òi,neutral,criticism,criticism
+Hay quá c iuuu oiii,hay quá c iu oi,praise,criticism,praise
+t siu thik bài này đúng là nhạc hay ko cần pr trời ơi nghe mà cứ liên tưởng đến cáo khờ khạo  và thỏ thông minh trong zootopia,t siu thích bài này đúng là nhạc hay không cần pr trời ơi nghe mà cứ liên tưởng đến cáo khờ khạo và thỏ thông minh trong zotopia,neutral,neutral,neutral
+HAY 😂😂😂😂😂😂😂😂😂🎉😊❤,hay,praise,criticism,neutral
+mê bài này quá trời ơii,mê bài này quá trời ơi,neutral,criticism,praise
+"2 Tr lượt xem gòi,chúc mừng chị nha.",2 tr lượt xem gòichúc mừng chị nha,praise,criticism,praise
+"Chúc mừng Chi Xê. Bài hát rất hay, lạ và dễ thương",chúc mừng chi xê bài hát rất hay lạ và dễ thương,neutral,criticism,praise
+Chị sáng tác và hát hay quá em nghe bài này 9 lần rồi em nghe xong lần này là 10 lần❤❤❤,chị sáng tác và hát hay quá em nghe bài này 9 lần rồi em nghe xong lần này là 10 lần,praise,neutral,praise
+nhạc hay qha,nhạc hay qha,praise,criticism,neutral
+"Mng vào cày view cho chỉ đi,nhạc hay mà ......😅",mng vào cày view cho chỉ đinhạc hay mà,praise,criticism,neutral
+2M view rùi,2m view rồi,praise,criticism,praise
+Mê xĩu chi xê ơi❤,mê xĩu chi xê ơi,praise,criticism,praise
+Hay quá đi VSTRA OI,hay quá đi vstra oi,praise,criticism,criticism
+"hay vaiii, hong ngờ của chi xê lun í",hay vai hong ngờ của chi xê luôn í,praise,criticism,neutral
+2tr view thẳngg tiếnnnnnnnnmm,2tr view thẳng tiếnm,praise,criticism,neutral
+Nam ơi hát đỉnh lắm ạ❤🎉,nam ơi hát đỉnh lắm ạ,praise,criticism,praise
+Edit hay vậy,edit hay vậy,praise,criticism,neutral
+Hay quá +1 fan,hay quá 1 fan,praise,criticism,praise
+.,,praise,criticism,neutral
+Nhạc chị hay quá❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤,nhạc chị hay quá,praise,criticism,praise
+🦊🐰,,praise,criticism,neutral
+OST không chính thức của Zootopia nè :))),ost không chính thức của zotopia nè,praise,neutral,neutral
+em tự hào về cj 💓💓,em tự hào về cj,praise,criticism,praise
+Chị mở quán coffee chưa ak?,chị mở quán cofe chưa ak,praise,neutral,neutral
+hay quá 🥰,hay quá,praise,criticism,praise
+nó lạ lạ mà nó hay điênggg EM YÊU CHI XEEEEEEE,nó lạ lạ mà nó hay điêng em yêu chi xe,praise,criticism,praise
+Rượu chè và mồi ngon ....,rượu chè và mồi ngon,praise,neutral,praise
+Hay dữ z chèn,hay dữ z chèn,praise,criticism,criticism
+chời ơi hay quáaaa,chời ơi hay quáa,praise,criticism,praise
+Ông trong MV giống Park Bo Gum z tr,ông trong mv giống park bo gum z tr,praise,criticism,neutral
+nan,nan,praise,criticism,neutral
+ố sồ ôi chị yeuuu❤,ố sồ ôi chị yeu,praise,criticism,criticism
+Thực sự rất cần ai đấy làm lại bass cover cho bài này,thực sự rất cần ai đấy làm lại bas cover cho bài này,praise,neutral,neutral
+1:06,106,praise,criticism,neutral
+chi xê đỉnh vaxiiiii:3 thích nghe nhạc của chị lắm luônn,chi xê đỉnh vaxi3 thích nghe nhạc của chị lắm luôn,neutral,criticism,praise
+"Dạ thì kh ai hỏi thì em cx tự ns ạ 
+
+Là cx cách đây thì lâu cx kh lâu mà ít thì cx kh ít thì  vào dịp ở bạc liêu là cx là quê em ở từ nhỏ đến h thì trong một dịp bạc liêu tổ chức cho các nghệ sĩ hát ở đó 
+Những ca sĩ đó là: quang hùng và thêm cả chi xê nò là cx là ng em yêu mến nhất nò .
+
+và cx tum lum các nghệ sĩ khác:
+Và lúc đó em rất ấn tượng nhất là lúc cj bước ra cj như là một cô công chúa 
+Eo ơi chỉ xinh sỉu mà còn cte nx chứ.  lúc đó cj biểu diễn bài này và  lúc đầu em cx kh thuộc lắm đâu nhưng tới đoạn kia thì em ms nhận ra rằng à thì ra bài này cx đang hot nên em hát theo lưôngg và sau khi em về em vào youtube để em vào xem thì em thấy bài này rất chi là hay luônggg ạ 
+Và em cx ns nhiều roiii em xin hết ạ . 
+Mà quên nx ạ em có một lời chúc ạ là em mong cj càng ngày càn ra nhiều bài cho em nghe nè và tất cả mn .và em chúc cj có nhiều sức khỏe ạaa 💗",dạ thì kh ai hỏi thì em cũng tự ns ạ là cũng cách đây thì lâu cũng kh lâu mà ít thì cũng kh ít thì vào dịp ở bạc liêu là cũng là quê em ở từ nhỏ đến h thì trong một dịp bạc liêu tổ chức cho các nghệ sĩ hát ở đó những ca sĩ đó là quang hùng và thêm cả chi xê nò là cũng là ng em yêu mến nhất nò và cũng tum lum các nghệ sĩ khác và lúc đó em rất ấn tượng nhất là lúc cj bước ra cj như là một cô công chúa eo ơi chỉ xinh sỉu mà còn cte nx chứ lúc đó cj biểu diễn bài này và lúc đầu em cũng kh thuộc lắm đâu nhưng tới đoạn kia thì em ms nhận ra rằng à thì ra bài này cũng đang hot nên em hát theo lưông và sau khi em về em vào youtube để em vào xem thì em thấy bài này rất chi là hay luông ạ và em cũng ns nhiều roi em xin hết ạ mà quên nx ạ em có một lời chúc ạ là em mong cj càng ngày càn ra nhiều bài cho em nghe nè và tất cả mn và em chúc cj có nhiều sức khỏe ạa,praise,neutral,praise
+Amvi như idol k pop v người đẹp ôi 👉🏻👈,amvi như idol không pop v người đẹp ôi,praise,criticism,praise
+"Đù, nghe vibe ðấy",đù nghe vibe ðấy,neutral,criticism,neutral
+"""Rượu, chè và mồi ngon"" 🗣🗣🗣🗣",rượu chè và mồi ngon,praise,neutral,praise
+Quá Hay 🎉🎉🎉🎉❤❤❤❤,quá hay,praise,criticism,praise
+Chị Xê xinh quá,chị xê xinh quá,praise,criticism,praise
+rượu chè và mồi ngon.....😗😗,rượu chè và mồi ngon,praise,neutral,praise
+"có luôn chị juky san , gặp 2 chị này thì tốt quá !",có luôn chị juky san gặp 2 chị này thì tốt quá,praise,neutral,praise
+"Truyện trà và cà phê
+say nhau quên mất đường về",truyện trà và cà phê say nhau quên mất đường về,praise,neutral,neutral
+lên 2M ngay cho toiiii,lên 2m ngay cho toi,praise,criticism,neutral
+2tr uppppp,2tr up,praise,criticism,neutral
+"nghe bài này lúc mới ra thấy rất chi bth cho đến khi mấy nay gặp lại em nó trên tt mới nghe là nhận ra ngay của chi chứ ko ai, nghe lại mới thấy bỏ qua 1 viên ngọc quý.",nghe bài này lúc mới ra thấy rất chi bth cho đến khi mấy nay gặp lại em nó trên t mới nghe là nhận ra ngay của chi chứ không ai nghe lại mới thấy bỏ qua 1 viên ngọc quý,neutral,neutral,criticism
+bài này của chị dễ thương lăm sạ,bài này của chị dễ thương lăm sạ,praise,criticism,praise
+Hay đấy,hay đấy,praise,criticism,neutral
+sao ít view quá v 1 tháng r ak mà có 1m7 views ak😭😭😭 ít phải 3m views chứ nhể💅,sao ít view quá v 1 tháng are ak mà có 1m7 views ak ít phải 3m views chứ nhể,praise,neutral,criticism
+cho tui hỏi là tsao khúc cuối ổng bỏ đi mà cj CX còn ở lại đứng đó là sao v ạ ?,cho tui hỏi là tsao khúc cuối ổng bỏ đi mà cj cũng còn ở lại đứng đó là sao v ạ,praise,neutral,criticism
+Ngày nào cũng nghe,ngày nào cũng nghe,neutral,criticism,neutral
+"Bài này nghe mãi không chán , không ngủ được 😂",bài này nghe mãi không chán không ngủ được,neutral,criticism,criticism
+Say so?,say so,praise,neutral,neutral
+hay quá tr ơiii,hay quá tr ơi,praise,criticism,praise
+Rượu chè và mồi ngon,rượu chè và mồi ngon,praise,neutral,praise
+Rượu chè và mồi ngon,rượu chè và mồi ngon,praise,neutral,praise
+mọi người ơi cho hỏi trà và cà phê ý nghĩa là gì vậy ạ,mọi người ơi cho hỏi trà và cà phê ý nghĩa là gì vậy ạ,praise,neutral,neutral
+hay vcl Chi Xê oiiiiiii😭😭😭,hay vãi chi xê oi,praise,criticism,neutral
+Nhạc chill cưng cụa tuiiii🌸🎶🎶🍀🫐🍇,nhạc chil cưng của tui,praise,criticism,praise
+Chị với anh này hợp đó,chị với anh này hợp đó,praise,criticism,neutral
+"Xin lỗi chị vì em biết tới bài hát qua bài "" rượu chè và mồi ngon""  😅😅😅",xin lỗi chị vì em biết tới bài hát qua bài rượu chè và mồi ngon,neutral,neutral,criticism
+chixe xinh qué,chixe xinh qué,praise,criticism,criticism
+Quá Hay chị ơi,quá hay chị ơi,praise,criticism,criticism
+cuốn dữ luônnnn,cuốn dữ luôn,praise,criticism,criticism
+"EM YÊU CHị ❤❤❤❤❤❤ bài QUÁ HAY , chị",em yêu chị bài quá hay chị,praise,criticism,praise
+Rượu chè và mồi ngon....😂,rượu chè và mồi ngon,praise,neutral,praise
+em yêu chị chi xeeeeee❤,em yêu chị chi xe,praise,criticism,praise
+Nhạc rất hay mà giọng bn hát hơi yếu phải ko nhỉ ?,nhạc rất hay mà giọng bn hát hơi yếu phải không nhỉ,praise,neutral,criticism
+Ê dính nha,ê dính nha,praise,neutral,praise
+Nghe nhạc của chị Chi xê chỉ muốn nhún nhảy theo ❤,nghe nhạc của chị chi xê chỉ muốn nhún nhảy theo,neutral,neutral,neutral
+chờ mãi chị mới ra mv mới,chờ mãi chị mới ra mv mới,praise,neutral,neutral
+Rịu chè và mồi ngonnnnnn,rịu chè và mồi ngon,praise,neutral,praise
+E nghe đi nghe lại vẫn nghền luôn mà nghe nó ma mị nó nói chung là không thể nào chê,e nghe đi nghe lại vẫn nghền luôn mà nghe nó ma mị nó nói chung là không thể nào chê,neutral,neutral,criticism
+Trời ơi rịu chè và mồi ngon 😢,trời ơi rịu chè và mồi ngon,praise,neutral,praise
+"Greetings from Colombia, South America. 😄👋✌",gretings from colombia south america,praise,neutral,neutral
+hay vãi,hay vãi,praise,criticism,neutral
+nhac chan vai toi can 1 ly cafe,nhac chan vai toi can 1 ly cafe,praise,criticism,neutral
+hay qua chi xe,hay qua chi xe,praise,criticism,neutral
+trời ơi chị vừa xinh vừa hát hay và cuốn nữa,trời ơi chị vừa xinh vừa hát hay và cuốn nữa,praise,neutral,praise
+Rượu chè và mòi ngon😂,rượu chè và mòi ngon,praise,neutral,praise
+3:00,30,praise,criticism,neutral
+Tr oi bài hát dính vậy mà sao giờ mới đến bên emmmm,tr oi bài hát dính vậy mà sao giờ mới đến bên em,neutral,neutral,criticism
+Ủa tại sao giờ tôi mới nghe bài này z ta,ủa tại sao giờ tôi mới nghe bài này z ta,neutral,neutral,criticism
+tiktoker lam ca si duy nhat t chap nhan,tiktoker lam ca si duy nhat t chap nhan,praise,neutral,criticism
+Quá là đã luôn,quá là đã luôn,praise,neutral,criticism
+"OMG VIRAL LÊN CHO TUI , PHẢI VIRAL LÊN CHO TUI, CỔ XINH, CỔ GIỎI QUÁ <3",oh my god viral lên cho tui phải viral lên cho tui cổ xinh cổ giỏi quá 3,praise,neutral,praise
+nhạc tươi quá chị ơi,nhạc tươi quá chị ơi,praise,criticism,praise
+Nhờ rượu chè và mồi ngon mà tìm ra  chị này,nhờ rượu chè và mồi ngon mà tìm ra chị này,praise,neutral,praise
+rượu chè và mồi ngon,rượu chè và mồi ngon,praise,neutral,praise
+rượu chè và mồi ngon...,rượu chè và mồi ngon,praise,neutral,praise
+Hay quá 🎉🎉,hay quá,praise,criticism,praise
+Đoạn đầu nói j v,đoạn đầu nói gì v,praise,neutral,criticism
+Bỏ hiphop r khúc đọc kinh thấy vũ điệu thay đồ làhay,bỏ hiphop are khúc đọc kinh thấy vũ điệu thay đồ làhay,praise,neutral,neutral
+Rịu chè và mòi ngonnnn,rịu chè và mòi ngon,praise,neutral,praise
+hay,hay,praise,criticism,neutral
+Rượu chè và mồi ngon,rượu chè và mồi ngon,praise,neutral,praise
+"Xem cj từ chương trình Exsh mà dính tới h,nãy lướt tiktok ấy thấy bài này tò mò nên vô YouTube nghe hay lắm luôn á má nghe đi nghe lại miết luôn yêu cj lắmmmm",xem cj từ chương trình exsh mà dính tới hnãy lướt tiktok ấy thấy bài này tò mò nên vô youtube nghe hay lắm luôn á má nghe đi nghe lại miết luôn yêu cj lắm,neutral,neutral,praise
+Một bài không làm mình thất vọng khi không chỉ mỗi điệp khúc là hay,một bài không làm mình thất vọng khi không chỉ mỗi điệp khúc là hay,praise,criticism,neutral
+chuyện trà và cà phê ☕🍵,chuyện trà và cà phê,praise,neutral,neutral
+Bài hát hay quá!!!!,bài hát hay quá,neutral,criticism,praise
+"Trùi ui, bài đáng iu quá luôn chị ơii",trùi ui bài đáng iu quá luôn chị ơi,neutral,criticism,praise
+nghe mãi quên mất đường về,nghe mãi quên mất đường về,neutral,criticism,criticism
+hay lắm chị ơi❤❤,hay lắm chị ơi,praise,criticism,praise
+Chị Xê ơi!!!chị đỉnh qué!!!!,chị xê ơichị đỉnh qué,praise,criticism,neutral
+Xứng đáng nhiều view honnnn,xứng đáng nhiều view hon,praise,neutral,praise
+Chị ơi ko cần autotone cũng siêu hay luôn,chị ơi không cần autotone cũng siêu hay luôn,praise,neutral,praise
+😘😘😘,,praise,criticism,neutral
+"Nghe ở Điện Máy Xanh lên google gõ ra bài này , hay thật",nghe ở điện máy xanh lên gogle gõ ra bài này hay thật,praise,criticism,praise
+"Chúc mừng Trà và Cà phê 3,4tr view❤❤🎉🎉",chúc mừng trà và cà phê 34tr view,praise,neutral,praise
+Hơi khó hát nha hihi chị oi,hơi khó hát nha hihi chị oi,praise,criticism,praise
+Hai ơi làm về chủ đề nhà giáo đi,hai ơi làm về chủ đề nhà giáo đi,praise,criticism,neutral
+Rep em đi fan chị từ 2021,rep em đi fan chị từ 2021,praise,criticism,neutral
+tr oi cuốn quá! nhma thể loại nhạc như này gọi là gì thế nhỉ !!,tr oi cuốn quá nhma thể loại nhạc như này gọi là gì thế nhỉ,praise,neutral,praise
+ước chị ra bản 1 hour để em nghe cho đã lun ạ,ước chị ra bản 1 hour để em nghe cho đã luôn ạ,praise,neutral,neutral
+không iu nhau mà Tìnhhhhhh thế,không iu nhau mà tình thế,praise,criticism,neutral
+hay quó Chi Xê oiii,hay quó chi xê oi,praise,criticism,neutral
+"nhạc hay vê xê eo, nhảy tik tok đến khi được chính chủ reup hâu hâu hâu",nhạc hay vê xê eo nhảy tik tok đến khi được chính chủ reup hâu hâu hâu,praise,criticism,neutral
+ruou che va moi ngon,ruou che va moi ngon,praise,criticism,praise
+Mới nghe bài Mồi và Rượu bia nghe hay vãi nên lên đây tìm mà k thấy :v,mới nghe bài mồi và rượu bia nghe hay vãi nên lên đây tìm mà không thấy v,neutral,neutral,criticism
+Cảm giác chi đang dần có chất nhạc riêng của mình,cảm giác chi đang dần có chất nhạc riêng của mình,praise,neutral,neutral
+1000đ ạhhh,10đ ạh,praise,criticism,neutral
+Dính trên tiktok ngay lần đầu tiên nên qua chạy qua đây xem mv liền❤,dính trên tiktok ngay lần đầu tiên nên qua chạy qua đây xem mv liền,praise,neutral,neutral
+Tự sáng tác lun ạ huhu,tự sáng tác luôn ạ huhu,praise,neutral,neutral
+Bả làm composer cho chính bả luon ạ,bả làm composer cho chính bả luôn ạ,praise,neutral,neutral
+Có ai từ rượu chè và mồi ngon từ tik tok qua đây ko 😂😂,có ai từ rượu chè và mồi ngon từ tik tok qua đây không,praise,neutral,neutral
+HAY QUÁ XÊ ƠIIIIIIIIIIIIIIIII ❤❤❤❤❤❤,hay quá xê ơi,praise,criticism,praise
+bài này hay quá mong được biết đến nhiều hơn,bài này hay quá mong được biết đến nhiều hơn,neutral,criticism,praise
+Hay,hay,praise,criticism,neutral
+chị nói thật đi chị có học ielts ko :),chị nói thật đi chị có học ielts không,praise,neutral,neutral
+hay quá chị ơi,hay quá chị ơi,praise,criticism,praise
+Từ rượu chè và mồii ngon đến đây😂😂,từ rượu chè và mồi ngon đến đây,praise,neutral,neutral
+1:50,150,praise,criticism,neutral
+1:90,190,praise,criticism,neutral
+Tui cx ko ngờ là nó  hay tới  vậy😭😭,tui cũng không ngờ là nó hay tới vậy,praise,neutral,criticism
+rịu chè và mồi ngon :v,rịu chè và mồi ngon v,praise,neutral,praise
+Bài này thuộc thể loại nhạc gì vậy mọi người?,bài này thuộc thể loại nhạc gì vậy mọi người,neutral,neutral,neutral
+ngày nào cũng nghe lun ý tr ạ hay thíaaaa,ngày nào cũng nghe luôn ý tr ạ hay thía,neutral,neutral,praise
+hay,hay,praise,criticism,neutral
+nhạc nầy rất hợp để mở ở quán cà phe tới năm 2030,nhạc nầy rất hợp để mở ở quán cà phe tới năm 2030,praise,neutral,praise
+Rịu chè và mồi ngonn 😂😂😂,rịu chè và mồi ngon,praise,neutral,praise
+Ỏoo ghiền,ỏo ghiền,praise,criticism,criticism
+Chúc mừng MV Trà và Cà phê của Chi đạt hơn 1M view nhóoooo,chúc mừng mv trà và cà phê của chi đạt hơn 1m view nhóo,praise,criticism,praise
+hay qa d,hay qa d,praise,criticism,criticism
+Hay đỉnk caoooooo,hay đỉnk cao,praise,criticism,praise
+ngày nghe 10 lần k chán,ngày nghe 10 lần không chán,neutral,neutral,praise
+peak quá chị ơiiii,peak quá chị ơi,praise,criticism,praise
+"chúc mừng chị đạt hơn 1tr view trong chưa đầy 1 thánggggg, quá giỏi lun !!",chúc mừng chị đạt hơn 1tr view trong chưa đầy 1 tháng quá giỏi luôn,praise,neutral,praise
+"Cái khúc chơi chữ Caffein nó dễ thương mà nó bất ngờ dữ luôn, y như cái hồi chị Chi Xê chơi chữ bài Seenderella",cái khúc chơi chữ cafein nó dễ thương mà nó bất ngờ dữ luôn why như cái hồi chị chi xê chơi chữ bài senderela,praise,neutral,praise
+"1,1tr view r cj oi",1tr view are cj oi,praise,criticism,criticism
+Ko biết có thay đổi tình tiết j nhiều ko,không biết có thay đổi tình tiết gì nhiều không,praise,neutral,neutral
+Mình hay nghe nhạc của Thùy Chi và Ngọc Mai là nhiều nhất mà nay cái bài này nghe bắt tai quá khiến mình phải nghe hết album của Chi Xê mới được ❤,mình hay nghe nhạc của thùy chi và ngọc mai là nhiều nhất mà nay cái bài này nghe bắt tai quá khiến mình phải nghe hết album của chi xê mới được,neutral,neutral,criticism
+Bài này mình nghe trên Fb ads của team Chi Xê chạy . Thực sự mình nghe giai điệu bắt tai dễ sợ nên mình mò qua đây 😂 0:01,bài này mình nghe trên fb ads của team chi xê chạy thực sự mình nghe giai điệu bắt tai dễ sợ nên mình mò qua đây 01,neutral,neutral,criticism
+Hay quá chị ơi  💯 luôn,hay quá chị ơi luôn,praise,criticism,praise
+Bà mà mất đt thì s mà ra vid đc 😭😭😭,bà mà mất đt thì s mà ra vid được,praise,criticism,criticism
+Hay quá Cê Chiên ơi <3 dính từ bài Ý e là đến mộc miên,hay quá cê chiên ơi 3 dính từ bài ý e là đến mộc miên,neutral,neutral,criticism
+Em muốn tương lại làm nhạc hay giống chị ❤,em muốn tương lại làm nhạc hay giống chị,praise,neutral,neutral
+Bài hay xỉu mát quá đúng gu tui,bài hay xỉu mát quá đúng gu tui,neutral,criticism,praise
+LÊN 1MIL R,lên 1mil are,praise,criticism,neutral
++ 1 máy mê CHI XÊ,1 máy mê chi xê,praise,neutral,praise
+đỉnh quá chị iu ơi,đỉnh quá chị iu ơi,praise,criticism,praise
+Bài hay quá chị ơiii,bài hay quá chị ơi,neutral,criticism,praise
+ông nhân vật chính trong mv đẹp chấn động,ông nhân vật chính trong mv đẹp chấn động,praise,neutral,praise
+Hay dean ❤🎉,hay dean,praise,criticism,neutral
+"bài này vừa nhí nhảnh vừa đáng iuu nữa, hiccc duyệt",bài này vừa nhí nhảnh vừa đáng iu nữa hic duyệt,neutral,neutral,praise
+Xin phép từ giờ gọi chị iu là my love ❤,xin phép từ giờ gọi chị iu là my love,praise,neutral,neutral
+.,,praise,criticism,neutral
+Bài này nghe bắt tai quá Chi ơi,bài này nghe bắt tai quá chi ơi,neutral,criticism,praise
+Nghe cuốn quá chị Xê ơi,nghe cuốn quá chị xê ơi,neutral,criticism,praise
+Nghe dính tai phết nhờ,nghe dính tai phết nhờ,neutral,criticism,praise
+Hay quá chị ơi!,hay quá chị ơi,praise,criticism,praise
+Quá hay,quá hay,praise,criticism,praise
+Quá hsyyyyy,quá hsy,praise,criticism,criticism
+Quá hsyyyyy,quá hsy,praise,criticism,criticism
+Quá hsyyyyy,quá hsy,praise,criticism,criticism
+"Hay quá ạ, +1 bài nghe khi chạy bộ, hay quá điiii",hay quá ạ 1 bài nghe khi chạy bộ hay quá đi,neutral,neutral,praise
+Disney là đây nè hay quá,disney là đây nè hay quá,praise,neutral,praise
+❤❤❤,,praise,criticism,neutral
+Tôithichbàihàtnáy,tôithichbàihàtnáy,praise,criticism,neutral
+Người bình luận thứ 1000,người bình luận thứ 10,praise,neutral,neutral
+"Mấy nay cứ nhẩm bài này, nó cuốn nó hay nó dịu nó thơ kinh khủng 🩷🩷🩷",mấy nay cứ nhẩm bài này nó cuốn nó hay nó dịu nó thơ kinh khủng,neutral,neutral,praise
+"Nhạc hay, lời hay, giọng hát hay, video hay. Ơ kìa, lên thôiiiii",nhạc hay lời hay giọng hát hay video hay ơ kìa lên thôi,praise,neutral,neutral
+waoo 1m rùi cj ơiiiii♥♥,wao 1m rồi cj ơi,praise,criticism,neutral
+0:24  nhẹ nhà và êm ái~,024 nhẹ nhà và êm ái,praise,criticism,praise
+1tr view rồiiii,1tr view rồi,praise,neutral,neutral
+bài  này hay quá,bài này hay quá,neutral,criticism,praise
+Hay vaic! Chi Xê cổ xinh vaic,hay vaic chi xê cổ xinh vaic,praise,criticism,praise
+Hay lắm chị ơi.Chúc mừng chị nha🥳🥳,hay lắm chị ơichúc mừng chị nha,praise,neutral,praise
+1tr view r cả nhà ak,1tr view are cả nhà ak,praise,criticism,neutral
+1tr lượt xem r vui quáaaa🎉❤,1tr lượt xem are vui quáa,praise,criticism,praise
+YEAHHH 1M VIEWS RÙIIIII,yeah 1m views rồi,praise,criticism,neutral
+bài này có gì để chê đâu nhỉ. Mkk thấy hay lắm luôn ấy,bài này có gì để chê đâu nhỉ mk thấy hay lắm luôn ấy,neutral,criticism,praise
+1M view 🎉🎉,1m view,praise,criticism,neutral
+1M rồiiiiiiiiiii,1m rồi,praise,criticism,neutral
+Sắp 1m roàiiiiiii,sắp 1m roài,praise,criticism,neutral
+Sắp 1m r chi ơi🐭🐭🐭,sắp 1m are chi ơi,praise,criticism,neutral
+sắp 1m view r chi xê ơi,sắp 1m view are chi xê ơi,praise,criticism,neutral
+😅,,praise,criticism,neutral
+Cà phê❤❤🎉🎉,cà phê,praise,neutral,neutral
+Nhạc này tẩm chất gây nghiện à 😂,nhạc này tẩm chất gây nghiện à,praise,neutral,criticism
+Hay quá cj oi,hay quá cj oi,praise,criticism,criticism
+">< hẹ tui đã đến hay qs chị oiiii nma em k0 hiểu ý nghĩa đoạn cuối s á:"")",hẹ tui đã đến hay qs chị oi nma em k0 hiểu ý nghĩa đoạn cuối s á,praise,neutral,neutral
+cuốn vô cùng,cuốn vô cùng,praise,neutral,praise
+😍😍😍😍😍😍😍😍,,praise,criticism,neutral
+Jukysan kìa😮😮😮😮😮😮❤❤❤❤❤,jukysan kìa,praise,criticism,criticism
+Em yêu Chi Xê nhiều lắm ạ!,em yêu chi xê nhiều lắm ạ,praise,criticism,praise
+hay vậy ạ,hay vậy ạ,praise,criticism,neutral
+😍😍,,praise,criticism,neutral
+"học được đoạn on a beautiful day ròiiii, sướng quớ điiiii",học được đoạn on a beautiful day ròi sướng quớ đi,praise,neutral,praise
+❤❤❤❤hay nhất của em ❤,hay nhất của em,praise,criticism,praise
+Hay quá chị iu ơi ❤,hay quá chị iu ơi,praise,criticism,praise
+VIBe disney Vãi Luôn chị ơi😊❤,vibe disney vãi luôn chị ơi,praise,criticism,praise
+Hay có chị ui❤❤❤❤,hay có chị ui,praise,criticism,neutral
+😇,,praise,criticism,neutral
+mê xỉuuuuu,mê xỉu,praise,criticism,criticism
+ai để ý bạn nam hơi giống park bogum khommm???,ai để ý bạn nam hơi giống park bogum khom,praise,criticism,criticism
+cóa thể cho em bài này loop 1H ko ạ :((((,cóa thể cho em bài này lop 1h không ạ,neutral,criticism,neutral
+hay quáaaaa,hay quáa,praise,criticism,praise
+"Chi Xê cứ cố gắng phát huy nữa thì sẽ có nhiều bản hit đấy , hát dễ nghe giai điệu hay .",chi xê cứ cố gắng phát huy nữa thì sẽ có nhiều bản hit đấy hát dễ nghe giai điệu hay,praise,neutral,praise
+ê hay thật nha,ê hay thật nha,praise,criticism,neutral
+emm vừa học vừa nghe lun chill chill nghe hay cực lùn nhưng vẫn mê bài xoay của chị hơn,em vừa học vừa nghe luôn chil chil nghe hay cực lùn nhưng vẫn mê bài xoay của chị hơn,neutral,criticism,praise
+"tình cờ nge trên tik tok, ngỡ như chỉ là bài hát dễ thương bình thường, chả hiểu sao mấy ngày sau quanh quẩn trong đầu mãi íii",tình cờ nge trên tik tok ngỡ như chỉ là bài hát dễ thương bình thường chả hiểu sao mấy ngày sau quanh quẩn trong đầu mãi íi,neutral,neutral,neutral
+Hay quá à☕️,hay quá à,praise,criticism,praise
+tôi nghiện rồi,tôi nghiện rồi,praise,neutral,criticism
+❤❤❤,,praise,criticism,neutral
+"hay lắm luôn tui nghe mà bị kẹt ở đây mấy ngày liền
+
+❤",hay lắm luôn tui nghe mà bị kẹt ở đây mấy ngày liền,neutral,neutral,praise
+10 đ ch iu oii😘🫰😉,10 đ ch iu oi,praise,criticism,neutral
+Đẩy nó lên 1tr view cho tui😡,đẩy nó lên 1tr view cho tui,praise,criticism,neutral
+Hay quá c oiiiii ghiền lun😍😍,hay quá c oi ghiền luôn,praise,criticism,criticism
+Nhạc này cứ gọi là “đi uống cafe hok bro”,nhạc này cứ gọi là đi uống cafe không bro,praise,neutral,neutral
+Viết lời thông minh quáaaa,viết lời thông minh quáa,praise,neutral,praise
+"bài nay hay quá em nghe cả ngày luôn
+xuất sắc quá hay",bài nay hay quá em nghe cả ngày luôn xuất sắc quá hay,neutral,neutral,praise
+toyyy vẫn đắm sayyy><,toy vẫn đắm say,praise,neutral,praise
+Nam 9 nhìn thẳng giống Park Bo Gum dị,nam 9 nhìn thẳng giống park bo gum dị,praise,neutral,criticism
+Em chào chị Juky và chi xê ạ,em chào chị juky và chi xê ạ,praise,neutral,neutral
+"chị ui nữ chính rất xinh, nam chính cũng đc nhưng mà e lại để ý ah dance cơ, đẹp trai thí ôi thoi chét",chị ui nữ chính rất xinh nam chính cũng được nhưng mà e lại để ý ah dance cơ đẹp trai thí ôi thoi chét,praise,neutral,praise
+Hay vãi,hay vãi,praise,criticism,neutral
+🥰🥰,,praise,criticism,neutral
+😃😍🥰🥰🥰🥰,,praise,criticism,neutral
+LÊN 1 MIL !!!!!,lên 1 mil,praise,criticism,neutral
+Nhạc đáng iu vãi ò,nhạc đáng iu vãi ò,praise,criticism,praise
+Hay qué CHI XÊ  ơi,hay qué chi xê ơi,praise,criticism,neutral
+Hay nha,hay nha,praise,criticism,neutral
+gần 800k view r cả nhà ơi,gần 80k view are cả nhà ơi,praise,neutral,neutral
+Spam cmt lên 1n đi mn,spam cmt lên 1n đi mn,praise,criticism,criticism
