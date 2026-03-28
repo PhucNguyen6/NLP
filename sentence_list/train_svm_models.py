@@ -120,6 +120,33 @@ def count_svm_params(svm: SVC, n_features: int) -> int:
     return sv_params + dual_params + bias_params
 
 
+def print_dataset_statistics(y_split, split_name: str, class_labels: list, le=None):
+    """
+    Thống kê chi tiết phân bố các lớp trong tập dữ liệu.
+    
+    Args:
+        y_split: mảng nhãn
+        split_name: tên tập (Train/Val/Test)
+        class_labels: danh sách tên các lớp
+        le: LabelEncoder (nếu muốn hiển thị tên lớp thay vì số)
+    """
+    unique, counts = np.unique(y_split, return_counts=True)
+    total = len(y_split)
+    
+    logging.info(f"┌─ {split_name.upper()} SET STATISTICS ─────────────────────────")
+    logging.info(f"│ Tổng mẫu: {total}")
+    
+    for label_idx, count in zip(unique, counts):
+        pct = 100 * count / total
+        class_name = class_labels[label_idx] if label_idx < len(class_labels) else f"Class {label_idx}"
+        bar_len = int(pct / 2)
+        bar = "█" * bar_len
+        logging.info(f"│ {class_name:<15} : {count:>6} ({pct:>5.1f}%) {bar:<30}")
+    
+    logging.info(f"└─ {'─'*60}")
+    return dict(zip(unique, counts))
+
+
 def split_data(X: np.ndarray, y: np.ndarray):
     """Chia 7 / 2 / 1 (train / val / test), stratified."""
     X_tmp, X_test, y_tmp, y_test = train_test_split(
@@ -170,6 +197,14 @@ for idx, (method_name, pkl_path) in enumerate(DATASETS.items(), 1):
         len(X_train), len(X_val), len(X_test),
     )
     print(f"  ✓ Split: Train={len(X_train)} | Val={len(X_val)} | Test={len(X_test)}")
+    
+    # ── In thống kê chi tiết về Validation & Test set ──────────────────────────
+    print(f"\n  ╔═ VALIDATION SET STATISTICS ═╗")
+    val_dist = print_dataset_statistics(y_val, "Validation", CLASS_LABELS, le)
+    
+    print(f"\n  ╔═ TEST SET STATISTICS (10% INTERNAL) ═╗")
+    test_dist = print_dataset_statistics(y_test, "Test", CLASS_LABELS, le)
+    print()
 
     # ── 4. Chuẩn hoá đặc trưng ──────────────────────────────────────────────
     print(f"  → Chuẩn hoá (StandardScaler)...")
@@ -278,6 +313,8 @@ for idx, (method_name, pkl_path) in enumerate(DATASETS.items(), 1):
         "n_val":             len(X_val),
         "n_test":            len(X_test),
         "label_dist":        meta.get("label_dist", {}),
+        "val_dist":          val_dist,
+        "test_dist":         test_dist,
         "lc_sizes":          lc_sizes,
         "lc_train_scores":   lc_train_scores,
         "lc_val_scores":     lc_val_scores,
@@ -331,6 +368,8 @@ with open(txt_path, "w", encoding="utf-8") as f:
     f.write("=" * 80 + "\n")
     f.write("SVM COMPARISON REPORT – TF-IDF vs Doc2Vec vs XLM-RoBERTa\n")
     f.write("=" * 80 + "\n\n")
+    f.write("NOTA: Test set là 10% từ phân chia dữ liệu stratified (KHÔNG dùng youtube_id_music_test.txt)\n")
+    f.write("=" * 80 + "\n\n")
 
     for m, res in all_results.items():
         f.write(f"{'─'*60}\n")
@@ -344,10 +383,29 @@ with open(txt_path, "w", encoding="utf-8") as f:
         f.write(f"  Thời gian encode  : {res['encoder_time_s']:.2f}s\n")
         f.write(f"  Thời gian SVM     : {res['svm_train_time_s']:.2f}s\n")
         f.write(f"  Model file        : {res['model_path']}\n")
+        
+        f.write(f"\n  --- Phân bố Validation Set ---\n")
+        f.write(f"  Tổng mẫu: {res['n_val']}\n")
+        if "val_dist" in res and res["val_dist"]:
+            total_val = res['n_val']
+            for class_idx in range(len(CLASS_LABELS)):
+                count = res["val_dist"].get(class_idx, 0)
+                pct = 100 * count / total_val if total_val > 0 else 0
+                f.write(f"    {CLASS_LABELS[class_idx]:<15}: {count:>6} ({pct:>5.1f}%)\n")
+        
+        f.write(f"\n  --- Phân bố Test Set (10% Internal) ---\n")
+        f.write(f"  Tổng mẫu: {res['n_test']}\n")
+        if "test_dist" in res and res["test_dist"]:
+            total_test = res['n_test']
+            for class_idx in range(len(CLASS_LABELS)):
+                count = res["test_dist"].get(class_idx, 0)
+                pct = 100 * count / total_test if total_test > 0 else 0
+                f.write(f"    {CLASS_LABELS[class_idx]:<15}: {count:>6} ({pct:>5.1f}%)\n")
+        
         f.write(f"\n  --- Validation ---\n")
         for k, v in res["val_metrics"].items():
             f.write(f"    {k:<12}: {v:.4f}\n")
-        f.write(f"\n  --- Test ---\n")
+        f.write(f"\n  --- Test (10% Internal) ---\n")
         for k, v in res["test_metrics"].items():
             f.write(f"    {k:<12}: {v:.4f}\n")
         f.write(f"\n  Classification Report (Test):\n")
