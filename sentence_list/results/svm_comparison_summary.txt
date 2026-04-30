@@ -1,0 +1,151 @@
+================================================================================
+SVM COMPARISON REPORT – TF-IDF vs Doc2Vec vs XLM-RoBERTa
+================================================================================
+
+NOTA: Test set là 10% từ phân chia dữ liệu stratified (KHÔNG dùng youtube_id_music_test.txt)
+================================================================================
+
+────────────────────────────────────────────────────────────
+  Phương pháp : TF-IDF
+────────────────────────────────────────────────────────────
+  Đặc trưng         : 500 chiều
+  Tham số encoder   : 500
+  Tham số SVM       : 3,284,589
+  Support vectors   : 6,543
+  Tổng tham số      : 3,285,089
+  Thời gian encode  : 1.54s
+  Thời gian SVM     : 775.37s
+  Model file        : D:\NLP_Project\NLP\sentence_list\results\svm_models\svm_model_tf_idf.pkl
+
+  --- Phân bố Validation Set ---
+  Tổng mẫu: 8182
+    criticism      :    424 (  5.2%)
+    neutral        :   1731 ( 21.2%)
+    praise         :   6027 ( 73.7%)
+
+  --- Phân bố Test Set (10% Internal) ---
+  Tổng mẫu: 4092
+    criticism      :    212 (  5.2%)
+    neutral        :    866 ( 21.2%)
+    praise         :   3014 ( 73.7%)
+
+  --- Validation ---
+    accuracy    : 0.9775
+    precision   : 0.9809
+    recall      : 0.9713
+    f1          : 0.9760
+
+  --- Test (10% Internal) ---
+    accuracy    : 0.9768
+    precision   : 0.9811
+    recall      : 0.9687
+    f1          : 0.9748
+
+  Classification Report (Test):
+              precision    recall  f1-score   support
+
+   criticism       1.00      0.99      1.00       212
+     neutral       0.97      0.92      0.94       866
+      praise       0.98      0.99      0.98      3014
+
+    accuracy                           0.98      4092
+   macro avg       0.98      0.97      0.97      4092
+weighted avg       0.98      0.98      0.98      4092
+
+
+────────────────────────────────────────────────────────────
+  Phương pháp : Doc2Vec
+────────────────────────────────────────────────────────────
+  Đặc trưng         : 100 chiều
+  Tham số encoder   : 2,917,600
+  Tham số SVM       : 510,717
+  Support vectors   : 5,007
+  Tổng tham số      : 3,428,317
+  Thời gian encode  : 191.17s
+  Thời gian SVM     : 194.73s
+  Model file        : D:\NLP_Project\NLP\sentence_list\results\svm_models\svm_model_doc2vec.pkl
+
+  --- Phân bố Validation Set ---
+  Tổng mẫu: 8182
+    criticism      :   3488 ( 42.6%)
+    neutral        :   4629 ( 56.6%)
+    praise         :     65 (  0.8%)
+
+  --- Phân bố Test Set (10% Internal) ---
+  Tổng mẫu: 4092
+    criticism      :   1744 ( 42.6%)
+    neutral        :   2316 ( 56.6%)
+    praise         :     32 (  0.8%)
+
+  --- Validation ---
+    accuracy    : 0.9763
+    precision   : 0.9828
+    recall      : 0.8788
+    f1          : 0.9204
+
+  --- Test (10% Internal) ---
+    accuracy    : 0.9746
+    precision   : 0.9818
+    recall      : 0.8809
+    f1          : 0.9216
+
+  Classification Report (Test):
+              precision    recall  f1-score   support
+
+   criticism       0.96      0.98      0.97      1744
+     neutral       0.99      0.97      0.98      2316
+      praise       1.00      0.69      0.81        32
+
+    accuracy                           0.97      4092
+   macro avg       0.98      0.88      0.92      4092
+weighted avg       0.97      0.97      0.97      4092
+
+
+────────────────────────────────────────────────────────────
+  Phương pháp : XLM-RoBERTa
+────────────────────────────────────────────────────────────
+  Đặc trưng         : 768 chiều
+  Tham số encoder   : 278,045,955
+  Tham số SVM       : 3,217,063
+  Support vectors   : 4,178
+  Tổng tham số      : 281,263,018
+  Thời gian encode  : 2250.37s
+  Thời gian SVM     : 299.35s
+  Model file        : D:\NLP_Project\NLP\sentence_list\results\svm_models\svm_model_xlm_roberta.pkl
+
+  --- Phân bố Validation Set ---
+  Tổng mẫu: 8182
+    criticism      :   1500 ( 18.3%)
+    neutral        :   3935 ( 48.1%)
+    praise         :   2747 ( 33.6%)
+
+  --- Phân bố Test Set (10% Internal) ---
+  Tổng mẫu: 4092
+    criticism      :    750 ( 18.3%)
+    neutral        :   1968 ( 48.1%)
+    praise         :   1374 ( 33.6%)
+
+  --- Validation ---
+    accuracy    : 0.9826
+    precision   : 0.9831
+    recall      : 0.9804
+    f1          : 0.9817
+
+  --- Test (10% Internal) ---
+    accuracy    : 0.9814
+    precision   : 0.9818
+    recall      : 0.9795
+    f1          : 0.9806
+
+  Classification Report (Test):
+              precision    recall  f1-score   support
+
+   criticism       0.98      0.97      0.98       750
+     neutral       0.98      0.99      0.98      1968
+      praise       0.99      0.98      0.98      1374
+
+    accuracy                           0.98      4092
+   macro avg       0.98      0.98      0.98      4092
+weighted avg       0.98      0.98      0.98      4092
+
+
