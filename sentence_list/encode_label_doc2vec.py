@@ -10,8 +10,6 @@ Bước 2 – Mã hoá Doc2Vec + Gán nhãn tự động
     bằng cách chấm điểm lexicon trên mẫu đại diện của từng cụm
   • Lưu toàn bộ đặc trưng + nhãn + metadata → encoded_data/doc2vec_labeled.pkl
 
-Chạy độc lập:
-    python encode_label_doc2vec.py
 ─────────────────────────────────────────────────────────────────────────────
 """
 

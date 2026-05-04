@@ -9,8 +9,6 @@ Bước 1 – Mã hoá TF-IDF + Gán nhãn tự động
     bằng cách chấm điểm lexicon trên mẫu đại diện của từng cụm
   • Lưu toàn bộ đặc trưng + nhãn + metadata → encoded_data/tfidf_labeled.pkl
 
-Chạy độc lập:
-    python encode_label_tfidf.py
 ─────────────────────────────────────────────────────────────────────────────
 """
 

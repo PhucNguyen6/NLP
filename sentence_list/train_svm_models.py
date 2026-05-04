@@ -24,8 +24,6 @@ Kết quả xuất:
   plots/04_learning_curves.png                – đường cong học (3 phương pháp)
   plots/05_metrics_heatmap.png                – heatmap tương quan metrics
 
-Chạy độc lập (sau khi đã chạy 3 file encode_label_*.py):
-    python train_svm_models.py
 ─────────────────────────────────────────────────────────────────────────────
 """
 
