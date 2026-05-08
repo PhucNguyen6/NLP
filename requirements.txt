@@ -1,13 +1,39 @@
-python-dotenv
-google-api-python-client
-emoji
-langdetect
-pandas
-scikit-learn
-gensim
-numpy
-matplotlib
-transformers
-torch
-seaborn
-torchgen
+# Core dependencies
+python-dotenv==1.0.0
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.2
+
+# LLM & Embeddings
+transformers==4.35.0
+torch==2.1.1
+gensim==4.3.1
+sentence-transformers==2.2.2
+tiktoken==0.7.0
+sentencepiece==0.2.0
+
+# Database
+psycopg2-binary==2.9.9
+pgvector==0.2.4
+
+# API & Web Scraping
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# YouTube & Crawling
+google-api-python-client==2.100.0
+youtube-dl==2021.12.17
+
+# NLP & Text Processing
+emoji==2.8.0
+langdetect==1.0.9
+
+# Utilities
+tqdm==4.66.1
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Development
+jupyter==1.0.0
+ipython==8.14.0
