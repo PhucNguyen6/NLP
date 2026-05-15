@@ -67,7 +67,7 @@ RAG_CONFIG = {
 # ============ LLM CONFIGURATION ============
 LLM_CONFIG = {
     'lm_studio_url': os.getenv('LM_STUDIO_URL', 'http://localhost:1234/v1'),
-    'model_name': os.getenv('LLM_MODEL', 'mistral'),
+    'model_name': os.getenv('LLM_MODEL', 'Vistral-7B-ChatML-GGUF'),
     'temperature': 0.7,
     'max_tokens': 500,
     'top_p': 0.95,

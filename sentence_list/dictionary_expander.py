@@ -25,6 +25,37 @@ logging.basicConfig(level=getattr(logging, LOGGING_CONFIG['level']),
 logger = logging.getLogger(__name__)
 
 
+def _log_repr(s: Optional[str]) -> str:
+    """Chuyen noi dung co Unicode sang dang \\uXXXX de ghi log tren console cp1252 (Windows)."""
+    if s is None:
+        return ""
+    try:
+        return s.encode("unicode_escape", errors="replace").decode("ascii")
+    except Exception:
+        return "<unprintable>"
+
+
+# Từ tối thiểu 3 ký tự có chữ cái tiếng Việt / Latin (dùng khi ngôn ngữ không phải en thuần)
+_VI_WORD = re.compile(
+    r"[a-zàáạảãâầấẩậẫăằắẳẵặèéẹẻẽêềếểệễìíịỉĩòóọỏõôồốổộỗơớờởợỡùúụủũưừứựửữỳýỵỷỹđ0-9]+",
+    re.IGNORECASE,
+)
+
+
+def _extract_candidate_words(text: str, language: str) -> List[str]:
+    """Trích token từ bình luận (vi/mix dùng regex tiếng Việt; en dùng từ a-z)."""
+    lang = (language or "vi").lower()
+    if lang == "en":
+        return re.findall(r"[a-z]{3,}", (text or "").lower())
+    if lang in ("vi", "mix", "mixed", "unknown"):
+        return [w.lower() for w in _VI_WORD.findall(text or "") if len(w) > 2]
+    return [w.lower() for w in _VI_WORD.findall(text or "") if len(w) > 2]
+
+
+def _is_ascii_alpha_token(word: str) -> bool:
+    return bool(re.fullmatch(r"[a-z]{3,}", word or ""))
+
+
 class DictionaryExpander:
     """Expands dictionary by crawling web sources and analyzing sentiment"""
     
@@ -79,7 +110,7 @@ class DictionaryExpander:
                         'crawled_at': datetime.now().isoformat()
                     }
             except Exception as e:
-                logger.warning(f"Error crawling {source} for '{word}': {e}")
+                logger.warning("Error crawling %s for word=%s: %s", source, _log_repr(word), e)
         
         return None
     
@@ -293,7 +324,7 @@ class DictionaryExpander:
             
             return float(score)
         except Exception as e:
-            logger.warning(f"Error analyzing sentiment for '{word}': {e}")
+            logger.warning("Error analyzing sentiment for word=%s: %s", _log_repr(word), e)
             return 0.0
     
     def add_word_to_database(self, word: str, definition: str = None,
@@ -332,7 +363,7 @@ class DictionaryExpander:
                 source=source
             )
             
-            logger.info(f"Added word '{word}' to database (ID: {word_id})")
+            logger.info("Added word word=%s to database (ID: %s)", _log_repr(word), word_id)
             return True
         
         except Exception as e:
@@ -352,45 +383,64 @@ class DictionaryExpander:
         Returns:
             Number of new words added
         """
-        
-        # Extract words
-        words = re.findall(r'\b[a-z]+\b', text.lower()) if language == 'en' else text.split()
-        unique_words = set(words)
-        
+        raw_lang = (language or "vi").lower()
+        if raw_lang in ("none", "null"):
+            raw_lang = "vi"
+        token_lang = "en" if raw_lang == "en" else "vi"
+
+        words = _extract_candidate_words(text, token_lang)
+        unique_words = list(dict.fromkeys(words))
+
         new_words_count = 0
-        unknown_words = []
-        
-        # Check which words are unknown
+        unknown_words: List[str] = []
+
         for word in unique_words:
-            if len(word) > 2 and not self.check_word_exists(word):
-                unknown_words.append(word)
-        
-        logger.info(f"Found {len(unknown_words)} unknown words")
-        
-        # Batch crawl and add
-        if batch_crawl and unknown_words:
-            batch_size = DICT_EXPANSION_CONFIG['batch_crawl_size']
-            for i in range(0, len(unknown_words), batch_size):
-                batch = unknown_words[i:i + batch_size]
-                
-                for word in batch:
-                    try:
-                        if language == 'en':
-                            entry = self.crawl_english_definition(word)
-                        else:
-                            entry = self.crawl_vietnamese_definition(word)
-                        
-                        if entry:
-                            if self.add_word_to_database(
-                                word=entry['word'],
-                                definition=entry['definition'],
-                                language=entry['language'],
-                                source=entry.get('source')
-                            ):
-                                new_words_count += 1
-                    except Exception as e:
-                        logger.warning(f"Error processing word '{word}': {e}")
-        
+            w = word.strip().lower()
+            if len(w) > 2 and not self.check_word_exists(w):
+                unknown_words.append(w)
+
+        logger.info(f"Found {len(unknown_words)} unknown words (lang_hint={language})")
+
+        if not unknown_words:
+            return 0
+
+        def _process_one(word: str) -> bool:
+            """Thử crawl; nếu không có định nghĩa vẫn thêm stub để DB có mặt từ mới."""
+            try:
+                entry = None
+                if raw_lang == "en" or _is_ascii_alpha_token(word):
+                    entry = self.crawl_english_definition(word)
+                if not entry:
+                    entry = self.crawl_vietnamese_definition(word)
+
+                if entry:
+                    return self.add_word_to_database(
+                        word=entry["word"],
+                        definition=entry["definition"],
+                        language=entry["language"],
+                        source=entry.get("source"),
+                    )
+
+                stub_lang = "en" if _is_ascii_alpha_token(word) else "vi"
+                return self.add_word_to_database(
+                    word=word,
+                    definition="〈Tự động〉 Từ trích từ bình luận — chưa thu thập được định nghĩa từ nguồn ngoài.",
+                    language=stub_lang,
+                    source="auto_stub",
+                )
+            except Exception as e:
+                logger.warning("Error processing word=%s: %s", _log_repr(word), e)
+                return False
+
+        batch_size = DICT_EXPANSION_CONFIG["batch_crawl_size"] if batch_crawl else len(unknown_words)
+        batch_size = max(1, int(batch_size))
+
+        for i in range(0, len(unknown_words), batch_size):
+            batch = unknown_words[i : i + batch_size]
+            for word in batch:
+                if _process_one(word):
+                    new_words_count += 1
+
         logger.info(f"Added {new_words_count} new words to dictionary")
         return new_words_count
     

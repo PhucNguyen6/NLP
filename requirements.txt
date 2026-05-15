@@ -7,7 +7,7 @@ scikit-learn==1.5.2
 # LLM & Embeddings
 transformers==4.35.0
 torch==2.1.1
-gensim==4.3.1
+gensim==4.3.3
 sentence-transformers==2.2.2
 tiktoken==0.7.0
 sentencepiece==0.2.0
@@ -37,3 +37,5 @@ seaborn==0.12.2
 # Development
 jupyter==1.0.0
 ipython==8.14.0
+
+streamlit == 1.41.0

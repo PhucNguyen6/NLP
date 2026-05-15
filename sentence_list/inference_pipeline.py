@@ -35,6 +35,23 @@ SVM_MODEL_FILES = {
     "xlmroberta": "svm_model_xlm_roberta.pkl",
 }
 
+VI_LABEL_MAP = {
+    "praise": "khen",
+    "positive": "khen",
+    "neutral": "trung lap",
+    "criticism": "che",
+    "negative": "che",
+    "khen": "khen",
+    "che": "che",
+    "trung lap": "trung lap",
+}
+
+
+def to_vi_label(label: Optional[str]) -> Optional[str]:
+    if label is None:
+        return None
+    return VI_LABEL_MAP.get(str(label).strip().lower(), str(label))
+
 
 class PreprocessingLayer:
     def run(self, text: str) -> Dict:
@@ -88,6 +105,7 @@ class SentimentModule:
                     if label_encoder is not None
                     else str(pred_raw)
                 )
+                label = to_vi_label(label)
                 confidence = None
                 if hasattr(model, "predict_proba"):
                     proba = model.predict_proba(features)[0]
@@ -98,17 +116,21 @@ class SentimentModule:
         return results
 
 
+PRIMARY_ENCODERS = ("tfidf", "doc2vec", "xlmroberta")
+
+
 class RAGPipeline:
     def __init__(self):
         self.retriever = get_rag_retriever()
 
-    def run(self, query: str, top_k: int = 5) -> Dict:
-        docs = self.retriever.retrieve_context(query=query, top_k=top_k, model="xlmroberta")
-        distribution = Counter([d.get("sentiment_label", "neutral") for d in docs])
+    def run(self, query: str, top_k: int = 5, model: str = "xlmroberta") -> Dict:
+        m = model if model in PRIMARY_ENCODERS else "xlmroberta"
+        docs = self.retriever.retrieve_context(query=query, top_k=top_k, model=m)
+        distribution = Counter([to_vi_label(d.get("sentiment_label", "neutral")) for d in docs])
         return {
             "documents": docs,
             "distribution": dict(distribution),
-            "rag_majority_label": distribution.most_common(1)[0][0] if distribution else "neutral",
+            "rag_majority_label": distribution.most_common(1)[0][0] if distribution else "trung lap",
         }
 
 
@@ -121,7 +143,7 @@ class LLMService:
         if not self.enabled or self.client is None:
             return None
         context = "\n".join(
-            f"- [{doc.get('sentiment_label', 'unknown')}] {doc.get('text_content', '')[:160]}"
+            f"- [{to_vi_label(doc.get('sentiment_label', 'unknown'))}] {doc.get('text_content', '')[:160]}"
             for doc in rag_docs[:3]
         )
         return self.client.generate_sentiment_explanation(
@@ -132,36 +154,55 @@ class LLMService:
 
 
 class SentimentArchitecturePipeline:
-    def __init__(self, use_llm: bool = True, auto_expand_dict: bool = True):
+    def __init__(
+        self,
+        use_llm: bool = True,
+        auto_expand_dict: bool = True,
+        primary_encoder: str = "xlmroberta",
+    ):
         self.preprocessing = PreprocessingLayer()
         self.embedding = get_embeddings_manager()
         self.sentiment = SentimentModule()
         self.rag = RAGPipeline()
         self.llm = LLMService(enabled=use_llm)
         self.dict_expander = get_dictionary_expander() if auto_expand_dict else None
+        self.primary_encoder = primary_encoder if primary_encoder in PRIMARY_ENCODERS else "xlmroberta"
 
     def _build_embedding_map(self, cleaned_text: str) -> Dict[str, np.ndarray]:
         emb = self.embedding.embed_sentence(cleaned_text, models=EMBEDDING_CONFIG["models"])
         return {k: np.asarray(v, dtype=np.float32) for k, v in emb.items()}
 
-    def analyze_comment(self, comment: str, return_explanation: bool = True, top_k: int = 5, language: str = "auto") -> Dict:
+    def analyze_comment(
+        self,
+        comment: str,
+        return_explanation: bool = True,
+        top_k: int = 5,
+        language: str = "auto",
+        primary_encoder: Optional[str] = None,
+    ) -> Dict:
         started = time.perf_counter()
         preprocessed = self.preprocessing.run(comment)
+        enc = (primary_encoder or self.primary_encoder).lower()
+        if enc not in PRIMARY_ENCODERS:
+            enc = "xlmroberta"
+
         embedding_map = self._build_embedding_map(preprocessed["cleaned_text"])
         sentiment_by_encoder = self.sentiment.predict_all(embedding_map)
-        rag_result = self.rag.run(preprocessed["cleaned_text"], top_k=top_k)
+        rag_result = self.rag.run(preprocessed["cleaned_text"], top_k=top_k, model=enc)
 
         # Dictionary expansion happens before generating the final LLM explanation.
         if self.dict_expander is not None:
             requested_lang = language if language != "auto" else preprocessed["language"]
             try:
-                self.dict_expander.expand_from_text(comment, language=requested_lang)
+                self.dict_expander.expand_from_text(comment, language=requested_lang or "vi")
             except Exception as ex:
                 # Dictionary expansion should never break inference.
                 logger.warning("Dictionary expansion failed (ignored): %s", ex)
 
         final_label = rag_result["rag_majority_label"]
-        if "xlmroberta" in sentiment_by_encoder:
+        if enc in sentiment_by_encoder:
+            final_label = sentiment_by_encoder[enc]["label"]
+        elif "xlmroberta" in sentiment_by_encoder:
             final_label = sentiment_by_encoder["xlmroberta"]["label"]
 
         explanation = None
@@ -182,7 +223,7 @@ class SentimentArchitecturePipeline:
                 "documents": [
                     {
                         "text": d.get("text_content", "")[:180],
-                        "sentiment": d.get("sentiment_label", "unknown"),
+                        "sentiment": to_vi_label(d.get("sentiment_label", "unknown")),
                         "similarity": float(d.get("similarity", 0.0)),
                     }
                     for d in rag_result["documents"]
@@ -191,6 +232,7 @@ class SentimentArchitecturePipeline:
             "llm_explanation": explanation,
             "metadata": {
                 "requested_language": language,
+                "primary_encoder": enc,
                 "latency_ms": round((time.perf_counter() - started) * 1000, 2),
             },
         }
@@ -221,9 +263,20 @@ class SentimentArchitecturePipeline:
             "avg_encode_ms": {k: round(v / n, 2) for k, v in totals.items()},
         }
 
-    def batch_analyze(self, comments: List[str], return_explanations: bool = True, top_k: int = 5) -> List[Dict]:
+    def batch_analyze(
+        self,
+        comments: List[str],
+        return_explanations: bool = True,
+        top_k: int = 5,
+        primary_encoder: Optional[str] = None,
+    ) -> List[Dict]:
         return [
-            self.analyze_comment(c, return_explanation=return_explanations, top_k=top_k)
+            self.analyze_comment(
+                c,
+                return_explanation=return_explanations,
+                top_k=top_k,
+                primary_encoder=primary_encoder,
+            )
             for c in comments
         ]
 
@@ -246,14 +299,24 @@ class SentimentArchitecturePipeline:
             "available_encoders": EMBEDDING_CONFIG["models"],
             "loaded_svm_models": list(self.sentiment.models.keys()),
             "llm_enabled": self.llm.enabled,
+            "primary_encoder": self.primary_encoder,
         }
 
 
-_pipeline = None
+_pipeline_store: Dict[tuple, SentimentArchitecturePipeline] = {}
 
 
-def get_pipeline(use_llm: bool = True, auto_expand_dict: bool = True) -> SentimentArchitecturePipeline:
-    global _pipeline
-    if _pipeline is None:
-        _pipeline = SentimentArchitecturePipeline(use_llm=use_llm, auto_expand_dict=auto_expand_dict)
-    return _pipeline
+def get_pipeline(
+    use_llm: bool = True,
+    auto_expand_dict: bool = True,
+    primary_encoder: str = "xlmroberta",
+) -> SentimentArchitecturePipeline:
+    pe = primary_encoder if primary_encoder in PRIMARY_ENCODERS else "xlmroberta"
+    key = (use_llm, auto_expand_dict, pe)
+    if key not in _pipeline_store:
+        _pipeline_store[key] = SentimentArchitecturePipeline(
+            use_llm=use_llm,
+            auto_expand_dict=auto_expand_dict,
+            primary_encoder=pe,
+        )
+    return _pipeline_store[key]

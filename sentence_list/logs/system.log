@@ -1,0 +1,1545 @@
+2026-05-14 23:30:30,651 - database - INFO - Database connection pool initialized successfully
+2026-05-14 23:30:30,841 - __main__ - ERROR - Error loading tfidf: invalid load key, '\x08'.
+2026-05-14 23:30:30,966 - __main__ - ERROR - Error loading doc2vec: invalid load key, '\x09'.
+2026-05-14 23:30:31,803 - __main__ - ERROR - Error loading xlmroberta: invalid load key, '\x08'.
+2026-05-14 23:30:31,908 - __main__ - INFO - Loaded 40911 comments
+2026-05-14 23:30:31,908 - embeddings_manager - INFO - Using device: cpu
+2026-05-14 23:30:31,909 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-14 23:30:40,870 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-14 23:30:41,373 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-14 23:30:41,420 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-14 23:30:41,420 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-14 23:30:41,420 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-14 23:30:41,563 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-14T23:30:41.549323', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-14 23:30:41,563 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-14 23:30:41,564 - embeddings_manager - ERROR - Failed to load TF-IDF vectorizer: invalid load key, '\x10'.
+2026-05-14 23:30:43,246 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:44,092 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:44,937 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:45,776 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:46,623 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:47,496 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:48,358 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:49,212 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:50,067 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:50,946 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:51,787 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:52,648 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:53,509 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:54,360 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:55,199 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:56,051 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:56,903 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:57,752 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:58,605 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:30:59,455 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:00,304 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:01,199 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:02,045 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:02,896 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:03,750 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:04,596 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:05,451 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:06,301 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:07,178 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:08,028 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:08,871 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:09,711 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:10,555 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:11,412 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:12,269 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:13,111 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:13,952 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:14,805 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:15,728 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:16,580 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:17,439 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:18,284 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:19,138 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:19,984 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:20,832 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:21,678 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:22,525 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:23,372 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:24,228 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:25,076 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:25,924 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:26,779 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:27,625 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:28,480 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:29,335 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:30,191 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:31,041 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:31,880 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:32,760 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:33,604 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:34,478 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:35,380 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:36,245 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:37,101 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:38,016 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:38,844 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:39,686 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:40,518 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:41,368 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:42,232 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:43,067 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:43,891 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:44,722 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:45,582 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:46,411 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:47,241 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:48,061 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:48,897 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:49,734 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:50,567 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:51,415 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:52,250 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:53,077 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:53,898 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:54,744 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:55,580 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:56,417 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:57,250 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:58,085 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:58,891 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:31:59,717 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:00,556 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:01,377 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:02,204 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:03,069 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:03,899 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:04,736 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:05,561 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:06,391 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:07,203 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:08,064 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:08,911 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:09,776 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:10,637 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:11,501 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:12,338 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:13,189 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:14,035 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:14,881 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:15,743 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:16,596 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:17,448 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:18,303 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:19,163 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:20,010 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:20,876 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:21,737 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:22,619 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:23,531 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:24,401 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:25,299 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:26,169 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:27,038 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:27,964 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:28,832 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:29,701 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:30,564 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:31,433 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:32,249 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:33,153 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:34,026 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:34,886 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:35,755 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:36,626 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:37,486 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:38,351 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:39,266 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:40,123 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:40,954 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:41,800 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:42,658 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:43,573 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:44,443 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:45,308 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:46,196 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:47,060 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:47,930 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:48,791 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:49,668 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:50,491 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:51,305 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:52,130 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:52,944 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:53,805 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:54,654 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:55,517 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:56,385 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:57,244 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:58,104 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:58,977 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:32:59,890 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:00,779 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:01,616 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:02,474 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:03,312 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:04,145 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:05,000 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:05,861 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:06,719 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:07,588 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:08,449 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:09,294 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:10,123 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:10,965 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:11,789 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:12,653 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:13,509 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:14,435 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:15,292 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:16,159 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:17,027 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:17,879 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:18,732 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:19,614 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:20,423 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:21,235 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:22,038 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:22,845 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:23,685 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:24,498 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:25,333 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:26,175 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:27,032 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:27,895 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:28,759 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:29,625 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:30,479 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:31,375 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:32,230 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:33,075 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:33,920 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:34,743 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:35,589 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:36,412 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:37,233 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:38,068 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:38,908 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:39,732 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:40,557 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:41,388 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:42,229 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:43,132 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:43,965 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:44,829 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:45,661 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:46,491 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:47,383 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:48,200 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:49,023 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:49,879 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:50,711 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:51,541 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:52,380 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:53,222 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:54,032 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:54,868 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:55,731 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:56,558 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:57,403 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:58,231 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:59,071 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:33:59,957 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:00,802 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:01,651 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:02,581 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:03,430 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:04,283 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:05,162 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:06,028 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:06,879 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:07,726 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:08,578 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:09,431 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:10,292 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:11,153 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:12,014 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:12,873 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:13,729 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:14,574 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:15,425 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:16,284 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:17,129 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:17,970 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:18,818 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:19,705 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:20,565 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:21,414 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:22,251 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:23,091 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:23,932 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:24,780 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:25,624 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:26,470 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:27,307 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:28,152 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:29,038 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:29,887 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:30,765 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:31,617 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:32,458 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:33,306 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:34,154 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:35,017 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:35,871 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:36,724 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:37,578 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:38,439 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:39,301 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:40,142 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:40,999 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:41,857 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:42,698 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:43,546 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:44,393 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:45,253 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:46,103 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:46,961 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:47,808 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:48,657 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:49,518 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:50,365 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:51,233 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:52,124 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:52,968 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:53,831 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:54,691 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:55,594 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:56,451 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:57,301 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:58,153 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:59,007 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:34:59,848 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:00,696 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:01,546 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:02,413 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:03,275 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:04,144 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:05,048 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:05,897 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:06,766 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:07,628 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:08,495 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:09,346 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:10,198 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:11,049 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:11,896 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:12,755 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:13,597 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:14,449 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:15,290 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:16,141 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:17,004 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:17,970 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:18,838 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:19,682 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:20,536 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:21,397 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:22,247 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:23,095 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:23,943 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:24,788 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:25,632 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:26,478 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:27,333 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:28,179 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:29,054 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:29,900 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:30,747 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:31,590 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:32,429 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:33,274 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:34,119 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:34,966 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:35,813 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:36,659 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:37,513 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:38,371 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:39,223 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:40,075 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:40,928 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:41,779 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:42,636 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:43,532 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:44,373 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:45,240 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:46,087 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:46,929 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:47,805 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:48,647 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:49,465 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:50,321 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:51,142 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:51,969 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:52,841 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:53,682 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:54,520 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:55,368 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:56,229 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:57,142 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:57,969 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:58,792 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:35:59,653 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:00,505 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:01,358 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:02,199 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:03,047 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:03,895 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:04,753 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:05,611 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:06,463 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:07,329 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:08,205 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:09,088 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:10,123 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:11,053 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:11,933 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:12,783 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:13,635 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:14,583 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:15,942 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:16,908 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:17,852 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:18,733 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:19,668 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:20,645 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:21,700 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:22,835 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:23,904 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:25,171 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:26,194 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:27,203 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:28,231 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:29,269 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:30,263 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:31,273 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:32,344 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:33,350 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:34,383 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:35,416 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:36,408 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:37,419 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:38,439 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:39,469 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:40,473 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:41,486 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:42,490 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:43,485 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:44,493 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:45,499 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:46,521 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:47,550 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:48,583 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:49,628 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:50,660 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:51,679 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:52,693 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:53,711 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:54,731 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:55,749 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:56,764 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:57,785 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:58,812 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:36:59,835 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:00,849 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:01,864 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:02,870 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:03,884 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:04,934 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:05,950 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:06,991 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:08,007 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:09,056 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:10,075 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:11,096 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:12,103 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:13,105 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:14,119 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:15,122 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:16,122 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:17,124 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:18,134 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:19,161 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:20,164 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:21,185 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:22,211 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:23,227 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:24,261 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:25,283 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:26,303 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:27,317 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:28,334 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:29,331 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:30,347 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:31,360 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:32,358 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:33,372 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:34,393 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:35,408 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:36,429 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:37,452 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:38,475 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:39,482 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:40,500 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:41,509 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:42,531 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:43,540 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:44,593 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:45,631 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:46,648 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:47,668 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:48,690 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:49,710 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:50,734 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:51,755 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:52,781 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:53,809 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:54,828 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:55,850 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:56,869 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:57,894 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:58,919 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:37:59,942 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:00,931 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:01,948 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:02,960 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:03,972 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:04,984 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:06,005 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:07,032 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:08,035 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:09,066 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:10,095 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:11,122 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:12,131 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:13,155 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:14,182 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:15,187 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:16,195 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:17,197 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:18,228 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:19,247 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:20,261 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:21,283 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:22,291 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:23,315 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:24,344 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:25,355 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:26,369 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:27,429 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:28,424 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:29,434 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:30,460 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:31,458 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:32,538 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:33,541 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:34,557 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:35,566 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:36,581 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:37,597 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:38,611 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:39,627 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:40,641 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:41,671 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:42,684 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:43,700 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:44,726 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:45,756 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:46,774 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:47,794 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:48,826 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:49,824 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:50,832 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:51,842 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:52,854 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:53,863 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:54,882 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:55,904 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:56,902 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:57,918 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:58,935 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:38:59,964 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:00,997 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:02,021 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:03,042 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:04,063 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:05,085 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:06,103 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:07,110 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:08,123 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:09,139 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:10,153 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:11,172 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:12,237 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:13,269 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:14,330 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:15,356 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:16,370 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:17,370 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:18,399 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:19,405 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:20,414 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:21,460 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:22,478 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:23,505 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:24,510 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:25,534 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:26,555 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:27,572 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:28,600 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:29,624 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:30,641 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:31,651 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:32,651 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:33,679 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:34,700 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:35,717 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:36,738 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:37,749 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:38,764 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:39,783 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:40,791 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:41,812 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:42,848 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:43,865 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:44,878 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:45,873 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:46,892 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:47,912 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:48,936 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:49,953 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:50,977 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:51,978 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:53,022 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:54,056 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:55,071 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:56,094 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:57,117 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:58,140 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:39:59,175 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:00,178 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:01,206 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:02,218 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:03,239 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:04,257 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:05,277 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:06,315 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:07,317 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:08,337 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:09,351 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:10,378 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:11,406 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:12,434 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:13,452 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:14,475 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:15,512 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:16,543 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:17,588 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:18,606 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:19,630 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:20,656 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:21,687 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:22,721 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:23,753 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:24,786 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:25,813 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:26,856 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:27,876 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:28,882 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:29,898 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:30,732 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:31,575 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:32,498 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:33,515 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:34,535 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:35,538 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:36,570 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:37,592 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:38,610 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:39,628 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:40,645 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:41,666 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:42,693 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:43,714 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:44,726 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:45,738 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:46,752 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:47,793 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:48,820 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:49,838 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:50,866 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:51,887 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:52,919 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:53,949 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:54,974 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:56,004 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:57,003 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:58,025 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:40:59,057 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:00,091 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:01,111 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:02,141 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:03,166 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:04,183 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:05,216 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:06,245 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:07,323 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:08,344 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:09,359 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:10,370 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:11,416 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:12,430 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:13,458 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:14,467 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:15,478 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:16,494 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:17,498 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:18,515 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:19,542 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:20,561 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:21,553 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:22,578 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:23,600 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:24,606 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:25,616 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:26,627 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:27,651 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:28,681 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:29,712 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:30,743 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:31,744 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:32,761 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:33,767 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:34,779 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:35,785 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:36,796 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:37,806 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:38,811 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:39,820 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:40,835 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:41,867 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:42,878 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:43,893 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:44,925 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:45,921 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:46,944 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:47,952 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:48,957 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:49,970 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:50,996 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:52,008 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:53,034 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:54,047 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:55,059 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:56,076 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:57,092 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:58,113 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:41:59,140 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:00,134 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:01,142 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:02,156 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:03,189 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:04,200 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:05,223 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:06,242 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:07,247 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:08,257 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:09,281 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:10,291 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:11,309 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:12,326 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:13,332 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:14,332 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:15,360 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:16,373 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:17,395 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:18,416 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:19,444 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:20,462 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:21,464 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:22,475 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:23,495 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:24,611 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:25,631 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:26,650 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:27,663 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:28,670 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:29,685 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:30,700 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:31,717 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:32,724 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:33,766 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:34,771 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:35,783 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:36,800 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:37,809 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:38,817 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:39,835 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:40,838 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:41,832 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:42,835 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:43,852 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:44,870 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:45,896 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:46,914 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:47,937 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:48,965 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:49,981 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:50,996 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:52,006 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:53,037 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:54,041 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:55,052 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:56,049 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:57,043 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:58,064 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:42:59,085 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:00,098 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:01,128 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:02,148 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:03,152 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:04,166 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:05,179 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:06,187 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:07,213 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:08,227 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:09,245 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:10,246 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:11,272 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:12,281 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:13,311 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:14,320 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:15,325 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:16,343 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:17,341 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:18,361 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:19,377 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:20,393 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:21,398 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:22,405 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:23,420 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:24,446 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:25,463 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:26,481 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:27,517 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:28,523 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:29,540 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:30,554 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:31,572 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:32,586 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:33,602 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:34,614 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:35,624 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:36,620 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:37,629 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:38,646 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:39,656 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:40,672 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:41,679 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:42,707 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:43,723 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:44,727 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:45,751 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:46,763 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:47,786 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:48,804 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:49,810 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:50,816 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:51,812 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:52,823 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:53,835 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:54,853 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:55,862 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:56,867 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:57,884 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:58,893 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:43:59,896 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:00,904 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:01,937 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:02,946 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:03,957 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:04,966 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:05,983 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:07,002 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:08,009 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:09,024 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:10,042 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:11,057 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:12,085 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:13,121 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:14,134 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:15,170 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:16,192 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:17,207 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:18,222 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:19,241 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:20,276 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:21,293 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:22,317 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:23,337 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:24,359 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:25,393 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:26,413 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:27,422 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:28,455 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:29,478 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:30,501 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:31,512 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:32,515 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:33,543 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:34,555 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:35,564 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:36,577 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:37,597 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:38,609 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:39,626 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:40,675 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:41,754 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:42,767 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:43,785 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:44,809 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:45,853 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:46,885 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:47,908 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:48,938 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:49,959 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:50,983 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:52,039 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:53,059 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:54,083 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:55,096 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:56,109 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:57,124 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:58,150 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:44:59,185 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:00,229 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:01,251 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:02,275 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:03,297 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:04,327 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:05,351 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:06,366 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:07,387 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:08,402 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:09,411 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:10,435 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:11,468 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:12,499 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:13,508 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:14,550 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:15,592 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:16,619 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:17,644 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:18,677 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:19,703 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:20,739 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:21,751 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:22,811 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:23,844 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:24,864 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:25,878 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:26,905 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:27,935 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:28,963 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:29,981 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:31,005 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:32,020 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:33,052 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:34,071 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:35,125 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:36,176 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:37,191 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:38,235 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:39,278 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:40,467 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:41,513 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:42,532 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:43,568 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:44,662 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:45,715 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:46,731 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:47,751 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:48,780 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:49,808 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:50,829 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:51,845 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:52,872 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:53,883 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:54,910 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:55,948 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:56,968 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:57,981 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:45:59,003 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:00,030 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:01,061 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:02,092 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:03,116 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:04,149 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:05,151 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:06,179 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:07,185 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:08,209 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:09,238 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:10,261 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:11,281 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:12,281 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:13,292 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:14,304 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:15,316 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:16,335 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:17,335 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:18,351 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:19,348 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:20,354 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:21,363 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:22,373 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:23,378 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:24,385 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:25,391 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:26,389 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:27,394 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:28,421 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:29,459 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:30,470 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:31,474 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:32,498 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:33,502 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:34,514 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:35,521 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:36,528 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:37,535 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:38,547 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:39,558 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:40,559 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:41,571 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:42,591 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:43,600 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:44,619 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:45,628 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:46,650 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:47,659 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:48,668 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:49,692 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:50,713 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:51,745 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:52,771 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:53,784 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:54,690 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:55,509 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:56,310 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:57,285 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:58,185 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:59,035 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:46:59,893 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:00,766 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:01,665 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:02,517 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:03,411 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:04,266 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:05,132 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:06,028 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:06,880 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:07,736 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:08,597 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:09,446 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:10,315 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:11,170 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:12,028 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:12,880 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:13,745 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:14,588 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:15,439 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:16,380 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:17,272 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:18,178 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:19,018 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:19,869 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:20,717 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:21,557 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:22,429 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:23,297 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:24,153 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:24,997 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:25,858 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:26,727 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:27,594 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:28,449 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:29,312 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:30,171 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:31,023 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:31,885 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:32,739 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:33,593 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:34,454 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:35,365 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:36,222 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:37,089 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:37,959 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:38,817 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:39,675 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:40,526 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:41,382 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:42,244 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:43,091 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:43,948 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:44,797 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:45,650 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:46,504 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:47,360 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:48,215 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:49,063 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:49,917 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:50,769 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:51,636 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:52,489 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:53,360 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:54,210 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:55,062 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:55,914 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:56,764 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:57,624 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:58,477 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:47:59,317 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:00,161 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:01,008 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:01,856 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:02,701 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:03,559 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:04,404 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:05,245 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:06,090 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:06,943 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:07,779 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:08,643 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:09,486 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:10,331 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:11,213 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:12,062 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:12,921 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:13,758 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:14,601 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:15,450 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:16,294 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:17,153 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:17,997 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:18,845 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:19,689 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:20,543 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:21,389 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:22,235 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:23,088 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:23,939 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:24,773 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:25,624 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:26,472 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:27,323 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:28,169 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:29,023 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:29,878 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:30,722 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:31,576 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:32,419 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:33,270 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:34,113 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:34,958 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:35,807 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:36,653 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:37,501 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:38,349 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:39,198 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:40,038 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:40,876 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:41,728 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:42,582 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:43,436 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:44,297 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:45,140 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:45,992 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:46,840 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:47,698 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:48,582 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:49,431 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:50,276 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:51,130 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:51,969 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:52,814 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:53,671 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:54,519 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:55,387 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:56,235 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:57,068 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:57,911 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:58,759 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:48:59,607 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:00,450 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:01,303 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:02,141 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:02,994 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:03,842 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:04,701 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:05,545 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:06,400 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:07,250 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:08,113 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:08,964 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:09,827 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:10,669 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:11,526 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:12,374 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:13,225 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:14,086 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:14,966 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:15,815 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:16,675 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:17,557 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:18,403 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:19,249 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:20,094 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:20,945 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:21,802 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:22,656 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:23,561 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:24,407 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:25,259 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:26,110 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:26,953 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:27,825 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:28,622 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:29,456 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:30,280 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:31,117 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:31,963 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:32,811 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:33,641 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:34,479 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:35,349 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:36,200 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:37,056 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:37,901 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:38,756 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:39,604 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:40,454 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:41,307 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:42,161 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:43,008 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:43,857 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:44,708 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:45,561 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:46,413 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:47,258 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:48,108 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:48,946 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:49,798 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:50,641 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:51,499 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:52,414 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:53,255 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:54,100 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:54,972 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:55,872 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:56,732 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:57,580 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:58,424 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:49:59,268 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:00,118 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:00,970 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:01,820 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:02,670 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:03,527 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:04,375 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:05,217 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:06,063 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:06,910 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:07,766 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:08,606 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:09,456 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:10,305 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:11,155 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:12,007 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:12,850 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:13,712 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:14,563 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:15,400 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:16,258 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:17,108 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:17,991 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:18,844 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:19,694 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:20,536 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:21,441 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:22,283 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:23,121 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:23,969 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:24,831 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:25,686 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:26,540 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:27,385 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:28,231 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:29,069 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:29,920 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:30,763 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:31,620 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:32,475 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:33,366 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:34,211 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:35,058 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:35,914 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:36,772 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:37,625 - database - INFO - Batch inserted 32 embeddings
+2026-05-14 23:50:38,066 - database - INFO - Batch inserted 15 embeddings
+2026-05-14 23:50:38,067 - __main__ - INFO - Inserted 40911 records from clean comments
+2026-05-14 23:50:38,103 - database - INFO - All database connections closed
+2026-05-14 23:51:58,076 - embeddings_manager - INFO - Using device: cpu
+2026-05-14 23:51:58,076 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-14 23:52:06,682 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-14 23:52:07,382 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-14 23:52:07,411 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-14 23:52:07,411 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-14 23:52:07,411 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-14 23:52:07,590 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-14T23:52:07.562776', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-14 23:52:07,590 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-14 23:52:07,590 - embeddings_manager - ERROR - Failed to load TF-IDF vectorizer: invalid load key, '\x10'.
+2026-05-14 23:52:07,784 - database - INFO - Database connection pool initialized successfully
+2026-05-14 23:52:07,784 - llm_client - INFO - Initializing LM Studio client: http://localhost:1234/v1
+2026-05-14 23:52:09,974 - llm_client - INFO - Connected to LM Studio successfully
+2026-05-15 00:06:11,244 - embeddings_manager - INFO - Rebuilding TF-IDF vectorizer from D:\NLP_Project\NLP\sentence_list\encoded_data\tfidf_labeled.pkl...
+2026-05-15 00:06:13,068 - embeddings_manager - INFO - TF-IDF vectorizer rebuilt and cached at D:\NLP_Project\NLP\sentence_list\encoded_data\tfidf_vectorizer.pkl
+2026-05-15 00:06:23,201 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:06:23,222 - dictionary_expander - INFO - Found 9 unknown words
+2026-05-15 00:06:41,838 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:06:43,970 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:06:46,018 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:06:48,086 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:06:48,087 - llm_client - ERROR - Failed to get response from LLM after retries
+2026-05-15 00:08:12,027 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:08:12,034 - dictionary_expander - INFO - Found 7 unknown words
+2026-05-15 00:08:26,044 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:08:28,098 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:08:30,150 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:08:32,233 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:08:32,233 - llm_client - ERROR - Failed to get response from LLM after retries
+2026-05-15 00:09:17,067 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:09:17,070 - dictionary_expander - INFO - Found 4 unknown words
+2026-05-15 00:09:25,129 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:09:27,190 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:09:29,246 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:09:31,315 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:09:31,315 - llm_client - ERROR - Failed to get response from LLM after retries
+2026-05-15 00:09:58,887 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:09:58,889 - dictionary_expander - INFO - Found 2 unknown words
+2026-05-15 00:10:02,833 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:10:04,907 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:10:06,991 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:10:09,045 - llm_client - ERROR - LLM API error: 400
+2026-05-15 00:10:09,045 - llm_client - ERROR - Failed to get response from LLM after retries
+2026-05-15 00:13:00,571 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:13:00,574 - dictionary_expander - INFO - Found 2 unknown words
+2026-05-15 00:13:04,470 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:13:33,738 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:13:33,742 - dictionary_expander - INFO - Found 4 unknown words
+2026-05-15 00:13:41,458 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:14:19,311 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:14:19,318 - dictionary_expander - INFO - Found 9 unknown words
+2026-05-15 00:14:40,799 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:15:56,604 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:15:56,802 - dictionary_expander - INFO - Found 239 unknown words
+2026-05-15 00:24:26,291 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:26:07,439 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:26:07,452 - dictionary_expander - INFO - Found 17 unknown words
+2026-05-15 00:26:42,822 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:28:07,824 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:28:07,871 - dictionary_expander - INFO - Found 55 unknown words
+2026-05-15 00:30:11,865 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:31:13,775 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:31:13,785 - dictionary_expander - INFO - Found 10 unknown words
+2026-05-15 00:31:33,770 - dictionary_expander - INFO - Added 0 new words to dictionary
+2026-05-15 00:54:23,270 - embeddings_manager - INFO - Using device: cpu
+2026-05-15 00:54:23,270 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-15 00:54:33,097 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-15 00:54:33,530 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-15 00:54:33,575 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-15 00:54:33,576 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-15 00:54:33,576 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-15 00:54:33,738 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-15T00:54:33.707505', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-15 00:54:33,739 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-15 00:54:33,741 - embeddings_manager - INFO - TF-IDF vectorizer loaded successfully
+2026-05-15 00:54:33,904 - database - INFO - Database connection pool initialized successfully
+2026-05-15 00:54:33,904 - llm_client - INFO - Initializing LM Studio client: http://localhost:1234/v1
+2026-05-15 00:54:35,960 - llm_client - INFO - Connected to LM Studio successfully
+2026-05-15 00:56:13,632 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 00:56:13,653 - dictionary_expander - INFO - Found 23 unknown words (lang_hint=vi)
+2026-05-15 00:56:15,660 - dictionary_expander - INFO - Added word 'lâu' to database (ID: 16)
+2026-05-15 00:56:21,156 - dictionary_expander - INFO - Added word 'cái' to database (ID: 19)
+2026-05-15 00:56:22,959 - dictionary_expander - INFO - Added word 'nào' to database (ID: 20)
+2026-05-15 00:56:25,403 - dictionary_expander - INFO - Added word 'hay' to database (ID: 21)
+2026-05-15 00:56:27,424 - dictionary_expander - INFO - Added word 'này' to database (ID: 22)
+2026-05-15 00:56:29,205 - dictionary_expander - INFO - Added word 'còn' to database (ID: 23)
+2026-05-15 00:56:38,688 - dictionary_expander - INFO - Added word 'tham' to database (ID: 27)
+2026-05-15 00:56:42,876 - dictionary_expander - INFO - Added word 'gia' to database (ID: 28)
+2026-05-15 00:56:49,083 - dictionary_expander - INFO - Added word 'anh' to database (ID: 31)
+2026-05-15 00:56:51,044 - dictionary_expander - INFO - Added word 'trúc' to database (ID: 32)
+2026-05-15 00:56:53,217 - dictionary_expander - INFO - Added word 'nhân' to database (ID: 33)
+2026-05-15 00:56:57,166 - dictionary_expander - INFO - Added word 'vào' to database (ID: 35)
+2026-05-15 00:57:03,081 - dictionary_expander - INFO - Added word 'thân' to database (ID: 38)
+2026-05-15 00:57:03,082 - dictionary_expander - INFO - Added 23 new words to dictionary
+2026-05-15 01:04:26,428 - embeddings_manager - INFO - Using device: cpu
+2026-05-15 01:04:26,430 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-15 01:04:35,330 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-15 01:04:35,775 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-15 01:04:35,803 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-15 01:04:35,804 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-15 01:04:35,804 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-15 01:04:36,022 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-15T01:04:36.003203', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-15 01:04:36,023 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-15 01:04:36,025 - embeddings_manager - INFO - TF-IDF vectorizer loaded successfully
+2026-05-15 01:04:36,183 - database - INFO - Database connection pool initialized successfully
+2026-05-15 01:04:36,183 - llm_client - INFO - Initializing LM Studio client: http://localhost:1234/v1
+2026-05-15 01:04:38,252 - llm_client - INFO - Connected to LM Studio successfully
+2026-05-15 01:04:51,411 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 01:04:51,438 - dictionary_expander - INFO - Found 20 unknown words (lang_hint=vi)
+2026-05-15 01:04:57,086 - dictionary_expander - INFO - Added word 'giàu' to database (ID: 41)
+2026-05-15 01:04:58,928 - dictionary_expander - INFO - Added word 'tình' to database (ID: 42)
+2026-05-15 01:05:16,856 - dictionary_expander - INFO - Added word 'showbiz' to database (ID: 51)
+2026-05-15 01:05:18,677 - dictionary_expander - INFO - Added word 'lên' to database (ID: 52)
+2026-05-15 01:05:20,489 - dictionary_expander - INFO - Added word 'khùng' to database (ID: 53)
+2026-05-15 01:05:24,298 - dictionary_expander - INFO - Added word 'tâm' to database (ID: 55)
+2026-05-15 01:05:30,019 - dictionary_expander - INFO - Added 20 new words to dictionary
+2026-05-15 01:06:15,118 - rag_retriever - INFO - Retrieved 0 similar documents
+2026-05-15 01:06:15,159 - dictionary_expander - INFO - Found 0 unknown words (lang_hint=vi)
+2026-05-15 01:08:14,448 - embeddings_manager - INFO - Using device: cpu
+2026-05-15 01:08:14,451 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-15 01:08:23,375 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-15 01:08:23,691 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-15 01:08:23,724 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-15 01:08:23,725 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-15 01:08:23,725 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-15 01:08:23,907 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-15T01:08:23.879953', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-15 01:08:23,908 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-15 01:08:23,909 - embeddings_manager - INFO - TF-IDF vectorizer loaded successfully
+2026-05-15 01:08:24,040 - database - INFO - Database connection pool initialized successfully
+2026-05-15 01:08:24,041 - llm_client - INFO - Initializing LM Studio client: http://localhost:1234/v1
+2026-05-15 01:08:26,111 - llm_client - INFO - Connected to LM Studio successfully
+2026-05-15 01:08:53,453 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 01:08:53,479 - dictionary_expander - INFO - Found 14 unknown words (lang_hint=vi)
+2026-05-15 01:08:53,795 - dictionary_expander - INFO - Added word word=m\u1ed9t to database (ID: 59)
+2026-05-15 01:08:55,595 - dictionary_expander - INFO - Added word word=chi\u1ebfc to database (ID: 60)
+2026-05-15 01:08:57,410 - dictionary_expander - INFO - Added word word=th\u01b0\u01a1ng to database (ID: 61)
+2026-05-15 01:08:59,196 - dictionary_expander - INFO - Added word word=ho\xe0nh to database (ID: 62)
+2026-05-15 01:09:01,038 - dictionary_expander - INFO - Added word word=tr\xe1ng to database (ID: 63)
+2026-05-15 01:09:02,805 - dictionary_expander - INFO - Added word word=kh\xe1ch to database (ID: 64)
+2026-05-15 01:09:05,633 - dictionary_expander - INFO - Added word word=m\u1eddi to database (ID: 65)
+2026-05-15 01:09:07,596 - dictionary_expander - INFO - Added word word=qu\xe1 to database (ID: 66)
+2026-05-15 01:09:09,547 - dictionary_expander - INFO - Added word word=tr\u1eddi to database (ID: 67)
+2026-05-15 01:09:11,483 - dictionary_expander - INFO - Added word word=ch\u1ecb to database (ID: 68)
+2026-05-15 01:09:13,285 - dictionary_expander - INFO - Added word word=d\xe0nh to database (ID: 69)
+2026-05-15 01:09:16,061 - dictionary_expander - INFO - Added word word=cho to database (ID: 70)
+2026-05-15 01:09:17,931 - dictionary_expander - INFO - Added word word=ch\u01a1i to database (ID: 71)
+2026-05-15 01:09:19,773 - dictionary_expander - INFO - Added word word=l\u1ee3i to database (ID: 72)
+2026-05-15 01:09:19,773 - dictionary_expander - INFO - Added 14 new words to dictionary
+2026-05-15 01:14:35,425 - embeddings_manager - INFO - Using device: cpu
+2026-05-15 01:14:35,426 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-15 01:14:44,200 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-15 01:14:44,488 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-15 01:14:44,517 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-15 01:14:44,518 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-15 01:14:44,518 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-15 01:14:44,677 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-15T01:14:44.657314', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-15 01:14:44,677 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-15 01:14:44,679 - embeddings_manager - INFO - TF-IDF vectorizer loaded successfully
+2026-05-15 01:14:44,804 - database - INFO - Database connection pool initialized successfully
+2026-05-15 01:14:44,804 - llm_client - INFO - Initializing LM Studio client: http://localhost:1234/v1
+2026-05-15 01:14:46,856 - llm_client - INFO - Connected to LM Studio successfully
+2026-05-15 01:15:24,356 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 01:15:24,384 - dictionary_expander - INFO - Found 20 unknown words (lang_hint=vi)
+2026-05-15 01:15:26,321 - dictionary_expander - INFO - Added word word=v\u1eady to database (ID: 73)
+2026-05-15 01:15:30,667 - dictionary_expander - INFO - Added word word=duy to database (ID: 74)
+2026-05-15 01:15:32,487 - dictionary_expander - INFO - Added word word=nh\u1ea5t to database (ID: 75)
+2026-05-15 01:15:34,313 - dictionary_expander - INFO - Added word word=l\xe0m to database (ID: 76)
+2026-05-15 01:15:36,098 - dictionary_expander - INFO - Added word word=b\xe0i to database (ID: 77)
+2026-05-15 01:15:38,827 - dictionary_expander - INFO - Added word word=khi to database (ID: 78)
+2026-05-15 01:15:41,272 - dictionary_expander - INFO - Added word word=debut to database (ID: 79)
+2026-05-15 01:15:43,096 - dictionary_expander - INFO - Added word word=\u0111\u1ebfn to database (ID: 80)
+2026-05-15 01:15:44,903 - dictionary_expander - INFO - Added word word=\u0111\u1ec1u to database (ID: 81)
+2026-05-15 01:15:46,729 - dictionary_expander - INFO - Added word word=b\u1eaft to database (ID: 82)
+2026-05-15 01:15:49,408 - dictionary_expander - INFO - Added word word=tai to database (ID: 83)
+2026-05-15 01:15:52,023 - dictionary_expander - INFO - Added word word=thi to database (ID: 84)
+2026-05-15 01:15:53,903 - dictionary_expander - INFO - Added word word=m\xf9a to database (ID: 85)
+2026-05-15 01:15:55,746 - dictionary_expander - INFO - Added word word=ng\u1ed3i to database (ID: 86)
+2026-05-15 01:15:57,601 - dictionary_expander - INFO - Added word word=v\u1eeba to database (ID: 87)
+2026-05-15 01:15:59,431 - dictionary_expander - INFO - Added word word=h\u1ecdc to database (ID: 88)
+2026-05-15 01:16:03,743 - dictionary_expander - INFO - Added word word=nghe to database (ID: 89)
+2026-05-15 01:16:06,219 - dictionary_expander - INFO - Added word word=chi to database (ID: 90)
+2026-05-15 01:16:08,668 - dictionary_expander - INFO - Added word word=playlist to database (ID: 91)
+2026-05-15 01:16:10,911 - dictionary_expander - INFO - Added word word=x\xf3t to database (ID: 92)
+2026-05-15 01:16:10,911 - dictionary_expander - INFO - Added 20 new words to dictionary
+2026-05-15 01:17:02,596 - rag_retriever - INFO - Retrieved 0 similar documents
+2026-05-15 01:17:02,645 - dictionary_expander - INFO - Found 0 unknown words (lang_hint=vi)
+2026-05-15 01:18:51,801 - rag_retriever - INFO - Retrieved 0 similar documents
+2026-05-15 01:18:51,850 - dictionary_expander - INFO - Found 0 unknown words (lang_hint=vi)
+2026-05-15 01:19:25,321 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 01:19:25,362 - dictionary_expander - INFO - Found 0 unknown words (lang_hint=vi)
+2026-05-15 01:26:25,006 - embeddings_manager - INFO - Using device: cpu
+2026-05-15 01:26:25,009 - embeddings_manager - INFO - Loading XLM-RoBERTa model: cardiffnlp/twitter-xlm-roberta-base-sentiment
+2026-05-15 01:26:33,734 - embeddings_manager - INFO - XLM-RoBERTa model loaded successfully
+2026-05-15 01:26:34,023 - gensim.utils - INFO - loading Doc2Vec object from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model
+2026-05-15 01:26:34,055 - gensim.utils - INFO - loading dv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.dv.* with mmap=None
+2026-05-15 01:26:34,056 - gensim.utils - INFO - loading wv recursively from D:\NLP_Project\NLP\sentence_list\encoded_data\doc2vec_model.model.wv.* with mmap=None
+2026-05-15 01:26:34,056 - gensim.utils - INFO - setting ignored attribute cum_table to None
+2026-05-15 01:26:34,279 - gensim.utils - INFO - Doc2Vec lifecycle event {'fname': 'D:\\NLP_Project\\NLP\\sentence_list\\encoded_data\\doc2vec_model.model', 'datetime': '2026-05-15T01:26:34.249935', 'gensim': '4.3.3', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'event': 'loaded'}
+2026-05-15 01:26:34,279 - embeddings_manager - INFO - Doc2Vec model loaded successfully
+2026-05-15 01:26:34,281 - embeddings_manager - INFO - TF-IDF vectorizer loaded successfully
+2026-05-15 01:26:34,401 - database - INFO - Database connection pool initialized successfully
+2026-05-15 01:26:34,402 - llm_client - INFO - Initializing LM Studio client: http://localhost:1234/v1
+2026-05-15 01:26:36,456 - llm_client - INFO - Connected to LM Studio successfully
+2026-05-15 01:28:56,040 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 01:28:56,061 - dictionary_expander - INFO - Found 12 unknown words (lang_hint=vi)
+2026-05-15 01:28:58,088 - dictionary_expander - INFO - Added word word=n\u1ebfu to database (ID: 93)
+2026-05-15 01:29:00,211 - dictionary_expander - INFO - Added word word=ph\xe1t to database (ID: 94)
+2026-05-15 01:29:02,150 - dictionary_expander - INFO - Added word word=h\xe0nh to database (ID: 95)
+2026-05-15 01:29:03,984 - dictionary_expander - INFO - Added word word=n\u0103m to database (ID: 96)
+2026-05-15 01:29:05,868 - dictionary_expander - INFO - Added word word=1900 to database (ID: 97)
+2026-05-15 01:29:07,752 - dictionary_expander - INFO - Added word word=th\xec to database (ID: 98)
+2026-05-15 01:29:10,497 - dictionary_expander - INFO - Added word word=titanic to database (ID: 99)
+2026-05-15 01:29:12,412 - dictionary_expander - INFO - Added word word=l\xe3ng to database (ID: 100)
+2026-05-15 01:29:14,296 - dictionary_expander - INFO - Added word word=qu\xean to database (ID: 101)
+2026-05-15 01:29:16,140 - dictionary_expander - INFO - Added word word=th\u1ea3m to database (ID: 102)
+2026-05-15 01:29:18,090 - dictionary_expander - INFO - Added word word=ho\u1ea1 to database (ID: 103)
+2026-05-15 01:29:19,979 - dictionary_expander - INFO - Added word word=t\u1ed3i to database (ID: 104)
+2026-05-15 01:29:19,979 - dictionary_expander - INFO - Added 12 new words to dictionary
+2026-05-15 01:30:32,920 - rag_retriever - INFO - Retrieved 5 similar documents
+2026-05-15 01:30:32,968 - dictionary_expander - INFO - Found 27 unknown words (lang_hint=vi)
+2026-05-15 01:30:34,821 - dictionary_expander - INFO - Added word word=qu\xed to database (ID: 105)
+2026-05-15 01:30:36,706 - dictionary_expander - INFO - Added word word=t\xf4i to database (ID: 106)
+2026-05-15 01:30:38,619 - dictionary_expander - INFO - Added word word=ch\u1ee7 to database (ID: 107)
+2026-05-15 01:30:40,470 - dictionary_expander - INFO - Added word word=s\xe2n to database (ID: 108)
+2026-05-15 01:30:43,010 - dictionary_expander - INFO - Added word word=pickleball to database (ID: 109)
+2026-05-15 01:30:44,945 - dictionary_expander - INFO - Added word word=h\xf4m to database (ID: 110)
+2026-05-15 01:30:46,802 - dictionary_expander - INFO - Added word word=mu\u1ed1n to database (ID: 111)
+2026-05-15 01:30:48,701 - dictionary_expander - INFO - Added word word=\u0111\xf3ng to database (ID: 112)
+2026-05-15 01:30:50,591 - dictionary_expander - INFO - Added word word=c\u1eeda to database (ID: 113)
+2026-05-15 01:30:52,691 - dictionary_expander - INFO - Added word word=s\u1edbm to database (ID: 114)
+2026-05-15 01:30:54,572 - dictionary_expander - INFO - Added word word=vi\u1ec7c to database (ID: 115)
+2026-05-15 01:30:56,354 - dictionary_expander - INFO - Added word word=b\u1eadn to database (ID: 116)
+2026-05-15 01:30:58,181 - dictionary_expander - INFO - Added word word=kh\xf4ng to database (ID: 117)
+2026-05-15 01:31:00,062 - dictionary_expander - INFO - Added word word=bi\u1ebft to database (ID: 118)
+2026-05-15 01:31:01,914 - dictionary_expander - INFO - Added word word=th\u1ebf to database (ID: 119)
+2026-05-15 01:31:03,788 - dictionary_expander - INFO - Added word word=th\u1eadt to database (ID: 120)
+2026-05-15 01:31:05,748 - dictionary_expander - INFO - Added word word=b\u1eadt to database (ID: 121)
+2026-05-15 01:31:07,633 - dictionary_expander - INFO - Added word word=h\xe1t to database (ID: 122)
+2026-05-15 01:31:09,470 - dictionary_expander - INFO - Added word word=b\u1ea1n to database (ID: 123)
+2026-05-15 01:31:11,632 - dictionary_expander - INFO - Added word word=ch\xe2n to database (ID: 124)
+2026-05-15 01:31:13,513 - dictionary_expander - INFO - Added word word=th\xe0nh to database (ID: 125)
+2026-05-15 01:31:15,374 - dictionary_expander - INFO - Added word word=c\xe1m to database (ID: 126)
+2026-05-15 01:31:18,287 - dictionary_expander - INFO - Added word word=giai to database (ID: 127)
+2026-05-15 01:31:20,215 - dictionary_expander - INFO - Added word word=\u0111i\u1ec7u to database (ID: 128)
+2026-05-15 01:31:22,169 - dictionary_expander - INFO - Added word word=ch\xfac to database (ID: 129)
+2026-05-15 01:31:24,717 - dictionary_expander - INFO - Added word word=bao to database (ID: 130)
+2026-05-15 01:31:26,531 - dictionary_expander - INFO - Added word word=gi\u1edd to database (ID: 131)
+2026-05-15 01:31:26,531 - dictionary_expander - INFO - Added 27 new words to dictionary
+2026-05-15 01:31:49,122 - rag_retriever - INFO - Retrieved 0 similar documents
+2026-05-15 01:31:49,219 - dictionary_expander - INFO - Found 0 unknown words (lang_hint=vi)

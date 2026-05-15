@@ -279,34 +279,51 @@ def create_sentiment_report(results: Dict) -> str:
     """
     
     lines = []
-    lines.append("\n" + "="*50)
-    lines.append("SENTIMENT ANALYSIS REPORT")
-    lines.append("="*50)
-    
-    if 'input' in results:
-        lines.append(f"\nComment: {results['input'][:200]}")
-    
-    if 'sentiment_analysis' in results:
-        sa = results['sentiment_analysis']
-        lines.append(f"\nPredicted Sentiment: {sa.get('predicted_label', 'unknown').upper()}")
-        lines.append(f"Confidence: {sa.get('confidence', 0):.1%}")
-        lines.append(f"Similar Documents: {sa.get('num_similar_docs', 0)}")
-        
-        if 'label_distribution' in sa:
-            lines.append("\nLabel Distribution:")
-            for label, count in sa['label_distribution'].items():
+    lines.append("\n" + "=" * 50)
+    lines.append("BAO CAO PHAN TICH BINH LUAN")
+    lines.append("=" * 50)
+
+    if "input" in results:
+        lines.append(f"\nBinh luan: {results['input'][:200]}")
+
+    sentiment_module = results.get("sentiment_module", {})
+    if sentiment_module:
+        final_label = sentiment_module.get("final_label", "khong xac dinh")
+        lines.append(f"\nCam xuc du doan: {str(final_label)}")
+
+        predictions = sentiment_module.get("predictions", {})
+        if predictions:
+            lines.append("Ket qua theo encoder:")
+            for model_name, pred in predictions.items():
+                label = pred.get("label", "khong xac dinh")
+                confidence = pred.get("confidence", None)
+                if confidence is None:
+                    lines.append(f"  - {model_name}: {label}")
+                else:
+                    lines.append(f"  - {model_name}: {label} ({confidence:.1%})")
+
+    rag_pipeline = results.get("rag_pipeline", {})
+    if rag_pipeline:
+        dist = rag_pipeline.get("distribution", {})
+        if dist:
+            lines.append("\nPhan bo nhan tu RAG:")
+            for label, count in dist.items():
                 lines.append(f"  - {label}: {count}")
-    
-    if 'similar_documents' in results and results['similar_documents']:
-        lines.append("\nTop Similar Examples:")
-        for i, doc in enumerate(results['similar_documents'][:3], 1):
-            lines.append(f"  {i}. [{doc['sentiment']}] {doc['text'][:80]}...")
-    
-    if 'llm_explanation' in results and results['llm_explanation']:
-        lines.append(f"\nExplanation:\n{results['llm_explanation']}")
-    
-    lines.append("\n" + "="*50 + "\n")
-    
+
+        docs = rag_pipeline.get("documents", [])
+        if docs:
+            lines.append("\nVi du tuong tu (top 3):")
+            for i, doc in enumerate(docs[:3], 1):
+                lines.append(
+                    f"  {i}. [{doc.get('sentiment', 'khong xac dinh')}] "
+                    f"{doc.get('text', '')[:80]}..."
+                )
+
+    explanation = results.get("llm_explanation")
+    if explanation:
+        lines.append(f"\nGiai thich (LLM):\n{explanation}")
+
+    lines.append("\n" + "=" * 50 + "\n")
     return "\n".join(lines)
 
 
@@ -366,39 +383,40 @@ def print_summary_statistics(results: List[Dict]) -> None:
         results: List of analysis results
     """
     
-    print("\n" + "="*50)
-    print("BATCH ANALYSIS SUMMARY")
-    print("="*50)
+    print("\n" + "=" * 50)
+    print("TONG KET PHAN TICH HANG LOAT")
+    print("=" * 50)
     
     total = len(results)
     errors = sum(1 for r in results if 'error' in r)
     successful = total - errors
     
-    print(f"Total processed: {total}")
-    print(f"Successful: {successful}")
-    print(f"Errors: {errors}")
+    print(f"Tong so da xu ly: {total}")
+    print(f"Thanh cong: {successful}")
+    print(f"Loi: {errors}")
     
-    # Sentiment distribution
+    # Phan bo nhan cam xuc
     label_dist = {}
     for result in results:
-        if 'sentiment_analysis' in result:
-            label = result['sentiment_analysis'].get('predicted_label', 'unknown')
+        if 'sentiment_module' in result:
+            label = result['sentiment_module'].get('final_label', 'khong_xac_dinh')
             label_dist[label] = label_dist.get(label, 0) + 1
     
     if label_dist:
-        print("\nSentiment Distribution:")
+        print("\nPhan bo cam xuc:")
         for label, count in sorted(label_dist.items(), key=lambda x: x[1], reverse=True):
             percentage = (count / successful * 100) if successful > 0 else 0
             print(f"  {label}: {count} ({percentage:.1f}%)")
     
-    # Average confidence
+    # Do tin cay trung binh (neu co)
     confidences = [
-        r['sentiment_analysis'].get('confidence', 0)
-        for r in results if 'sentiment_analysis' in r
+        r.get('sentiment_module', {}).get('predictions', {}).get('xlmroberta', {}).get('confidence')
+        for r in results if 'sentiment_module' in r
     ]
+    confidences = [c for c in confidences if c is not None]
     if confidences:
-        print(f"\nAverage Confidence: {np.mean(confidences):.1%}")
-        print(f"Min Confidence: {np.min(confidences):.1%}")
-        print(f"Max Confidence: {np.max(confidences):.1%}")
+        print(f"\nDo tin cay trung binh (xlmroberta): {np.mean(confidences):.1%}")
+        print(f"Thap nhat: {np.min(confidences):.1%}")
+        print(f"Cao nhat: {np.max(confidences):.1%}")
     
-    print("="*50 + "\n")
+    print("=" * 50 + "\n")

@@ -9,7 +9,9 @@ from typing import List, Dict, Tuple, Optional
 import hashlib
 import json
 
-from config import RAG_CONFIG, LOGGING_CONFIG
+import numpy as np
+
+from config import RAG_CONFIG, LOGGING_CONFIG, EMBEDDING_CONFIG
 from database import get_db_manager
 from embeddings_manager import get_embeddings_manager
 
@@ -36,6 +38,25 @@ class RAGRetriever:
         self.embeddings = get_embeddings_manager()
         self.cache = {}
     
+    def _query_embedding(self, query: str, model: str) -> np.ndarray:
+        """Vector truy vấn theo đúng cột embedding trong DB (xlmroberta / doc2vec / tfidf)."""
+        m = (model or "xlmroberta").lower().replace("-", "_")
+        if m == "tf_idf":
+            m = "tfidf"
+        if m == "xlm_roberta":
+            m = "xlmroberta"
+        if m == "xlmroberta":
+            return np.asarray(self.embeddings.embed_text_xlmroberta(query), dtype=np.float32)
+        if m == "doc2vec":
+            return np.asarray(self.embeddings.embed_text_doc2vec(query.lower().split()), dtype=np.float32)
+        if m == "tfidf":
+            vec = self.embeddings.embed_sentence(query, models=["tfidf"]).get("tfidf")
+            if vec is None:
+                dim = int(EMBEDDING_CONFIG.get("tfidf", {}).get("max_features", 500))
+                return np.zeros(dim, dtype=np.float32)
+            return np.asarray(vec, dtype=np.float32).reshape(-1)
+        return np.asarray(self.embeddings.embed_text_xlmroberta(query), dtype=np.float32)
+
     def retrieve_context(self, query: str, top_k: int = None,
                         model: str = 'xlmroberta') -> List[Dict]:
         """
@@ -52,11 +73,7 @@ class RAGRetriever:
         top_k = top_k or self.top_k
         
         try:
-            # Generate query embedding
-            if model == 'xlmroberta':
-                query_embedding = self.embeddings.embed_text_xlmroberta(query)
-            else:
-                query_embedding = self.embeddings.embed_text_xlmroberta(query)
+            query_embedding = self._query_embedding(query, model)
             
             # Search similar embeddings in database
             similar_docs = self.db.search_similar_embeddings(
