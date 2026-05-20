@@ -68,63 +68,63 @@
       },
       "metrics": {
         "train": {
-          "accuracy": 0.9960888392233552,
-          "precision": 0.9961369849597923,
-          "recall": 0.9947201635040691,
-          "f1": 0.9954242634025926
+          "accuracy": 0.8475345718675793,
+          "precision": 0.8641562723037559,
+          "recall": 0.8022316153488974,
+          "f1": 0.8245533855779388
         },
         "val": {
-          "accuracy": 0.9770255407552243,
-          "precision": 0.9789968628444248,
-          "recall": 0.9705085288787728,
-          "f1": 0.974628899312291
+          "accuracy": 0.740926310644018,
+          "precision": 0.7463161303849096,
+          "recall": 0.6720646606334005,
+          "f1": 0.6922977443251007
         },
         "test": {
-          "accuracy": 0.9772727272727273,
-          "precision": 0.981969577553594,
-          "recall": 0.9690718401011784,
-          "f1": 0.9753416971004132
+          "accuracy": 0.7512218963831867,
+          "precision": 0.7646743878470404,
+          "recall": 0.685984065277334,
+          "f1": 0.7082398273006915
         }
       },
       "parameters": {
-        "encoder_params": 500,
-        "svm_params_estimate": 3321235,
-        "total_params_estimate": 3321735,
-        "n_support_vectors": 6616,
-        "n_features": 500
+        "encoder_params": 1500,
+        "svm_params_estimate": 29814703,
+        "total_params_estimate": 29816203,
+        "n_support_vectors": 19850,
+        "n_features": 1500
       },
       "timing_seconds": {
-        "encoder": 1.5383746000006795,
-        "svm_fit": 731.1158675999977
+        "encoder": 3.725713099999666,
+        "svm_fit": 6806.6093603
       },
       "model_path": "D:\\NLP_Project\\NLP\\sentence_list\\results\\svm_models\\svm_model_tf_idf.pkl",
       "encoder_metadata": {
         "method": "TF-IDF",
         "n_samples": 40911,
-        "n_features": 500,
-        "vocab_size": 500,
-        "encoder_params": 500,
-        "encode_time_s": 1.5383746000006795,
-        "cluster_time_s": 9.35684489999403,
-        "total_time_s": 10.89521949999471,
-        "label_map": {
-          "0": "criticism",
-          "2": "neutral",
-          "1": "praise"
-        },
+        "n_features": 1500,
+        "vocab_size": 1500,
+        "encoder_params": 1500,
+        "encode_time_s": 3.725713099999666,
+        "labeling_time_s": 3.3353258000001915,
+        "total_time_s": 7.061038899999858,
         "label_dist": {
-          "praise": 30094,
-          "neutral": 8698,
-          "criticism": 2119
+          "criticism": 7500,
+          "neutral": 19674,
+          "praise": 13737
+        },
+        "labeling": {
+          "labeling_mode": "teacher",
+          "teacher_file": "xlmroberta_labeled.pkl"
         },
         "tfidf_config": {
-          "max_features": 500,
+          "max_features": 1500,
           "ngram_range": [
             1,
             2
           ],
           "sublinear_tf": true,
-          "min_df": 2
+          "min_df": 3,
+          "max_df": 0.92
         }
       }
     },
@@ -137,61 +137,64 @@
       },
       "metrics": {
         "train": {
-          "accuracy": 0.9985333147087582,
-          "precision": 0.9990158205551856,
-          "recall": 0.9974899376744291,
-          "f1": 0.9982511335383362
+          "accuracy": 0.7528635284257578,
+          "precision": 0.810361453703031,
+          "recall": 0.6731153893287903,
+          "f1": 0.7023249173850697
         },
         "val": {
-          "accuracy": 0.9795918367346939,
-          "precision": 0.9852879334839187,
-          "recall": 0.898339964556324,
-          "f1": 0.934725108128864
+          "accuracy": 0.628498105829158,
+          "precision": 0.633383174897053,
+          "recall": 0.5281908586091183,
+          "f1": 0.528556929988936
         },
         "test": {
-          "accuracy": 0.9802052785923754,
-          "precision": 0.9858191968446768,
-          "recall": 0.9256531433260555,
-          "f1": 0.9524530419270674
+          "accuracy": 0.6392961876832844,
+          "precision": 0.6500362483288549,
+          "recall": 0.5393293392977597,
+          "f1": 0.5407758219880497
         }
       },
       "parameters": {
-        "encoder_params": 2917600,
-        "svm_params_estimate": 507453,
-        "total_params_estimate": 3425053,
-        "n_support_vectors": 4975,
-        "n_features": 100
+        "encoder_params": 2052000,
+        "svm_params_estimate": 4722359,
+        "total_params_estimate": 6774359,
+        "n_support_vectors": 23378,
+        "n_features": 200
       },
       "timing_seconds": {
-        "encoder": 164.17824180000025,
-        "svm_fit": 214.97816980000061
+        "encoder": 298.62514610000017,
+        "svm_fit": 1601.4111520999995
       },
       "model_path": "D:\\NLP_Project\\NLP\\sentence_list\\results\\svm_models\\svm_model_doc2vec.pkl",
       "encoder_metadata": {
         "method": "Doc2Vec",
         "n_samples": 40911,
-        "n_features": 100,
-        "vocab_size": 14588,
-        "encoder_params": 2917600,
-        "encode_time_s": 164.17824180000025,
-        "cluster_time_s": 1.5630017000003136,
-        "total_time_s": 165.74124350000056,
-        "label_map": {
-          "0": "criticism",
-          "2": "neutral",
-          "1": "praise"
-        },
+        "n_features": 200,
+        "vocab_size": 5130,
+        "encoder_params": 2052000,
+        "encode_time_s": 298.62514610000017,
+        "labeling_time_s": 2.4478272000001198,
+        "total_time_s": 301.0729733000003,
         "label_dist": {
-          "praise": 316,
-          "neutral": 23009,
-          "criticism": 17586
+          "criticism": 7500,
+          "neutral": 19674,
+          "praise": 13737
+        },
+        "labeling": {
+          "labeling_mode": "teacher",
+          "teacher_file": "xlmroberta_labeled.pkl"
         },
         "d2v_config": {
-          "vector_size": 100,
-          "window": 5,
-          "min_count": 1,
-          "epochs": 40,
-          "dm": 1
+          "vector_size": 200,
+          "window": 8,
+          "min_count": 3,
+          "epochs": 50,
+          "dm": 1,
+          "dbow_words": 1,
+          "infer_epochs": 30,
+          "negative": 8,
+          "workers": 4
         }
       }
     },
@@ -224,14 +227,14 @@
       },
       "parameters": {
         "encoder_params": 278045955,
-        "svm_params_estimate": 3223223,
-        "total_params_estimate": 281269178,
-        "n_support_vectors": 4186,
+        "svm_params_estimate": 3223993,
+        "total_params_estimate": 281269948,
+        "n_support_vectors": 4187,
         "n_features": 768
       },
       "timing_seconds": {
-        "encoder": 4180.739385499997,
-        "svm_fit": 315.36568380000244
+        "encoder": 6207.642383800001,
+        "svm_fit": 348.1876276999992
       },
       "model_path": "D:\\NLP_Project\\NLP\\sentence_list\\results\\svm_models\\svm_model_xlm_roberta.pkl",
       "encoder_metadata": {
@@ -239,8 +242,8 @@
         "n_samples": 40911,
         "n_features": 768,
         "encoder_params": 278045955,
-        "encode_time_s": 4180.739385499997,
-        "total_time_s": 4180.739385499997,
+        "encode_time_s": 6207.642383800001,
+        "total_time_s": 6207.642383800001,
         "label_dist": {
           "praise": 13737,
           "neutral": 19674,

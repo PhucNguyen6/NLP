@@ -19,7 +19,7 @@ import joblib
 from config import EMBEDDING_CONFIG, LOGGING_CONFIG, MODELS_DIR
 from embeddings_manager import get_embeddings_manager
 from llm_client import get_llm_client
-from preprocessing_comment import preprocess_comment
+from data import preprocess_comment
 from rag_retriever import get_rag_retriever
 from dictionary_expander import get_dictionary_expander
 
@@ -123,12 +123,26 @@ class RAGPipeline:
     def __init__(self):
         self.retriever = get_rag_retriever()
 
-    def run(self, query: str, top_k: int = 5, model: str = "xlmroberta") -> Dict:
+    def run(
+        self,
+        query: str,
+        top_k: int = 5,
+        model: str = "xlmroberta",
+        dict_top_k: int | None = None,
+    ) -> Dict:
         m = model if model in PRIMARY_ENCODERS else "xlmroberta"
-        docs = self.retriever.retrieve_context(query=query, top_k=top_k, model=m)
-        distribution = Counter([to_vi_label(d.get("sentiment_label", "neutral")) for d in docs])
+        hybrid = self.retriever.retrieve_hybrid_context(
+            query=query, top_k=top_k, dict_top_k=dict_top_k, model=m
+        )
+        comment_docs = hybrid.get("comment_documents") or []
+        dictionary_docs = hybrid.get("dictionary_documents") or []
+        distribution = Counter(
+            [to_vi_label(d.get("sentiment_label", "neutral")) for d in comment_docs]
+        )
         return {
-            "documents": docs,
+            "documents": comment_docs,
+            "comment_documents": comment_docs,
+            "dictionary_documents": dictionary_docs,
             "distribution": dict(distribution),
             "rag_majority_label": distribution.most_common(1)[0][0] if distribution else "trung lap",
         }
@@ -139,13 +153,30 @@ class LLMService:
         self.enabled = enabled
         self.client = get_llm_client() if enabled else None
 
-    def explain(self, comment: str, sentiment_label: str, rag_docs: List[Dict]) -> Optional[str]:
+    def explain(
+        self,
+        comment: str,
+        sentiment_label: str,
+        rag_docs: List[Dict],
+        dictionary_docs: List[Dict] | None = None,
+    ) -> Optional[str]:
         if not self.enabled or self.client is None:
             return None
-        context = "\n".join(
-            f"- [{to_vi_label(doc.get('sentiment_label', 'unknown'))}] {doc.get('text_content', '')[:160]}"
-            for doc in rag_docs[:3]
-        )
+        parts: List[str] = []
+        if rag_docs:
+            parts.append("Bình luận tương tự:")
+            parts.extend(
+                f"- [{to_vi_label(doc.get('sentiment_label', 'unknown'))}] "
+                f"{doc.get('text_content', '')[:160]}"
+                for doc in rag_docs[:3]
+            )
+        if dictionary_docs:
+            parts.append("Từ điển:")
+            parts.extend(
+                f"- {doc.get('word', '')}: {(doc.get('semantics') or doc.get('text_content', ''))[:120]}"
+                for doc in dictionary_docs[:3]
+            )
+        context = "\n".join(parts)
         return self.client.generate_sentiment_explanation(
             query=comment,
             context=context,
@@ -207,7 +238,12 @@ class SentimentArchitecturePipeline:
 
         explanation = None
         if return_explanation:
-            explanation = self.llm.explain(comment, final_label, rag_result["documents"])
+            explanation = self.llm.explain(
+                comment,
+                final_label,
+                rag_result.get("comment_documents") or rag_result["documents"],
+                rag_result.get("dictionary_documents"),
+            )
 
         return {
             "timestamp": datetime.now().isoformat(),
@@ -225,8 +261,19 @@ class SentimentArchitecturePipeline:
                         "text": d.get("text_content", "")[:180],
                         "sentiment": to_vi_label(d.get("sentiment_label", "unknown")),
                         "similarity": float(d.get("similarity", 0.0)),
+                        "source": d.get("source", "comments"),
                     }
-                    for d in rag_result["documents"]
+                    for d in rag_result.get("comment_documents") or rag_result["documents"]
+                ],
+                "dictionary_documents": [
+                    {
+                        "word": d.get("word", ""),
+                        "semantics": (d.get("semantics") or "")[:200],
+                        "similarity": float(d.get("similarity", 0.0)),
+                        "language": d.get("language"),
+                        "source": d.get("source", "dictionary"),
+                    }
+                    for d in rag_result.get("dictionary_documents") or []
                 ],
             },
             "llm_explanation": explanation,

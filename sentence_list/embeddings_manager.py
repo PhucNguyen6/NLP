@@ -283,10 +283,9 @@ class EmbeddingsManager:
                 continue
             
             try:
-                with open(model_path, 'rb') as f:
-                    data = pickle.load(f)
-                    logger.info(f"Loaded {model_name} embeddings: {data['X'].shape}")
-                    results[model_name] = data
+                data = joblib.load(model_path)
+                logger.info(f"Loaded {model_name} embeddings: {data['X'].shape}")
+                results[model_name] = data
             except Exception as e:
                 logger.error(f"Error loading {model_name}: {e}")
         
@@ -329,16 +328,22 @@ class EmbeddingsManager:
 
     def _load_tfidf_vectorizer(self) -> None:
         """Load TF-IDF vectorizer if cached; otherwise keep as None for rebuild."""
+        vectorizer_path = ENCODED_DIR / "tfidf_vectorizer.pkl"
+        if not vectorizer_path.exists():
+            logger.warning("TF-IDF vectorizer not found; will rebuild on demand.")
+            return
         try:
-            vectorizer_path = ENCODED_DIR / "tfidf_vectorizer.pkl"
-            if vectorizer_path.exists():
-                with open(vectorizer_path, "rb") as f:
-                    self.tfidf_vectorizer = pickle.load(f)
-                logger.info("TF-IDF vectorizer loaded successfully")
-            else:
-                logger.warning("TF-IDF vectorizer not found; will rebuild on demand.")
+            self.tfidf_vectorizer = joblib.load(vectorizer_path)
+            logger.info("TF-IDF vectorizer loaded successfully")
+            return
+        except Exception:
+            pass
+        try:
+            with open(vectorizer_path, "rb") as f:
+                self.tfidf_vectorizer = pickle.load(f)
+            logger.info("TF-IDF vectorizer loaded (legacy pickle)")
         except Exception as e:
-            logger.error("Failed to load TF-IDF vectorizer: %s", e)
+            logger.error("Failed to load TF-IDF vectorizer: %s — will rebuild on demand.", e)
 
     def _build_tfidf_from_labeled(self) -> None:
         """Rebuild TF-IDF vectorizer from `tfidf_labeled.pkl` when cache is missing."""
@@ -366,8 +371,7 @@ class EmbeddingsManager:
             vectorizer.fit(texts)
 
             vectorizer_path = ENCODED_DIR / "tfidf_vectorizer.pkl"
-            with open(vectorizer_path, "wb") as f:
-                pickle.dump(vectorizer, f)
+            joblib.dump(vectorizer, vectorizer_path)
             self.tfidf_vectorizer = vectorizer
             logger.info("TF-IDF vectorizer rebuilt and cached at %s", vectorizer_path)
         except Exception as e:

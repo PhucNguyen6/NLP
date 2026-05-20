@@ -1,0 +1,1028 @@
+{
+  "created_at": "2026-05-20T14:33:23.218980+00:00",
+  "n_queries": 150,
+  "rag_config": {
+    "top_k": 5,
+    "dict_top_k": 3,
+    "similarity_threshold": 0.3,
+    "dictionary_similarity_threshold": 0.25,
+    "hybrid_retrieval": true,
+    "chunk_size": 100,
+    "chunk_overlap": 20,
+    "max_context_tokens": 2000
+  },
+  "embedding_config": {
+    "primary_model": "xlmroberta",
+    "models": [
+      "xlmroberta",
+      "doc2vec",
+      "tfidf"
+    ]
+  },
+  "database": {
+    "total_embeddings": 122733,
+    "total_words": 137989,
+    "sentiment_labels": 3,
+    "label_distribution": {
+      "criticism": 22500,
+      "neutral": 59022,
+      "praise": 41211
+    }
+  },
+  "dictionary_chunks": {
+    "available": true,
+    "path": "D:\\NLP_Project\\NLP\\sentence_list\\clean_dict\\dictionary_chunks.json",
+    "total_chunks": 214898,
+    "metadata": {
+      "created_at": "2026-05-20T04:13:11.348880+00:00",
+      "chunk_size_words": 100,
+      "chunk_overlap_words": 20,
+      "total_chunks": 214898,
+      "total_entries": 212549,
+      "languages": [
+        "vi",
+        "en"
+      ],
+      "stats": {
+        "languages": {
+          "vi": {
+            "entries": 36763,
+            "chunks": 36763,
+            "source": "D:\\NLP_Project\\NLP\\sentence_list\\clean_dict\\vi_dict.csv"
+          },
+          "en": {
+            "entries": 175786,
+            "chunks": 178135,
+            "source": "D:\\NLP_Project\\NLP\\sentence_list\\clean_dict\\en_dict.csv"
+          }
+        },
+        "files_read": [
+          "D:\\NLP_Project\\NLP\\sentence_list\\clean_dict\\vi_dict.csv",
+          "D:\\NLP_Project\\NLP\\sentence_list\\clean_dict\\en_dict.csv"
+        ]
+      }
+    },
+    "by_language": {
+      "vi": 36763,
+      "en": 178135
+    }
+  },
+  "hybrid_retrieval": {
+    "xlmroberta": {
+      "model": "xlmroberta",
+      "comments": {
+        "model": "xlmroberta",
+        "label": "XLM-RoBERTa",
+        "n_queries": 150,
+        "top_k": 5,
+        "similarity_threshold": 0.3,
+        "metrics": {
+          "avg_top1_similarity": 0.9385583275789219,
+          "median_top1_similarity": 0.9374603372195138,
+          "std_top1_similarity": 0.04363147810695418,
+          "avg_topk_mean_similarity": 0.9210843988491866,
+          "threshold_pass_rate": 1.0,
+          "avg_n_retrieved": 5.0,
+          "queries_with_any_hit": 150,
+          "avg_latency_ms": 6320.979228666643,
+          "p50_latency_ms": 6309.019500000431,
+          "p95_latency_ms": 6836.211449996881
+        },
+        "sample_queries": [
+          {
+            "query_preview": "số bài hát đen vượt tháng ngày covid phong tỏa 202 thường nghe để nhớ thời khắc khó khăn vượt",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9199970791442691,
+            "latency_ms": 6734.38
+          },
+          {
+            "query_preview": "ứng tượng sự kết hợp 2 ac",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8744829847841782,
+            "latency_ms": 5819.46
+          },
+          {
+            "query_preview": "beauti low cortisol agn tachyon",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8811227385246331,
+            "latency_ms": 5675.06
+          },
+          {
+            "query_preview": "em moun khóc loun",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9453168180984088,
+            "latency_ms": 5708.95
+          },
+          {
+            "query_preview": "tuyệt vời",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999996194,
+            "latency_ms": 6130.46
+          },
+          {
+            "query_preview": "rồi tới đức phúc v",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999995006,
+            "latency_ms": 5962.19
+          },
+          {
+            "query_preview": "dich không nhà nghe xúc động ghê 882021",
+            "n_retrieved": 5,
+            "top1_similarity": 1.0000001026208138,
+            "latency_ms": 5750.89
+          },
+          {
+            "query_preview": "mội người biếc bửa tiệt không tàn đám cưới chúng rồi chưa kể gần tết xin hát bài hát nhà dài dòng hát thôi đám cưới nhìn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9809122696686869,
+            "latency_ms": 5809.17
+          },
+          {
+            "query_preview": "buồn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999998909015009,
+            "latency_ms": 5747.91
+          },
+          {
+            "query_preview": "nghe bài nhớ nhà 5 năm rồi chưa",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9164942327880479,
+            "latency_ms": 5713.69
+          },
+          {
+            "query_preview": "3 năm are nhanh thật",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9545267185253343,
+            "latency_ms": 5852.87
+          },
+          {
+            "query_preview": "mình sơn la nè tết nay vắng nhà",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8960087305928562,
+            "latency_ms": 5669.72
+          },
+          {
+            "query_preview": "bài kết hợp wowy xe kiểu thiên đàng",
+            "n_retrieved": 5,
+            "top1_similarity": 0.88729357002944,
+            "latency_ms": 5833.89
+          },
+          {
+            "query_preview": "thiếu cặp đôi xàm xí vpop kevin khánhkhởi my ha chắc nhìn xàm nchug cặp cũg dễ thương",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999991426,
+            "latency_ms": 5656.68
+          },
+          {
+            "query_preview": "đã top 1 chúc mừng e trai",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9408540602894108,
+            "latency_ms": 5720.14
+          },
+          {
+            "query_preview": "gần 10tr lượt xem video",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9158469189442233,
+            "latency_ms": 5959.88
+          },
+          {
+            "query_preview": "ạhơn ý nghĩa",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9444213995492837,
+            "latency_ms": 5817.9
+          },
+          {
+            "query_preview": "bài hát ngangremix càng nghe không không cảm xúc",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8953998096380823,
+            "latency_ms": 5957.45
+          },
+          {
+            "query_preview": "xem khóc mong ước chỉ lần yêu người hết đời như không cần ồn ào chỉ cần trầm lặng nhau vượt năm tháng tươi đẹp đủ 3",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9462502353092009,
+            "latency_ms": 5814.25
+          },
+          {
+            "query_preview": "hơn yêu cảm thông thấu hiểu chia sẻ hi sinh lắng nghe đồng điệu tâm hồn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9306867875561847,
+            "latency_ms": 6084.6
+          }
+        ]
+      },
+      "dictionary": {
+        "model": "xlmroberta",
+        "n_queries": 150,
+        "dict_top_k": 3,
+        "dictionary_similarity_threshold": 0.25,
+        "metrics": {
+          "avg_top1_similarity": 0.8931491939226787,
+          "threshold_pass_rate": 1.0,
+          "avg_n_retrieved": 3.0,
+          "queries_with_any_hit": 150,
+          "avg_latency_ms": 1012.3965499998303
+        }
+      },
+      "hybrid_latency_ms": {
+        "avg": 11440.167575333326,
+        "p95": 12818.787439998778
+      }
+    },
+    "doc2vec": {
+      "model": "doc2vec",
+      "comments": {
+        "model": "doc2vec",
+        "label": "Doc2Vec",
+        "n_queries": 150,
+        "top_k": 5,
+        "similarity_threshold": 0.3,
+        "metrics": {
+          "avg_top1_similarity": 0.764579339271305,
+          "median_top1_similarity": 0.7909604858988253,
+          "std_top1_similarity": 0.1857205042119652,
+          "avg_topk_mean_similarity": 0.6978655056409688,
+          "threshold_pass_rate": 1.0,
+          "avg_n_retrieved": 4.98,
+          "queries_with_any_hit": 150,
+          "avg_latency_ms": 1648.8694500004447,
+          "p50_latency_ms": 1615.9630500042113,
+          "p95_latency_ms": 1850.8500099978846
+        },
+        "sample_queries": [
+          {
+            "query_preview": "số bài hát đen vượt tháng ngày covid phong tỏa 202 thường nghe để nhớ thời khắc khó khăn vượt",
+            "n_retrieved": 5,
+            "top1_similarity": 0.38631005649242234,
+            "latency_ms": 2038.41
+          },
+          {
+            "query_preview": "ứng tượng sự kết hợp 2 ac",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8053646503939144,
+            "latency_ms": 1563.29
+          },
+          {
+            "query_preview": "beauti low cortisol agn tachyon",
+            "n_retrieved": 2,
+            "top1_similarity": 0.3838454986630717,
+            "latency_ms": 1704.38
+          },
+          {
+            "query_preview": "em moun khóc loun",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9577881199472337,
+            "latency_ms": 1541.54
+          },
+          {
+            "query_preview": "tuyệt vời",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9865184224942238,
+            "latency_ms": 1575.74
+          },
+          {
+            "query_preview": "rồi tới đức phúc v",
+            "n_retrieved": 5,
+            "top1_similarity": 0.7018864648956287,
+            "latency_ms": 1633.79
+          },
+          {
+            "query_preview": "dich không nhà nghe xúc động ghê 882021",
+            "n_retrieved": 5,
+            "top1_similarity": 0.7963943533437288,
+            "latency_ms": 1714.2
+          },
+          {
+            "query_preview": "mội người biếc bửa tiệt không tàn đám cưới chúng rồi chưa kể gần tết xin hát bài hát nhà dài dòng hát thôi đám cưới nhìn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.36932274622844463,
+            "latency_ms": 1651.87
+          },
+          {
+            "query_preview": "buồn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9691503514739906,
+            "latency_ms": 1593.86
+          },
+          {
+            "query_preview": "nghe bài nhớ nhà 5 năm rồi chưa",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9616060207607782,
+            "latency_ms": 1584.61
+          },
+          {
+            "query_preview": "3 năm are nhanh thật",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8160425443642769,
+            "latency_ms": 1693.0
+          },
+          {
+            "query_preview": "mình sơn la nè tết nay vắng nhà",
+            "n_retrieved": 5,
+            "top1_similarity": 0.5827688673538021,
+            "latency_ms": 1511.08
+          },
+          {
+            "query_preview": "bài kết hợp wowy xe kiểu thiên đàng",
+            "n_retrieved": 5,
+            "top1_similarity": 0.6800526077571752,
+            "latency_ms": 1757.34
+          },
+          {
+            "query_preview": "thiếu cặp đôi xàm xí vpop kevin khánhkhởi my ha chắc nhìn xàm nchug cặp cũg dễ thương",
+            "n_retrieved": 5,
+            "top1_similarity": 0.5936364474268553,
+            "latency_ms": 1633.04
+          },
+          {
+            "query_preview": "đã top 1 chúc mừng e trai",
+            "n_retrieved": 5,
+            "top1_similarity": 0.732894365412503,
+            "latency_ms": 1554.5
+          },
+          {
+            "query_preview": "gần 10tr lượt xem video",
+            "n_retrieved": 5,
+            "top1_similarity": 0.7188395567071599,
+            "latency_ms": 1680.3
+          },
+          {
+            "query_preview": "ạhơn ý nghĩa",
+            "n_retrieved": 5,
+            "top1_similarity": 0.979810464331719,
+            "latency_ms": 1573.47
+          },
+          {
+            "query_preview": "bài hát ngangremix càng nghe không không cảm xúc",
+            "n_retrieved": 5,
+            "top1_similarity": 0.6001260359019002,
+            "latency_ms": 1552.79
+          },
+          {
+            "query_preview": "xem khóc mong ước chỉ lần yêu người hết đời như không cần ồn ào chỉ cần trầm lặng nhau vượt năm tháng tươi đẹp đủ 3",
+            "n_retrieved": 5,
+            "top1_similarity": 0.41921078216664037,
+            "latency_ms": 1787.4
+          },
+          {
+            "query_preview": "hơn yêu cảm thông thấu hiểu chia sẻ hi sinh lắng nghe đồng điệu tâm hồn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.6711564109275038,
+            "latency_ms": 1560.06
+          }
+        ]
+      },
+      "dictionary": {
+        "model": "doc2vec",
+        "n_queries": 150,
+        "dict_top_k": 3,
+        "dictionary_similarity_threshold": 0.25,
+        "metrics": {
+          "avg_top1_similarity": 0.8931491939226787,
+          "threshold_pass_rate": 1.0,
+          "avg_n_retrieved": 3.0,
+          "queries_with_any_hit": 150,
+          "avg_latency_ms": 1061.185244666849
+        }
+      },
+      "hybrid_latency_ms": {
+        "avg": 3945.8229353337083,
+        "p95": 4161.227935001443
+      }
+    },
+    "tfidf": {
+      "model": "tfidf",
+      "comments": {
+        "model": "tfidf",
+        "label": "TF-IDF",
+        "n_queries": 150,
+        "top_k": 5,
+        "similarity_threshold": 0.3,
+        "metrics": {
+          "avg_top1_similarity": 0.7065845222771482,
+          "median_top1_similarity": 0.7068325105694915,
+          "std_top1_similarity": 0.2739140222705607,
+          "avg_topk_mean_similarity": 0.5899424238841767,
+          "threshold_pass_rate": 0.9533333333333334,
+          "avg_n_retrieved": 4.553333333333334,
+          "queries_with_any_hit": 143,
+          "avg_latency_ms": 4513.474307333187,
+          "p50_latency_ms": 5126.2940500018885,
+          "p95_latency_ms": 6137.057285003536
+        },
+        "sample_queries": [
+          {
+            "query_preview": "số bài hát đen vượt tháng ngày covid phong tỏa 202 thường nghe để nhớ thời khắc khó khăn vượt",
+            "n_retrieved": 1,
+            "top1_similarity": 0.3105796164309114,
+            "latency_ms": 3776.62
+          },
+          {
+            "query_preview": "ứng tượng sự kết hợp 2 ac",
+            "n_retrieved": 5,
+            "top1_similarity": 0.6574823855696277,
+            "latency_ms": 3871.72
+          },
+          {
+            "query_preview": "beauti low cortisol agn tachyon",
+            "n_retrieved": 0,
+            "top1_similarity": null,
+            "latency_ms": 3593.6
+          },
+          {
+            "query_preview": "em moun khóc loun",
+            "n_retrieved": 5,
+            "top1_similarity": 0.8197745083942799,
+            "latency_ms": 3634.2
+          },
+          {
+            "query_preview": "tuyệt vời",
+            "n_retrieved": 5,
+            "top1_similarity": 1.0000000595046519,
+            "latency_ms": 3574.84
+          },
+          {
+            "query_preview": "rồi tới đức phúc v",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3570.88
+          },
+          {
+            "query_preview": "dich không nhà nghe xúc động ghê 882021",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3564.69
+          },
+          {
+            "query_preview": "mội người biếc bửa tiệt không tàn đám cưới chúng rồi chưa kể gần tết xin hát bài hát nhà dài dòng hát thôi đám cưới nhìn",
+            "n_retrieved": 3,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3722.56
+          },
+          {
+            "query_preview": "buồn",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3598.77
+          },
+          {
+            "query_preview": "nghe bài nhớ nhà 5 năm rồi chưa",
+            "n_retrieved": 5,
+            "top1_similarity": 0.42005068059535455,
+            "latency_ms": 3568.99
+          },
+          {
+            "query_preview": "3 năm are nhanh thật",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9022371768049179,
+            "latency_ms": 3611.78
+          },
+          {
+            "query_preview": "mình sơn la nè tết nay vắng nhà",
+            "n_retrieved": 5,
+            "top1_similarity": 0.4504611789729745,
+            "latency_ms": 3540.12
+          },
+          {
+            "query_preview": "bài kết hợp wowy xe kiểu thiên đàng",
+            "n_retrieved": 5,
+            "top1_similarity": 0.5973212122319854,
+            "latency_ms": 3629.31
+          },
+          {
+            "query_preview": "thiếu cặp đôi xàm xí vpop kevin khánhkhởi my ha chắc nhìn xàm nchug cặp cũg dễ thương",
+            "n_retrieved": 5,
+            "top1_similarity": 0.6372568606693065,
+            "latency_ms": 3770.8
+          },
+          {
+            "query_preview": "đã top 1 chúc mừng e trai",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3532.2
+          },
+          {
+            "query_preview": "gần 10tr lượt xem video",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3576.73
+          },
+          {
+            "query_preview": "ạhơn ý nghĩa",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3598.24
+          },
+          {
+            "query_preview": "bài hát ngangremix càng nghe không không cảm xúc",
+            "n_retrieved": 5,
+            "top1_similarity": 0.9999999999,
+            "latency_ms": 3627.3
+          },
+          {
+            "query_preview": "xem khóc mong ước chỉ lần yêu người hết đời như không cần ồn ào chỉ cần trầm lặng nhau vượt năm tháng tươi đẹp đủ 3",
+            "n_retrieved": 5,
+            "top1_similarity": 1.0000000595046519,
+            "latency_ms": 3596.16
+          },
+          {
+            "query_preview": "hơn yêu cảm thông thấu hiểu chia sẻ hi sinh lắng nghe đồng điệu tâm hồn",
+            "n_retrieved": 1,
+            "top1_similarity": 0.33921204077333084,
+            "latency_ms": 3889.99
+          }
+        ]
+      },
+      "dictionary": {
+        "model": "tfidf",
+        "n_queries": 150,
+        "dict_top_k": 3,
+        "dictionary_similarity_threshold": 0.25,
+        "metrics": {
+          "avg_top1_similarity": 0.8931491939226787,
+          "threshold_pass_rate": 1.0,
+          "avg_n_retrieved": 3.0,
+          "queries_with_any_hit": 150,
+          "avg_latency_ms": 1044.173272667055
+        }
+      },
+      "hybrid_latency_ms": {
+        "avg": 7102.4654346665675,
+        "p95": 7452.890154999841
+      }
+    }
+  },
+  "dictionary_retrieval_by_encoder": {
+    "xlmroberta": {
+      "model": "xlmroberta",
+      "n_queries": 150,
+      "dict_top_k": 3,
+      "dictionary_similarity_threshold": 0.25,
+      "metrics": {
+        "avg_top1_similarity": 0.8931491939226787,
+        "threshold_pass_rate": 1.0,
+        "avg_n_retrieved": 3.0,
+        "queries_with_any_hit": 150,
+        "avg_latency_ms": 1012.3965499998303
+      }
+    },
+    "doc2vec": {
+      "model": "doc2vec",
+      "n_queries": 150,
+      "dict_top_k": 3,
+      "dictionary_similarity_threshold": 0.25,
+      "metrics": {
+        "avg_top1_similarity": 0.8931491939226787,
+        "threshold_pass_rate": 1.0,
+        "avg_n_retrieved": 3.0,
+        "queries_with_any_hit": 150,
+        "avg_latency_ms": 1061.185244666849
+      }
+    },
+    "tfidf": {
+      "model": "tfidf",
+      "n_queries": 150,
+      "dict_top_k": 3,
+      "dictionary_similarity_threshold": 0.25,
+      "metrics": {
+        "avg_top1_similarity": 0.8931491939226787,
+        "threshold_pass_rate": 1.0,
+        "avg_n_retrieved": 3.0,
+        "queries_with_any_hit": 150,
+        "avg_latency_ms": 1044.173272667055
+      }
+    }
+  },
+  "models": {
+    "xlmroberta": {
+      "model": "xlmroberta",
+      "label": "XLM-RoBERTa",
+      "n_queries": 150,
+      "top_k": 5,
+      "similarity_threshold": 0.3,
+      "metrics": {
+        "avg_top1_similarity": 0.9385583275789219,
+        "median_top1_similarity": 0.9374603372195138,
+        "std_top1_similarity": 0.04363147810695418,
+        "avg_topk_mean_similarity": 0.9210843988491866,
+        "threshold_pass_rate": 1.0,
+        "avg_n_retrieved": 5.0,
+        "queries_with_any_hit": 150,
+        "avg_latency_ms": 6320.979228666643,
+        "p50_latency_ms": 6309.019500000431,
+        "p95_latency_ms": 6836.211449996881
+      },
+      "sample_queries": [
+        {
+          "query_preview": "số bài hát đen vượt tháng ngày covid phong tỏa 202 thường nghe để nhớ thời khắc khó khăn vượt",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9199970791442691,
+          "latency_ms": 6734.38
+        },
+        {
+          "query_preview": "ứng tượng sự kết hợp 2 ac",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8744829847841782,
+          "latency_ms": 5819.46
+        },
+        {
+          "query_preview": "beauti low cortisol agn tachyon",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8811227385246331,
+          "latency_ms": 5675.06
+        },
+        {
+          "query_preview": "em moun khóc loun",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9453168180984088,
+          "latency_ms": 5708.95
+        },
+        {
+          "query_preview": "tuyệt vời",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999996194,
+          "latency_ms": 6130.46
+        },
+        {
+          "query_preview": "rồi tới đức phúc v",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999995006,
+          "latency_ms": 5962.19
+        },
+        {
+          "query_preview": "dich không nhà nghe xúc động ghê 882021",
+          "n_retrieved": 5,
+          "top1_similarity": 1.0000001026208138,
+          "latency_ms": 5750.89
+        },
+        {
+          "query_preview": "mội người biếc bửa tiệt không tàn đám cưới chúng rồi chưa kể gần tết xin hát bài hát nhà dài dòng hát thôi đám cưới nhìn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9809122696686869,
+          "latency_ms": 5809.17
+        },
+        {
+          "query_preview": "buồn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999998909015009,
+          "latency_ms": 5747.91
+        },
+        {
+          "query_preview": "nghe bài nhớ nhà 5 năm rồi chưa",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9164942327880479,
+          "latency_ms": 5713.69
+        },
+        {
+          "query_preview": "3 năm are nhanh thật",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9545267185253343,
+          "latency_ms": 5852.87
+        },
+        {
+          "query_preview": "mình sơn la nè tết nay vắng nhà",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8960087305928562,
+          "latency_ms": 5669.72
+        },
+        {
+          "query_preview": "bài kết hợp wowy xe kiểu thiên đàng",
+          "n_retrieved": 5,
+          "top1_similarity": 0.88729357002944,
+          "latency_ms": 5833.89
+        },
+        {
+          "query_preview": "thiếu cặp đôi xàm xí vpop kevin khánhkhởi my ha chắc nhìn xàm nchug cặp cũg dễ thương",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999991426,
+          "latency_ms": 5656.68
+        },
+        {
+          "query_preview": "đã top 1 chúc mừng e trai",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9408540602894108,
+          "latency_ms": 5720.14
+        },
+        {
+          "query_preview": "gần 10tr lượt xem video",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9158469189442233,
+          "latency_ms": 5959.88
+        },
+        {
+          "query_preview": "ạhơn ý nghĩa",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9444213995492837,
+          "latency_ms": 5817.9
+        },
+        {
+          "query_preview": "bài hát ngangremix càng nghe không không cảm xúc",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8953998096380823,
+          "latency_ms": 5957.45
+        },
+        {
+          "query_preview": "xem khóc mong ước chỉ lần yêu người hết đời như không cần ồn ào chỉ cần trầm lặng nhau vượt năm tháng tươi đẹp đủ 3",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9462502353092009,
+          "latency_ms": 5814.25
+        },
+        {
+          "query_preview": "hơn yêu cảm thông thấu hiểu chia sẻ hi sinh lắng nghe đồng điệu tâm hồn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9306867875561847,
+          "latency_ms": 6084.6
+        }
+      ]
+    },
+    "doc2vec": {
+      "model": "doc2vec",
+      "label": "Doc2Vec",
+      "n_queries": 150,
+      "top_k": 5,
+      "similarity_threshold": 0.3,
+      "metrics": {
+        "avg_top1_similarity": 0.764579339271305,
+        "median_top1_similarity": 0.7909604858988253,
+        "std_top1_similarity": 0.1857205042119652,
+        "avg_topk_mean_similarity": 0.6978655056409688,
+        "threshold_pass_rate": 1.0,
+        "avg_n_retrieved": 4.98,
+        "queries_with_any_hit": 150,
+        "avg_latency_ms": 1648.8694500004447,
+        "p50_latency_ms": 1615.9630500042113,
+        "p95_latency_ms": 1850.8500099978846
+      },
+      "sample_queries": [
+        {
+          "query_preview": "số bài hát đen vượt tháng ngày covid phong tỏa 202 thường nghe để nhớ thời khắc khó khăn vượt",
+          "n_retrieved": 5,
+          "top1_similarity": 0.38631005649242234,
+          "latency_ms": 2038.41
+        },
+        {
+          "query_preview": "ứng tượng sự kết hợp 2 ac",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8053646503939144,
+          "latency_ms": 1563.29
+        },
+        {
+          "query_preview": "beauti low cortisol agn tachyon",
+          "n_retrieved": 2,
+          "top1_similarity": 0.3838454986630717,
+          "latency_ms": 1704.38
+        },
+        {
+          "query_preview": "em moun khóc loun",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9577881199472337,
+          "latency_ms": 1541.54
+        },
+        {
+          "query_preview": "tuyệt vời",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9865184224942238,
+          "latency_ms": 1575.74
+        },
+        {
+          "query_preview": "rồi tới đức phúc v",
+          "n_retrieved": 5,
+          "top1_similarity": 0.7018864648956287,
+          "latency_ms": 1633.79
+        },
+        {
+          "query_preview": "dich không nhà nghe xúc động ghê 882021",
+          "n_retrieved": 5,
+          "top1_similarity": 0.7963943533437288,
+          "latency_ms": 1714.2
+        },
+        {
+          "query_preview": "mội người biếc bửa tiệt không tàn đám cưới chúng rồi chưa kể gần tết xin hát bài hát nhà dài dòng hát thôi đám cưới nhìn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.36932274622844463,
+          "latency_ms": 1651.87
+        },
+        {
+          "query_preview": "buồn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9691503514739906,
+          "latency_ms": 1593.86
+        },
+        {
+          "query_preview": "nghe bài nhớ nhà 5 năm rồi chưa",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9616060207607782,
+          "latency_ms": 1584.61
+        },
+        {
+          "query_preview": "3 năm are nhanh thật",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8160425443642769,
+          "latency_ms": 1693.0
+        },
+        {
+          "query_preview": "mình sơn la nè tết nay vắng nhà",
+          "n_retrieved": 5,
+          "top1_similarity": 0.5827688673538021,
+          "latency_ms": 1511.08
+        },
+        {
+          "query_preview": "bài kết hợp wowy xe kiểu thiên đàng",
+          "n_retrieved": 5,
+          "top1_similarity": 0.6800526077571752,
+          "latency_ms": 1757.34
+        },
+        {
+          "query_preview": "thiếu cặp đôi xàm xí vpop kevin khánhkhởi my ha chắc nhìn xàm nchug cặp cũg dễ thương",
+          "n_retrieved": 5,
+          "top1_similarity": 0.5936364474268553,
+          "latency_ms": 1633.04
+        },
+        {
+          "query_preview": "đã top 1 chúc mừng e trai",
+          "n_retrieved": 5,
+          "top1_similarity": 0.732894365412503,
+          "latency_ms": 1554.5
+        },
+        {
+          "query_preview": "gần 10tr lượt xem video",
+          "n_retrieved": 5,
+          "top1_similarity": 0.7188395567071599,
+          "latency_ms": 1680.3
+        },
+        {
+          "query_preview": "ạhơn ý nghĩa",
+          "n_retrieved": 5,
+          "top1_similarity": 0.979810464331719,
+          "latency_ms": 1573.47
+        },
+        {
+          "query_preview": "bài hát ngangremix càng nghe không không cảm xúc",
+          "n_retrieved": 5,
+          "top1_similarity": 0.6001260359019002,
+          "latency_ms": 1552.79
+        },
+        {
+          "query_preview": "xem khóc mong ước chỉ lần yêu người hết đời như không cần ồn ào chỉ cần trầm lặng nhau vượt năm tháng tươi đẹp đủ 3",
+          "n_retrieved": 5,
+          "top1_similarity": 0.41921078216664037,
+          "latency_ms": 1787.4
+        },
+        {
+          "query_preview": "hơn yêu cảm thông thấu hiểu chia sẻ hi sinh lắng nghe đồng điệu tâm hồn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.6711564109275038,
+          "latency_ms": 1560.06
+        }
+      ]
+    },
+    "tfidf": {
+      "model": "tfidf",
+      "label": "TF-IDF",
+      "n_queries": 150,
+      "top_k": 5,
+      "similarity_threshold": 0.3,
+      "metrics": {
+        "avg_top1_similarity": 0.7065845222771482,
+        "median_top1_similarity": 0.7068325105694915,
+        "std_top1_similarity": 0.2739140222705607,
+        "avg_topk_mean_similarity": 0.5899424238841767,
+        "threshold_pass_rate": 0.9533333333333334,
+        "avg_n_retrieved": 4.553333333333334,
+        "queries_with_any_hit": 143,
+        "avg_latency_ms": 4513.474307333187,
+        "p50_latency_ms": 5126.2940500018885,
+        "p95_latency_ms": 6137.057285003536
+      },
+      "sample_queries": [
+        {
+          "query_preview": "số bài hát đen vượt tháng ngày covid phong tỏa 202 thường nghe để nhớ thời khắc khó khăn vượt",
+          "n_retrieved": 1,
+          "top1_similarity": 0.3105796164309114,
+          "latency_ms": 3776.62
+        },
+        {
+          "query_preview": "ứng tượng sự kết hợp 2 ac",
+          "n_retrieved": 5,
+          "top1_similarity": 0.6574823855696277,
+          "latency_ms": 3871.72
+        },
+        {
+          "query_preview": "beauti low cortisol agn tachyon",
+          "n_retrieved": 0,
+          "top1_similarity": null,
+          "latency_ms": 3593.6
+        },
+        {
+          "query_preview": "em moun khóc loun",
+          "n_retrieved": 5,
+          "top1_similarity": 0.8197745083942799,
+          "latency_ms": 3634.2
+        },
+        {
+          "query_preview": "tuyệt vời",
+          "n_retrieved": 5,
+          "top1_similarity": 1.0000000595046519,
+          "latency_ms": 3574.84
+        },
+        {
+          "query_preview": "rồi tới đức phúc v",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3570.88
+        },
+        {
+          "query_preview": "dich không nhà nghe xúc động ghê 882021",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3564.69
+        },
+        {
+          "query_preview": "mội người biếc bửa tiệt không tàn đám cưới chúng rồi chưa kể gần tết xin hát bài hát nhà dài dòng hát thôi đám cưới nhìn",
+          "n_retrieved": 3,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3722.56
+        },
+        {
+          "query_preview": "buồn",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3598.77
+        },
+        {
+          "query_preview": "nghe bài nhớ nhà 5 năm rồi chưa",
+          "n_retrieved": 5,
+          "top1_similarity": 0.42005068059535455,
+          "latency_ms": 3568.99
+        },
+        {
+          "query_preview": "3 năm are nhanh thật",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9022371768049179,
+          "latency_ms": 3611.78
+        },
+        {
+          "query_preview": "mình sơn la nè tết nay vắng nhà",
+          "n_retrieved": 5,
+          "top1_similarity": 0.4504611789729745,
+          "latency_ms": 3540.12
+        },
+        {
+          "query_preview": "bài kết hợp wowy xe kiểu thiên đàng",
+          "n_retrieved": 5,
+          "top1_similarity": 0.5973212122319854,
+          "latency_ms": 3629.31
+        },
+        {
+          "query_preview": "thiếu cặp đôi xàm xí vpop kevin khánhkhởi my ha chắc nhìn xàm nchug cặp cũg dễ thương",
+          "n_retrieved": 5,
+          "top1_similarity": 0.6372568606693065,
+          "latency_ms": 3770.8
+        },
+        {
+          "query_preview": "đã top 1 chúc mừng e trai",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3532.2
+        },
+        {
+          "query_preview": "gần 10tr lượt xem video",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3576.73
+        },
+        {
+          "query_preview": "ạhơn ý nghĩa",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3598.24
+        },
+        {
+          "query_preview": "bài hát ngangremix càng nghe không không cảm xúc",
+          "n_retrieved": 5,
+          "top1_similarity": 0.9999999999,
+          "latency_ms": 3627.3
+        },
+        {
+          "query_preview": "xem khóc mong ước chỉ lần yêu người hết đời như không cần ồn ào chỉ cần trầm lặng nhau vượt năm tháng tươi đẹp đủ 3",
+          "n_retrieved": 5,
+          "top1_similarity": 1.0000000595046519,
+          "latency_ms": 3596.16
+        },
+        {
+          "query_preview": "hơn yêu cảm thông thấu hiểu chia sẻ hi sinh lắng nghe đồng điệu tâm hồn",
+          "n_retrieved": 1,
+          "top1_similarity": 0.33921204077333084,
+          "latency_ms": 3889.99
+        }
+      ]
+    }
+  },
+  "plots": [
+    "D:\\NLP_Project\\NLP\\sentence_list\\plots\\rag\\01_rag_similarity_latency.png",
+    "D:\\NLP_Project\\NLP\\sentence_list\\plots\\rag\\02_top1_similarity_histogram.png",
+    "D:\\NLP_Project\\NLP\\sentence_list\\plots\\rag\\03_threshold_pass_and_retrieved.png",
+    "D:\\NLP_Project\\NLP\\sentence_list\\plots\\rag\\04_retrieval_latency_boxplot.png",
+    "D:\\NLP_Project\\NLP\\sentence_list\\plots\\rag\\05_db_sentiment_distribution.png"
+  ]
+}

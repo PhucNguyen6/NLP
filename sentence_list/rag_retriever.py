@@ -13,6 +13,7 @@ import numpy as np
 
 from config import RAG_CONFIG, LOGGING_CONFIG, EMBEDDING_CONFIG
 from database import get_db_manager
+from dictionary import get_dictionary_chunk_store
 from embeddings_manager import get_embeddings_manager
 
 # Setup logging
@@ -33,9 +34,13 @@ class RAGRetriever:
             similarity_threshold: Minimum similarity score
         """
         self.top_k = top_k or RAG_CONFIG['top_k']
+        self.dict_top_k = int(RAG_CONFIG.get('dict_top_k', 3))
         self.similarity_threshold = similarity_threshold or RAG_CONFIG['similarity_threshold']
+        self.dict_threshold = float(RAG_CONFIG.get('dictionary_similarity_threshold', 0.25))
+        self.hybrid_retrieval = bool(RAG_CONFIG.get('hybrid_retrieval', True))
         self.db = get_db_manager()
         self.embeddings = get_embeddings_manager()
+        self.dict_store = get_dictionary_chunk_store()
         self.cache = {}
     
     def _query_embedding(self, query: str, model: str) -> np.ndarray:
@@ -83,12 +88,91 @@ class RAGRetriever:
                 model=model
             )
             
-            logger.info(f"Retrieved {len(similar_docs)} similar documents")
+            for doc in similar_docs:
+                doc['source'] = 'comments'
+            logger.debug(f"Retrieved {len(similar_docs)} similar comment documents")
             return similar_docs
         except Exception as e:
             logger.error(f"Error retrieving context: {e}")
             return []
-    
+
+    def retrieve_dictionary_context(
+        self,
+        query: str,
+        top_k: int = None,
+        model: str = 'xlmroberta',
+    ) -> List[Dict]:
+        """
+        Retrieve dictionary chunks (JSON embedding index) + bổ sung từ DB nếu có.
+        """
+        top_k = top_k or self.dict_top_k
+        results: List[Dict] = []
+
+        try:
+            json_hits = self.dict_store.search(
+                query,
+                top_k=top_k,
+                model=model,
+                threshold=self.dict_threshold,
+            )
+            results.extend(json_hits)
+        except Exception as e:
+            logger.error(f"Dictionary JSON retrieval error: {e}")
+
+        try:
+            query_embedding = self.embeddings.embed_text_xlmroberta(query)
+            db_hits = self.db.search_similar_dictionary(
+                embedding=query_embedding.tolist(),
+                top_k=top_k,
+            )
+            seen_words = {str(r.get('word', '')).lower() for r in results}
+            for row in db_hits:
+                w = str(row.get('word', '')).strip()
+                if not w or w.lower() in seen_words:
+                    continue
+                sim = float(row.get('similarity', 0.0))
+                if sim < self.dict_threshold:
+                    continue
+                results.append({
+                    'source': 'dictionary_db',
+                    'chunk_id': f"db_{row.get('id')}",
+                    'word': w,
+                    'semantics': row.get('definition') or '',
+                    'language': row.get('language'),
+                    'text_content': f"{w}: {row.get('definition', '')}",
+                    'similarity': sim,
+                })
+                seen_words.add(w.lower())
+        except Exception as e:
+            logger.debug(f"Dictionary DB retrieval skipped: {e}")
+
+        results.sort(key=lambda x: x.get('similarity', 0.0), reverse=True)
+        return results[:top_k]
+
+    def retrieve_hybrid_context(
+        self,
+        query: str,
+        top_k: int = None,
+        dict_top_k: int = None,
+        model: str = 'xlmroberta',
+    ) -> Dict:
+        """
+        Kết hợp retrieve bình luận (vector DB) + chunk từ điển (JSON/DB).
+        """
+        top_k = top_k or self.top_k
+        dict_top_k = dict_top_k or self.dict_top_k
+        comment_docs = self.retrieve_context(query=query, top_k=top_k, model=model)
+        dictionary_docs: List[Dict] = []
+        if self.hybrid_retrieval:
+            dictionary_docs = self.retrieve_dictionary_context(
+                query=query, top_k=dict_top_k, model=model
+            )
+        return {
+            'comment_documents': comment_docs,
+            'dictionary_documents': dictionary_docs,
+            'documents': comment_docs,
+        }
+
     def retrieve_semantic_context(self, query: str, top_k: int = None) -> List[Dict]:
         """
         Retrieve semantic context (sentiment, emotion, keywords)
@@ -134,30 +218,8 @@ class RAGRetriever:
             return []
     
     def retrieve_related_words(self, query: str, top_k: int = 5) -> List[Dict]:
-        """
-        Retrieve related dictionary entries
-        
-        Args:
-            query: Query word/phrase
-            top_k: Number of related words
-            
-        Returns:
-            List of related words with definitions
-        """
-        try:
-            # Generate embedding for query
-            query_embedding = self.embeddings.embed_text_xlmroberta(query)
-            
-            # Search similar words in dictionary
-            similar_words = self.db.search_similar_dictionary(
-                embedding=query_embedding.tolist(),
-                top_k=top_k
-            )
-            
-            return similar_words
-        except Exception as e:
-            logger.error(f"Error retrieving related words: {e}")
-            return []
+        """Alias — dùng retrieve_dictionary_context (JSON + DB)."""
+        return self.retrieve_dictionary_context(query=query, top_k=top_k, model="xlmroberta")
     
     def augment_prompt_with_context(self, query: str, context_docs: List[Dict],
                                    max_tokens: int = None) -> str:
@@ -176,32 +238,49 @@ class RAGRetriever:
         
         if not context_docs:
             return query
-        
-        # Format context
+
+        comment_docs = [d for d in context_docs if d.get('source') in (None, 'comments')]
+        dict_docs = [d for d in context_docs if str(d.get('source', '')).startswith('dictionary')]
+
         context_text = "### Retrieved Context:\n\n"
         token_count = 0
-        
-        for i, doc in enumerate(context_docs, 1):
-            # Add document with similarity score
-            doc_text = f"[Document {i}] (Similarity: {doc.get('similarity', 0):.2f})\n"
-            doc_text += f"Text: {doc.get('text_content', '')}\n"
-            
-            # Add sentiment if available
-            if doc.get('sentiment_label'):
-                doc_text += f"Sentiment: {doc.get('sentiment_label')}\n"
-            
-            # Add semantic context if available
-            if doc.get('sentiment_context'):
-                doc_text += f"Context: {json.dumps(doc.get('sentiment_context'), ensure_ascii=False)}\n"
-            
-            doc_text += "\n"
-            
-            token_count += len(doc_text.split())
-            
-            if token_count > max_tokens:
-                break
-            
-            context_text += doc_text
+
+        if comment_docs:
+            context_text += "#### Bình luận tương tự\n\n"
+            for i, doc in enumerate(comment_docs, 1):
+                doc_text = f"[Comment {i}] (sim={doc.get('similarity', 0):.2f})\n"
+                doc_text += f"Text: {doc.get('text_content', '')}\n"
+                if doc.get('sentiment_label'):
+                    doc_text += f"Sentiment: {doc.get('sentiment_label')}\n"
+                if doc.get('sentiment_context'):
+                    doc_text += f"Context: {json.dumps(doc.get('sentiment_context'), ensure_ascii=False)}\n"
+                doc_text += "\n"
+                token_count += len(doc_text.split())
+                if token_count > max_tokens:
+                    break
+                context_text += doc_text
+
+        if dict_docs and token_count <= max_tokens:
+            context_text += "#### Từ điển liên quan\n\n"
+            for i, doc in enumerate(dict_docs, 1):
+                doc_text = f"[Dict {i}] (sim={doc.get('similarity', 0):.2f}) "
+                doc_text += f"{doc.get('word', '')}: {doc.get('semantics', doc.get('text_content', ''))}\n\n"
+                token_count += len(doc_text.split())
+                if token_count > max_tokens:
+                    break
+                context_text += doc_text
+
+        if not comment_docs and not dict_docs:
+            for i, doc in enumerate(context_docs, 1):
+                doc_text = f"[Document {i}] (Similarity: {doc.get('similarity', 0):.2f})\n"
+                doc_text += f"Text: {doc.get('text_content', '')}\n"
+                if doc.get('sentiment_label'):
+                    doc_text += f"Sentiment: {doc.get('sentiment_label')}\n"
+                doc_text += "\n"
+                token_count += len(doc_text.split())
+                if token_count > max_tokens:
+                    break
+                context_text += doc_text
         
         # Combine query with context
         augmented_prompt = f"""Query: {query}

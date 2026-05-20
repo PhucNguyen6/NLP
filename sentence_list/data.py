@@ -1,6 +1,8 @@
 import re
 import csv
 import os
+import time
+from pathlib import Path
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
 import nltk
@@ -266,12 +268,11 @@ def preprocess_comment(original: str) -> tuple[str | None, str | None]:
 
     return text.strip(), lang
 
-DEFAULT_INPUT = os.path.join(
-    os.path.dirname(__file__), "raw_data", "raw_comment.csv"
-)
-DEFAULT_OUTPUT = os.path.join(
-    os.path.dirname(__file__), "clean_data", "clean_comment.csv"
-)
+from config import BASE_DIR, DATA_DIR, CRAWLING_CONFIG
+
+RAW_DATA_DIR = BASE_DIR / "raw_data"
+DEFAULT_INPUT = str(RAW_DATA_DIR / "raw_comment.csv")
+DEFAULT_OUTPUT = str(DATA_DIR / "clean_comment.csv")
 
 # Thực thi tiền xử lý 
 def process_file(input_path: str | None = None, output_path: str | None = None) -> tuple[int, int]:
@@ -309,7 +310,68 @@ def process_file(input_path: str | None = None, output_path: str | None = None) 
     return kept, dropped
 
 
-if __name__ == "__main__":
-    kept, dropped = process_file()
-    print(f"Đã tiền xử lý xong: Số comment sạch là {kept}, đã loại bỏ {dropped}")
-    print(f"Đã lưu comment sạch vào : {DEFAULT_OUTPUT}")
+# --- YouTube crawl (gộp từ crawl_sentence.py) ---
+def crawl_youtube_comments(video_id, max_results=1000, max_retries=5, retry_backoff=2):
+    from googleapiclient.discovery import build
+
+    api_key = CRAWLING_CONFIG.get("youtube_api_key") or __import__("os").getenv("YOUTUBE_API_KEY")
+    if not api_key:
+        raise RuntimeError("Thiếu YOUTUBE_API_KEY trong .env")
+    youtube = build("youtube", "v3", developerKey=api_key)
+    comments = []
+    request = youtube.commentThreads().list(part="snippet", videoId=video_id, maxResults=100)
+    while request and len(comments) < max_results:
+        attempt = 0
+        while attempt < max_retries:
+            try:
+                response = request.execute()
+                break
+            except Exception as e:
+                attempt += 1
+                if attempt >= max_retries:
+                    raise
+                time.sleep(retry_backoff * attempt)
+        for item in response.get("items", []):
+            text = item["snippet"]["topLevelComment"]["snippet"].get("textOriginal", "")
+            comments.append({"video_id": video_id, "comment": text})
+        if len(comments) >= max_results:
+            break
+        request = youtube.commentThreads().list_next(request, response)
+    return comments[:max_results]
+
+
+def read_video_ids(file_path):
+    path = Path(file_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Video ID file not found: {path}")
+    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def run_crawl(
+    video_list: str | None = None,
+    output_path: str | None = None,
+    max_per_video: int = 20000,
+) -> str:
+    import time
+    from pathlib import Path
+
+    video_list = video_list or str(BASE_DIR / "youtube_id_music.txt")
+    output_path = output_path or DEFAULT_INPUT
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    all_comments = []
+    for vid in read_video_ids(video_list):
+        print(f"Đang crawl video: {vid}")
+        all_comments.extend(crawl_youtube_comments(vid, max_results=max_per_video))
+        time.sleep(1)
+    with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["video_id", "comment"])
+        writer.writeheader()
+        writer.writerows(all_comments)
+    print(f"Đã lưu {len(all_comments)} comments → {output_path}")
+    return output_path
+
+
+def run_preprocess(input_path: str | None = None, output_path: str | None = None) -> tuple[int, int]:
+    kept, dropped = process_file(input_path, output_path)
+    print(f"Tiền xử lý: giữ {kept}, loại {dropped} → {output_path or DEFAULT_OUTPUT}")
+    return kept, dropped

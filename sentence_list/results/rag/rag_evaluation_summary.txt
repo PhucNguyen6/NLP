@@ -1,0 +1,61 @@
+========================================================================
+BÁO CÁO ĐÁNH GIÁ RAG
+========================================================================
+Thời gian: 2026-05-20T14:33:23.218980+00:00
+Số truy vấn mẫu: 150
+
+--- Tham số RAG ---
+  top_k: 5
+  dict_top_k: 3
+  similarity_threshold: 0.3
+  dictionary_similarity_threshold: 0.25
+  hybrid_retrieval: True
+  chunk_size: 100
+  chunk_overlap: 20
+  max_context_tokens: 2000
+
+--- Cơ sở dữ liệu ---
+  Tổng embeddings: 122733
+  Tổng từ điển (DB): 137989
+  Phân bố nhãn: {'criticism': 22500, 'neutral': 59022, 'praise': 41211}
+
+--- Chunk từ điển (JSON) ---
+  File: D:\NLP_Project\NLP\sentence_list\clean_dict\dictionary_chunks.json
+  Tổng chunk: 214898
+  Theo ngôn ngữ: {'vi': 36763, 'en': 178135}
+
+--- Kết quả theo encoder ---
+
+  [XLM-RoBERTa]
+    avg top-1 similarity : 0.9386
+    threshold pass rate  : 1.0000
+    avg n retrieved      : 5.00
+    avg latency (ms)     : 6320.98
+    p95 latency (ms)       : 6836.21
+
+  [Doc2Vec]
+    avg top-1 similarity : 0.7646
+    threshold pass rate  : 1.0000
+    avg n retrieved      : 4.98
+    avg latency (ms)     : 1648.87
+    p95 latency (ms)       : 1850.85
+
+  [TF-IDF]
+    avg top-1 similarity : 0.7066
+    threshold pass rate  : 0.9533
+    avg n retrieved      : 4.55
+    avg latency (ms)     : 4513.47
+    p95 latency (ms)       : 6137.06
+
+--- Retrieve từ điển (hybrid, theo encoder) ---
+  [xlmroberta] sim=0.8931 hits=150/150
+  [doc2vec] sim=0.8931 hits=150/150
+  [tfidf] sim=0.8931 hits=150/150
+
+Biểu đồ:
+  - D:\NLP_Project\NLP\sentence_list\plots\rag\01_rag_similarity_latency.png
+  - D:\NLP_Project\NLP\sentence_list\plots\rag\02_top1_similarity_histogram.png
+  - D:\NLP_Project\NLP\sentence_list\plots\rag\03_threshold_pass_and_retrieved.png
+  - D:\NLP_Project\NLP\sentence_list\plots\rag\04_retrieval_latency_boxplot.png
+  - D:\NLP_Project\NLP\sentence_list\plots\rag\05_db_sentiment_distribution.png
+========================================================================

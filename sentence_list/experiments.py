@@ -28,7 +28,6 @@ import pandas as pd
 import seaborn as sns
 import torch
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
-from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import (
     accuracy_score,
@@ -43,7 +42,8 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-from sentiment_define import analyze_sentiment
+from config import EMBEDDING_CONFIG, OPTIMIZATION_CONFIG, PSEUDO_LABEL_CONFIG, get_torch_device
+from pseudo_labeling import assign_pseudo_labels, label_distribution
 
 warnings.filterwarnings("ignore")
 
@@ -100,32 +100,27 @@ def load_comments():
     return texts, langs
 
 
-def map_clusters_to_labels(cluster_ids, texts, langs):
-    cluster_scores = {}
-    for cid in sorted(set(cluster_ids)):
-        idxs = np.where(cluster_ids == cid)[0][:300]
-        scores = []
-        for i in idxs:
-            try:
-                scores.append(analyze_sentiment(texts[i], language=langs[i]).get("score", 0.0))
-            except Exception:
-                scores.append(0.0)
-        cluster_scores[cid] = float(np.mean(scores)) if scores else 0.0
-    sorted_cids = sorted(cluster_scores, key=lambda c: cluster_scores[c])
-    label_map = {sorted_cids[0]: "criticism", sorted_cids[1]: "neutral", sorted_cids[2]: "praise"}
-    y = np.array([label_map[c] for c in cluster_ids])
-    return y, cluster_scores, label_map
-
-
-def encode_tfidf(texts, langs):
+def encode_tfidf(texts, langs, label_mode: str | None = None):
+    tf_cfg = EMBEDDING_CONFIG.get("tfidf", {})
     start = time.perf_counter()
-    vectorizer = TfidfVectorizer(max_features=500, ngram_range=(1, 2), sublinear_tf=True, min_df=2)
+    vectorizer = TfidfVectorizer(
+        max_features=int(tf_cfg.get("max_features", 1500)),
+        ngram_range=tuple(tf_cfg.get("ngram_range", (1, 2))),
+        sublinear_tf=bool(tf_cfg.get("sublinear_tf", True)),
+        min_df=int(tf_cfg.get("min_df", 3)),
+        max_df=float(tf_cfg.get("max_df", 0.92)),
+    )
     x = vectorizer.fit_transform(texts).toarray().astype(np.float32)
     encode_time = time.perf_counter() - start
-    cluster_start = time.perf_counter()
-    cluster_ids = KMeans(n_clusters=3, random_state=42, n_init=15, max_iter=500).fit_predict(x)
-    y, cluster_scores, label_map = map_clusters_to_labels(cluster_ids, texts, langs)
-    cluster_time = time.perf_counter() - cluster_start
+
+    label_start = time.perf_counter()
+    y, labeling_meta = assign_pseudo_labels(
+        texts, langs, x, mode=label_mode, method_name="TF-IDF"
+    )
+    label_time = time.perf_counter() - label_start
+    dist = label_distribution(y)
+    logger.info("TF-IDF pseudo-labels (%s): %s", labeling_meta.get("labeling_mode"), dist)
+
     payload = {
         "X": x,
         "y": y,
@@ -138,39 +133,55 @@ def encode_tfidf(texts, langs):
             "vocab_size": len(vectorizer.vocabulary_),
             "encoder_params": len(vectorizer.vocabulary_),
             "encode_time_s": encode_time,
-            "cluster_time_s": cluster_time,
-            "total_time_s": encode_time + cluster_time,
-            "cluster_scores": cluster_scores,
-            "label_map": label_map,
-            "label_dist": {k: int((y == k).sum()) for k in ["praise", "neutral", "criticism"]},
-            "tfidf_config": {"max_features": 500, "ngram_range": (1, 2), "sublinear_tf": True, "min_df": 2},
+            "labeling_time_s": label_time,
+            "total_time_s": encode_time + label_time,
+            "label_dist": dist,
+            "labeling": labeling_meta,
+            "tfidf_config": dict(tf_cfg),
         },
     }
     joblib.dump(payload, ENCODED_DIR / "tfidf_labeled.pkl", compress=3)
     joblib.dump(vectorizer, ENCODED_DIR / "tfidf_vectorizer.pkl")
 
 
-def encode_doc2vec(texts, langs):
-    config = {"vector_size": 100, "window": 5, "min_count": 1, "epochs": 40, "dm": 1}
+def encode_doc2vec(texts, langs, label_mode: str | None = None):
+    config = dict(EMBEDDING_CONFIG.get("doc2vec", {}))
+    vector_size = int(config.get("vector_size", 200))
+    window = int(config.get("window", 8))
+    min_count = int(config.get("min_count", 3))
+    epochs = int(config.get("epochs", 50))
+    infer_epochs = int(config.get("infer_epochs", 30))
+    workers = int(config.get("workers", 4))
+
     start = time.perf_counter()
     tagged = [TaggedDocument(words=t.split(), tags=[str(i)]) for i, t in enumerate(texts)]
     model = Doc2Vec(
-        vector_size=config["vector_size"],
-        window=config["window"],
-        min_count=config["min_count"],
-        workers=4,
-        epochs=config["epochs"],
-        dm=config["dm"],
+        vector_size=vector_size,
+        window=window,
+        min_count=min_count,
+        workers=workers,
+        epochs=epochs,
+        dm=int(config.get("dm", 1)),
+        dbow_words=int(config.get("dbow_words", 1)),
+        negative=int(config.get("negative", 8)),
         seed=42,
     )
     model.build_vocab(tagged)
     model.train(tagged, total_examples=model.corpus_count, epochs=model.epochs)
-    x = np.array([model.infer_vector(t.split(), epochs=20) for t in texts], dtype=np.float32)
+    x = np.array(
+        [model.infer_vector(t.split(), epochs=infer_epochs) for t in texts],
+        dtype=np.float32,
+    )
     encode_time = time.perf_counter() - start
-    cluster_start = time.perf_counter()
-    cluster_ids = KMeans(n_clusters=3, random_state=42, n_init=15, max_iter=500).fit_predict(x)
-    y, cluster_scores, label_map = map_clusters_to_labels(cluster_ids, texts, langs)
-    cluster_time = time.perf_counter() - cluster_start
+
+    label_start = time.perf_counter()
+    y, labeling_meta = assign_pseudo_labels(
+        texts, langs, x, mode=label_mode, method_name="Doc2Vec"
+    )
+    label_time = time.perf_counter() - label_start
+    dist = label_distribution(y)
+    logger.info("Doc2Vec pseudo-labels (%s): %s", labeling_meta.get("labeling_mode"), dist)
+
     vocab_size = len(model.wv.key_to_index)
     payload = {
         "X": x,
@@ -182,13 +193,12 @@ def encode_doc2vec(texts, langs):
             "n_samples": len(texts),
             "n_features": x.shape[1],
             "vocab_size": vocab_size,
-            "encoder_params": vocab_size * config["vector_size"] * 2,
+            "encoder_params": vocab_size * vector_size * 2,
             "encode_time_s": encode_time,
-            "cluster_time_s": cluster_time,
-            "total_time_s": encode_time + cluster_time,
-            "cluster_scores": cluster_scores,
-            "label_map": label_map,
-            "label_dist": {k: int((y == k).sum()) for k in ["praise", "neutral", "criticism"]},
+            "labeling_time_s": label_time,
+            "total_time_s": encode_time + label_time,
+            "label_dist": dist,
+            "labeling": labeling_meta,
             "d2v_config": config,
         },
     }
@@ -196,15 +206,23 @@ def encode_doc2vec(texts, langs):
     model.save(str(ENCODED_DIR / "doc2vec_model.model"))
 
 
-def encode_xlmroberta(texts, langs):
+def encode_xlmroberta(texts, langs, device: str | None = None):
     del langs
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = get_torch_device(device)
+    logger.info("XLM-RoBERTa encode on device: %s", device)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False)
     model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, output_hidden_states=True)
     model.to(device)
     model.eval()
     label_remap = {"negative": "criticism", "neutral": "neutral", "positive": "praise"}
-    bs = 32
+    bs = int(
+        __import__("os").getenv(
+            "XLM_BATCH_SIZE",
+            str(EMBEDDING_CONFIG["xlmroberta"].get("batch_size", 32)),
+        )
+    )
+    if str(device).startswith("cuda") and bs < 64:
+        logger.info("GPU: có thể tăng tốc bằng XLM_BATCH_SIZE=64 hoặc 128 (nếu đủ VRAM)")
     all_emb, all_labels = [], []
     start = time.perf_counter()
     with torch.no_grad():
@@ -242,17 +260,24 @@ def encode_xlmroberta(texts, langs):
     joblib.dump(payload, ENCODED_DIR / "xlmroberta_labeled.pkl", compress=3)
 
 
-def run_encode(method: str):
+def run_encode(method: str, device: str | None = None, label_mode: str | None = None):
+    from config import log_torch_cuda_status
+
+    if method in ("all", "xlmroberta"):
+        log_torch_cuda_status(logger)
     texts, langs = load_comments()
-    if method in ("tfidf", "all"):
-        logger.info("Encoding TF-IDF...")
-        encode_tfidf(texts, langs)
-    if method in ("doc2vec", "all"):
-        logger.info("Encoding Doc2Vec...")
-        encode_doc2vec(texts, langs)
-    if method in ("xlmroberta", "all"):
-        logger.info("Encoding XLM-RoBERTa...")
-        encode_xlmroberta(texts, langs)
+    # XLM trước để TF-IDF/Doc2Vec mode=auto có thể dùng nhãn teacher
+    order = ["xlmroberta", "tfidf", "doc2vec"] if method == "all" else [method]
+    for m in order:
+        if m == "xlmroberta":
+            logger.info("Encoding XLM-RoBERTa...")
+            encode_xlmroberta(texts, langs, device=device)
+        elif m == "tfidf":
+            logger.info("Encoding TF-IDF...")
+            encode_tfidf(texts, langs, label_mode=label_mode)
+        elif m == "doc2vec":
+            logger.info("Encoding Doc2Vec...")
+            encode_doc2vec(texts, langs, label_mode=label_mode)
 
 
 def split_train_val_test_721(X: np.ndarray, y: np.ndarray):
@@ -344,8 +369,23 @@ def sanitize_for_json(obj: Any) -> Any:
     return obj
 
 
-def run_train():
+def run_train(
+    skip_learning_curve: bool | None = None,
+    learning_curve_jobs: int | None = None,
+):
     """Huấn luyện SVM cho từng encoder đã lưu: metrics train/val/test, plots, CSV, TXT, JSON."""
+    skip_lc = (
+        skip_learning_curve
+        if skip_learning_curve is not None
+        else not OPTIMIZATION_CONFIG.get("svm_learning_curve", True)
+    )
+    lc_jobs = (
+        learning_curve_jobs
+        if learning_curve_jobs is not None
+        else int(OPTIMIZATION_CONFIG.get("learning_curve_n_jobs", -1))
+    )
+    if skip_lc:
+        logger.info("Bỏ qua learning curve (giảm tải CPU). Dùng --skip-learning-curve hoặc SVM_LEARNING_CURVE=0")
     all_results: dict[str, dict[str, Any]] = {}
 
     for file_key, display_name, pkl_name in ENCODED_SPECS:
@@ -400,15 +440,19 @@ def run_train():
         enc_params = int(meta.get("encoder_params", 0))
 
         train_sizes_frac = np.linspace(0.1, 1.0, 8)
-        lc_sizes, lc_train_scores, lc_val_scores = learning_curve(
-            SVC(**SVM_CONFIG),
-            X_train_sc,
-            y_train,
-            train_sizes=train_sizes_frac,
-            cv=5,
-            scoring="f1_macro",
-            n_jobs=-1,
-        )
+        if skip_lc:
+            lc_sizes = lc_train_scores = lc_val_scores = None
+        else:
+            logger.info("Learning curve (5-fold CV, n_jobs=%s) — chủ yếu dùng CPU...", lc_jobs)
+            lc_sizes, lc_train_scores, lc_val_scores = learning_curve(
+                SVC(**SVM_CONFIG),
+                X_train_sc,
+                y_train,
+                train_sizes=train_sizes_frac,
+                cv=int(OPTIMIZATION_CONFIG.get("learning_curve_cv", 5)),
+                scoring="f1_macro",
+                n_jobs=lc_jobs,
+            )
 
         model_path = MODELS_DIR / f"svm_model_{file_key}.pkl"
         model_pkg = {
@@ -685,32 +729,35 @@ def run_train():
     plt.savefig(p3, dpi=150, bbox_inches="tight")
     plt.close()
 
-    # Plot 4: learning curves
-    fig, axes = plt.subplots(1, n_methods, figsize=(6 * n_methods, 5), sharey=True)
-    if n_methods == 1:
-        axes = [axes]
-    fig.suptitle("Learning curve (F1-macro, 5-fold CV trên tập train)", fontsize=13, fontweight="bold")
-    for ax, m in zip(axes, methods):
-        sizes = all_results[m]["lc_sizes"]
-        tr_mean = all_results[m]["lc_train_scores"].mean(axis=1)
-        tr_std = all_results[m]["lc_train_scores"].std(axis=1)
-        cv_mean = all_results[m]["lc_val_scores"].mean(axis=1)
-        cv_std = all_results[m]["lc_val_scores"].std(axis=1)
-        col = COLORS[m]
-        ax.plot(sizes, tr_mean, "o-", color=col, label="Train (CV)", linewidth=1.8)
-        ax.fill_between(sizes, tr_mean - tr_std, tr_mean + tr_std, alpha=0.15, color=col)
-        ax.plot(sizes, cv_mean, "s--", color=col, alpha=0.7, label="Val (CV)", linewidth=1.8)
-        ax.fill_between(sizes, cv_mean - cv_std, cv_mean + cv_std, alpha=0.1, color=col)
-        ax.set_xlabel("Số mẫu train (trong fold)")
-        ax.set_ylabel("F1-macro")
-        ax.set_title(m)
-        ax.legend(fontsize=8)
-        ax.set_ylim(0, 1.05)
-        ax.grid(alpha=0.3)
-    plt.tight_layout()
+    # Plot 4: learning curves (optional)
     p4 = PLOTS_DIR / "04_learning_curves.png"
-    plt.savefig(p4, dpi=150, bbox_inches="tight")
-    plt.close()
+    if skip_lc or all_results[methods[0]].get("lc_sizes") is None:
+        logger.info("Không vẽ learning curve (đã bỏ qua bước tính CV).")
+    else:
+        fig, axes = plt.subplots(1, n_methods, figsize=(6 * n_methods, 5), sharey=True)
+        if n_methods == 1:
+            axes = [axes]
+        fig.suptitle("Learning curve (F1-macro, 5-fold CV trên tập train)", fontsize=13, fontweight="bold")
+        for ax, m in zip(axes, methods):
+            sizes = all_results[m]["lc_sizes"]
+            tr_mean = all_results[m]["lc_train_scores"].mean(axis=1)
+            tr_std = all_results[m]["lc_train_scores"].std(axis=1)
+            cv_mean = all_results[m]["lc_val_scores"].mean(axis=1)
+            cv_std = all_results[m]["lc_val_scores"].std(axis=1)
+            col = COLORS[m]
+            ax.plot(sizes, tr_mean, "o-", color=col, label="Train (CV)", linewidth=1.8)
+            ax.fill_between(sizes, tr_mean - tr_std, tr_mean + tr_std, alpha=0.15, color=col)
+            ax.plot(sizes, cv_mean, "s--", color=col, alpha=0.7, label="Val (CV)", linewidth=1.8)
+            ax.fill_between(sizes, cv_mean - cv_std, cv_mean + cv_std, alpha=0.1, color=col)
+            ax.set_xlabel("Số mẫu train (trong fold)")
+            ax.set_ylabel("F1-macro")
+            ax.set_title(m)
+            ax.legend(fontsize=8)
+            ax.set_ylim(0, 1.05)
+            ax.grid(alpha=0.3)
+        plt.tight_layout()
+        plt.savefig(p4, dpi=150, bbox_inches="tight")
+        plt.close()
 
     # Plot 5: heatmap test metrics
     heat_data = pd.DataFrame({m: {k: all_results[m]["test_metrics"][k] for k in metric_keys} for m in methods}).T
@@ -753,24 +800,59 @@ def run_train():
         logger.info("Plot: %s", p)
 
 
+def _add_train_args(p):
+    p.add_argument(
+        "--device",
+        choices=["auto", "cuda", "cpu"],
+        default=None,
+        help="Thiết bị cho encode XLM-RoBERTa (mặc định: TRAIN_DEVICE hoặc auto)",
+    )
+    p.add_argument(
+        "--label-mode",
+        choices=["auto", "teacher", "lexicon", "percentile", "hybrid", "cluster"],
+        default=None,
+        help="Cách gán nhãn TF-IDF/Doc2Vec (mặc định PSEUDO_LABEL_MODE/auto)",
+    )
+    p.add_argument(
+        "--skip-learning-curve",
+        action="store_true",
+        help="Bỏ learning curve 5-fold — giảm tải CPU khi train SVM",
+    )
+    p.add_argument(
+        "--learning-curve-jobs",
+        type=int,
+        default=None,
+        help="n_jobs cho learning curve (mặc định LEARNING_CURVE_JOBS hoặc -1)",
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description="Encode + train SVM (7/2/1), plots & JSON report.")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_encode = sub.add_parser("encode", help="Mã hoá TF-IDF / Doc2Vec / XLM-RoBERTa.")
     p_encode.add_argument("--method", choices=["tfidf", "doc2vec", "xlmroberta", "all"], default="all")
+    _add_train_args(p_encode)
 
-    sub.add_parser("train", help="Huấn luyện SVM, xuất metrics/plots/JSON.")
-    sub.add_parser("all", help="encode(all) rồi train.")
+    p_train = sub.add_parser("train", help="Huấn luyện SVM, xuất metrics/plots/JSON.")
+    _add_train_args(p_train)
+
+    p_all = sub.add_parser("all", help="encode(all) rồi train.")
+    _add_train_args(p_all)
 
     args = parser.parse_args()
+    device = getattr(args, "device", None)
+    label_mode = getattr(args, "label_mode", None)
+    skip_lc = getattr(args, "skip_learning_curve", False)
+    lc_jobs = getattr(args, "learning_curve_jobs", None)
+
     if args.command == "encode":
-        run_encode(args.method)
+        run_encode(args.method, device=device, label_mode=label_mode)
     elif args.command == "train":
-        run_train()
+        run_train(skip_learning_curve=skip_lc, learning_curve_jobs=lc_jobs)
     elif args.command == "all":
-        run_encode("all")
-        run_train()
+        run_encode("all", device=device, label_mode=label_mode)
+        run_train(skip_learning_curve=skip_lc, learning_curve_jobs=lc_jobs)
 
 
 if __name__ == "__main__":

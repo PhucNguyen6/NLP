@@ -90,6 +90,26 @@ def render_result(result: dict) -> None:
                     unsafe_allow_html=True,
                 )
 
+    rag = result.get("rag_pipeline", {})
+    comment_docs = rag.get("documents") or []
+    dict_docs = rag.get("dictionary_documents") or []
+    if comment_docs or dict_docs:
+        with st.expander("Ngữ cảnh RAG (bình luận + từ điển)", expanded=False):
+            if comment_docs:
+                st.markdown("**Bình luận tương tự**")
+                for d in comment_docs[:5]:
+                    st.caption(
+                        f"sim={d.get('similarity', 0):.2f} | "
+                        f"{d.get('sentiment', '—')}: {d.get('text', '')[:120]}"
+                    )
+            if dict_docs:
+                st.markdown("**Từ điển**")
+                for d in dict_docs[:5]:
+                    st.caption(
+                        f"sim={d.get('similarity', 0):.2f} | "
+                        f"**{d.get('word', '')}**: {d.get('semantics', '')[:120]}"
+                    )
+
     if llm_explanation:
         st.markdown("**Giải thích bởi LLM:**")
         st.write(llm_explanation)

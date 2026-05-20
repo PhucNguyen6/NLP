@@ -5,89 +5,89 @@ SVM — TF-IDF / Doc2Vec / XLM-RoBERTa (stratified 7/2/1)
 ────────────────────────────────────────────────────────────
   Phương pháp: TF-IDF
 ────────────────────────────────────────────────────────────
-  Đặc trưng: 500 chiều
-  Tham số encoder: 500 | SVM: 3,321,235 | SV: 6616
-  Thời gian encode: 1.54s | SVM: 731.12s
+  Đặc trưng: 1500 chiều
+  Tham số encoder: 1,500 | SVM: 29,814,703 | SV: 19850
+  Thời gian encode: 3.73s | SVM: 6806.61s
   Model: D:\NLP_Project\NLP\sentence_list\results\svm_models\svm_model_tf_idf.pkl
 
   --- TRAIN ---
-    accuracy    : 0.9961
-    precision   : 0.9961
-    recall      : 0.9947
-    f1          : 0.9954
+    accuracy    : 0.8475
+    precision   : 0.8642
+    recall      : 0.8022
+    f1          : 0.8246
   --- VAL ---
-    accuracy    : 0.9770
-    precision   : 0.9790
-    recall      : 0.9705
-    f1          : 0.9746
+    accuracy    : 0.7409
+    precision   : 0.7463
+    recall      : 0.6721
+    f1          : 0.6923
   --- TEST ---
-    accuracy    : 0.9773
-    precision   : 0.9820
-    recall      : 0.9691
-    f1          : 0.9753
+    accuracy    : 0.7512
+    precision   : 0.7647
+    recall      : 0.6860
+    f1          : 0.7082
 
-  Phân bố nhãn (train): {'criticism': 1483, 'neutral': 6088, 'praise': 21065}
-  Phân bố nhãn (val):   {'criticism': 424, 'neutral': 1740, 'praise': 6019}
-  Phân bố nhãn (test):  {'criticism': 212, 'neutral': 870, 'praise': 3010}
+  Phân bố nhãn (train): {'criticism': 5250, 'neutral': 13771, 'praise': 9615}
+  Phân bố nhãn (val):   {'criticism': 1500, 'neutral': 3935, 'praise': 2748}
+  Phân bố nhãn (test):  {'criticism': 750, 'neutral': 1968, 'praise': 1374}
 
   Classification report (TEST):
               precision    recall  f1-score   support
 
-   criticism       1.00      0.99      1.00       212
-     neutral       0.97      0.93      0.95       870
-      praise       0.98      0.99      0.98      3010
+   criticism       0.76      0.46      0.57       750
+     neutral       0.72      0.89      0.80      1968
+      praise       0.82      0.71      0.76      1374
 
-    accuracy                           0.98      4092
-   macro avg       0.98      0.97      0.98      4092
-weighted avg       0.98      0.98      0.98      4092
+    accuracy                           0.75      4092
+   macro avg       0.76      0.69      0.71      4092
+weighted avg       0.76      0.75      0.74      4092
 
 
 ────────────────────────────────────────────────────────────
   Phương pháp: Doc2Vec
 ────────────────────────────────────────────────────────────
-  Đặc trưng: 100 chiều
-  Tham số encoder: 2,917,600 | SVM: 507,453 | SV: 4975
-  Thời gian encode: 164.18s | SVM: 214.98s
+  Đặc trưng: 200 chiều
+  Tham số encoder: 2,052,000 | SVM: 4,722,359 | SV: 23378
+  Thời gian encode: 298.63s | SVM: 1601.41s
   Model: D:\NLP_Project\NLP\sentence_list\results\svm_models\svm_model_doc2vec.pkl
 
   --- TRAIN ---
-    accuracy    : 0.9985
-    precision   : 0.9990
-    recall      : 0.9975
-    f1          : 0.9983
+    accuracy    : 0.7529
+    precision   : 0.8104
+    recall      : 0.6731
+    f1          : 0.7023
   --- VAL ---
-    accuracy    : 0.9796
-    precision   : 0.9853
-    recall      : 0.8983
-    f1          : 0.9347
+    accuracy    : 0.6285
+    precision   : 0.6334
+    recall      : 0.5282
+    f1          : 0.5286
   --- TEST ---
-    accuracy    : 0.9802
-    precision   : 0.9858
-    recall      : 0.9257
-    f1          : 0.9525
+    accuracy    : 0.6393
+    precision   : 0.6500
+    recall      : 0.5393
+    f1          : 0.5408
 
-  Phân bố nhãn (train): {'criticism': 12309, 'neutral': 16106, 'praise': 221}
-  Phân bố nhãn (val):   {'criticism': 3518, 'neutral': 4602, 'praise': 63}
-  Phân bố nhãn (test):  {'criticism': 1759, 'neutral': 2301, 'praise': 32}
+  Phân bố nhãn (train): {'criticism': 5250, 'neutral': 13771, 'praise': 9615}
+  Phân bố nhãn (val):   {'criticism': 1500, 'neutral': 3935, 'praise': 2748}
+  Phân bố nhãn (test):  {'criticism': 750, 'neutral': 1968, 'praise': 1374}
 
   Classification report (TEST):
               precision    recall  f1-score   support
 
-   criticism       0.97      0.99      0.98      1759
-     neutral       0.99      0.98      0.98      2301
-      praise       1.00      0.81      0.90        32
+   criticism       0.66      0.17      0.27       750
+     neutral       0.62      0.84      0.71      1968
+      praise       0.67      0.61      0.64      1374
 
-    accuracy                           0.98      4092
-   macro avg       0.99      0.93      0.95      4092
-weighted avg       0.98      0.98      0.98      4092
+    accuracy                           0.64      4092
+   macro avg       0.65      0.54      0.54      4092
+weighted avg       0.65      0.64      0.61      4092
 
 
 ────────────────────────────────────────────────────────────
   Phương pháp: XLM-RoBERTa
 ────────────────────────────────────────────────────────────
   Đặc trưng: 768 chiều
-  Tham số encoder: 278,045,955 | SVM: 3,223,223 | SV: 4186
-  Thời gian encode: 4180.74s | SVM: 315.37s
+  Tham số encoder: 278,045,955 | SVM: 3,223,993 | SV: 4187
+  Thời gian encode: 6207.64s | SVM: 348.19s
   Model: D:\NLP_Project\NLP\sentence_list\results\svm_models\svm_model_xlm_roberta.pkl
 
   --- TRAIN ---
